@@ -17,10 +17,12 @@
 
 ### Update the OS
 1. Login as wsprdeamon
-2. Update the OS
+2. Add the wsprdeamon user to the _sudo_ group
+      - $$sudo usermod -aG sudo wsprdaemon
+4. Update the OS
       - $sudo apt update
       - $sudo apt update
-4. Disable Snap if installed and running
+5. Disable Snap if installed and running
       - $sudo apt autoremove --purge snapd gnome-software-plugin-snap
       - $sudo apt-mark hold snapd
 
