@@ -2,6 +2,7 @@
 
 1. Run the following command:
    - cd ~\
-git clone https://github.com/rrobinett/wsprdaemon.git\
-cd wsprdaemon\
-./wsprdaemon.sh -V
+   - git clone https://github.com/rrobinett/wsprdaemon.git\
+   - cd wsprdaemon\
+   - ./wsprdaemon.sh -V
+2. ddd
