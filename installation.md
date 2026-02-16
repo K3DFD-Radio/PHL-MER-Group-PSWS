@@ -23,6 +23,5 @@
 4. Disable Snap if installed and running
    *$sudo apt autoremove --purge snapd gnome-software-plugin-snap
    *$sudo apt-mark hold snapd
-
-   100. First list item
-     - First nested list item
+      - First list item
+      - - First nested list item
