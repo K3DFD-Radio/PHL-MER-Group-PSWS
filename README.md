@@ -53,7 +53,7 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 ## Link: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
 
 ---
-## Link: WSPRDaemon Configuration
+## Link: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
 
 ---
 ## Link: HamSCI Backhaul Data Upload
