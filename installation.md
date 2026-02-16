@@ -29,6 +29,9 @@
       - $sudo mkdir /home/wsprdaemon
       - $sudo chown wsprdaemon:wsprdaemon /home/wsprdaemon
       - $sudo chmod 755 /home/wsprdaemon
+  
+### Set the system up for automatic reboot in case of power failure. 
+> ** Note ** This is optional for systems withing battery backup\
 
 ### Dependency and Library Updates and Installations
 1. There are a large number of dependencies and tools to be installed. 
