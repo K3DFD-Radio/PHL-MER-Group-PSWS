@@ -48,3 +48,9 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 ---
 ## System Build and Integration
 
+---
+## ka9q-radio Configuration
+
+---
+## HamSCI Backhaul Data Upload
+
