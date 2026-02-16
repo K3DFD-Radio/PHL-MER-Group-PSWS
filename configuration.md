@@ -16,43 +16,42 @@
 > **Note:** Adjust these configuration items to match your PSWS PC environment. Refer to the [WSPRDaemon documents](https://wsprdaemon.readthedocs.io/en/master/configuration/wsprdaemon.conf.d/wsprdaemon.conf.html)
 
 !/bin/bash\
-\# The previous line signals to the editor that it should use its 'bash' editing mode when editing this file
+_\# The previous line signals to the editor that it should use its 'bash' editing mode when editing this file_
 
-WD_CPU_CORES="2-15"
+_\# RAC setup enables WD supporters to access your machine remotely.  Get a RAC # from Rob Robinett. WD will run without this_
 RADIOD_CPU_CORES="0-7"
+WD_CPU_CORES="2-15"
 
+_/# ka9q-radio/web parameters_
 KA9Q_RADIO_COMMIT="main"
 KA9Q_CONF_NAME="rx888-wsprdaemon"
 KA9Q_WEB_COMMIT_CHECK="main"
 KA9Q_WEB_TITLE="<Your Callsign>"
 
+_/# To avoid overflowing the file system, the oldest wav files are deleted first when storage reaches 75%_
 ARCHIVE_WAV_FILES="yes"
 
-\# WD always attempts to upload spots to wsprnet.org
+_\# WD always attempts to upload spots to wsprnet.org_
 SIGNAL_LEVEL_UPLOAD="yes"
 SIGNAL_LEVEL_UPLOAD_MODE="noise"  
 
-\# The name put in upload log records, the title bar of the graph, and the name used to view spots and noise at that server
+_\# The name put in upload log records, the title bar of the graph, and the name used to view spots and noise at that server_
 SIGNAL_LEVEL_UPLOAD_ID="<Your Callsign>"    
 
-\# If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then FTP graphs of the last 24 hours to http://wsprdaemon.org/graphs/
+_\# If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then FTP graphs of the last 24 hours to http://wsprdaemon.org/graphs/_
 SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"   
 
-\# If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then make graphs visible at http://localhost/
+_\# If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then make graphs visible at http://localhost/_
 SIGNAL_LEVEL_LOCAL_GRAPHS="yes"    
 
-\# These two variables need to be defined in order to enable this WD GRAPE service:
-
-\# If this and GRAPE_PSWS_TOKEN are both defined, then each day soon after 00:00 UDT WD will upload the previous day's 24_hour_10sps-iq.wav file
-\# GRAPE_PSWS_ID has the form <SITE_ID>_<INSTRUMENT_ID>,  where those values are obtained from a PSWS user account which assigns these values for this site+receiver.  That PSWS site is at https://pswsnetwork.caps.ua.edu/home                                                   
-
-\# SITE_ID has the form 'S000nnn' while INSTRUMENT has the form 'NNN'
+_\# These two variables need to be defined in order to enable this WD GRAPE service. These values are obtained from the PSWS user account at https://pswsnetwork.caps.ua.edu/home. Together GRAPE_PSWS_ID + GRAPE_PSWS_TOKEN are the user+password used to authenticate rsync access to  WD1/grape.wsprdaemon.org_
+                                                 
+_\# SITE_ID has the form 'S000nnn' while INSTRUMENT has the form 'NNN'_
 GRAPE_PSWS_ID="<Your Station ID>_<Your Instrument ID>"
           
-\# This value is the "token" created for that user account by the PSWS server.  It is a very long string with 0-9 and a-z characters in it
+_\ # This value is the "token" created for that user account by the PSWS server.  It is a very long string with 0-9 and a-z characters in it_
 GRAPE_PSWS_TOKEN="<TokenFromPSWSsite>"             
 
-\# Together GRAPE_PSWS_ID + GRAPE_PSWS_ are the user+password used to authenticate rsync access to  WD1/grape.wsprdaemon.org
 \# After those variables are defined, the WD user must register this server with the GRAPE server by executing 'wdg p'.  This command needs to be run successfully only once after which automatic uploads to the GRAPE server are enabled
 
 declare RECEIVER_LIST=(
