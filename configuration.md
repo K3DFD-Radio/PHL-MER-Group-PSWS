@@ -16,7 +16,7 @@
 
 3.
 !/bin/bash
-### The previous line signals to the editor that it should use its 'bash' editing mode when editing this file
+\The previous line signals to the editor that it should use its 'bash' editing mode when editing this file
 
 WD_CPU_CORES="8-15"
 RADIOD_CPU_CORES="0-7"
@@ -26,42 +26,40 @@ KA9Q_CONF_NAME="rx888-wsprdaemon"
 KA9Q_WEB_COMMIT_CHECK="main"
 KA9Q_WEB_TITLE="<Your Callsign>"
 
-### Since these wav files are uncompressed audio they are quite large.  A 30 minute wav file which might contain a FST4W-1800 signal will be almost 50 MBytes
-### To avoid overflowing the ~/wsprdaemon/wav-archive.d file system, if that wave file will fill more than 75% of the file system, then some of the oldest wav files are deleted first
+\# Since these wav files are uncompressed audio they are quite large.  A 30 minute wav file which might contain a FST4W-1800 signal will be almost 50 MBytes. To avoid overflowing the ~/wsprdaemon/wav-archive.d file system, if that wave file will fill more than 75% of the file system, then some of the oldest wav files are deleted first
 ARCHIVE_WAV_FILES="yes"
 
-### Whether and how to upload extended spots to wsprdaemon.org.  WD always attempts to upload spots to wsprnet.org
+\# Whether and how to upload extended spots to wsprdaemon.org.  WD always attempts to upload spots to wsprnet.org
 SIGNAL_LEVEL_UPLOAD="yes"
-### SIGNAL_LEVEL_UPLOAD="no"         => (Default) Only upload spots directly to wsprnet.org   
+\# SIGNAL_LEVEL_UPLOAD="no"         => (Default) Only upload spots directly to wsprnet.org   
 
 SIGNAL_LEVEL_UPLOAD_MODE="noise"    
-### SIGNAL_LEVEL_UPLOAD_MODE="noise" => In addition, upload extended spots and noise data to wsprdaemon.org
-### SIGNAL_LEVEL_UPLOAD_MODE="proxy" => Don't directly upload spots to wsprdaemon.org.  Instead, after uploading extended spots and noise data to wsprdaemon.org have it regenerate and upload those spots to wsprnet.org        
-### This mode minimizes the use of Internet bandwidth, but makes getting spots to wsprnet.org dependent upon the wsprdameon.org services.
+\# SIGNAL_LEVEL_UPLOAD_MODE="noise" => In addition, upload extended spots and noise data to wsprdaemon.org
+\# SIGNAL_LEVEL_UPLOAD_MODE="proxy" => Don't directly upload spots to wsprdaemon.org.  Instead, after uploading extended spots and noise data to wsprdaemon.org have it regenerate and upload those spots to wsprnet.org        
+\# This mode minimizes the use of Internet bandwidth, but makes getting spots to wsprnet.org dependent upon the wsprdameon.org services.
 
-### If SIGNAL_LEVEL_UPLOAD in NOT "no", then you must modify SIGNAL_LEVEL_UPLOAD_ID from "K2MFF" to your call sign.  SIGNAL_LEVEL_UPLOAD_ID cannot include '/
+\# If SIGNAL_LEVEL_UPLOAD in NOT "no", then you must modify SIGNAL_LEVEL_UPLOAD_ID from "K2MFF" to your call sign.  SIGNAL_LEVEL_UPLOAD_ID cannot include '/
 SIGNAL_LEVEL_UPLOAD_ID="<Your Callsign>"    
-### The name put in upload log records, the title bar of the graph, and the name used to view spots and noise at that server
+\# The name put in upload log records, the title bar of the graph, and the name used to view spots and noise at that server
 
 SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"   
-### If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then FTP graphs of the last 24 hours to http://wsprdaemon.org/graphs/
+\# If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then FTP graphs of the last 24 hours to http://wsprdaemon.org/graphs/
 
 SIGNAL_LEVEL_LOCAL_GRAPHS="yes"    
-### If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then make graphs visible at http://localhost/
+\# If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then make graphs visible at http://localhost/
 
+\# These two variables need to be defined in order to enable this WD GRAPE service:
 
-### These two variables need to be defined in order to enable this WD GRAPE service:
-
-### If this and GRAPE_PSWS_TOKEN are both defined, then each day soon after 00:00 UDT WD will upload the previous day's 24_hour_10sps-iq.wav file
-### GRAPE_PSWS_ID has the form <SITE_ID>_<INSTRUMENT_ID>,  where those values are obtained from a PSWS user account which assigns these values for this site+receiver.  That PSWS site is at https://pswsnetwork.caps.ua.edu/home                                                   
-### SITE_ID has the form 'S000nnn' while INSTRUMENT has the form 'NNN'
+\# If this and GRAPE_PSWS_TOKEN are both defined, then each day soon after 00:00 UDT WD will upload the previous day's 24_hour_10sps-iq.wav file
+\# GRAPE_PSWS_ID has the form <SITE_ID>_<INSTRUMENT_ID>,  where those values are obtained from a PSWS user account which assigns these values for this site+receiver.  That PSWS site is at https://pswsnetwork.caps.ua.edu/home                                                   
+\# SITE_ID has the form 'S000nnn' while INSTRUMENT has the form 'NNN'
 GRAPE_PSWS_ID="<Your Station ID>_<Your Instrument ID>"
           
-### This value is the "token" created for that user account by the PSWS server.  It is a very long string with 0-9 and a-z characters in it
+\# This value is the "token" created for that user account by the PSWS server.  It is a very long string with 0-9 and a-z characters in it
 GRAPE_PSWS_TOKEN="<TokenFromPSWSsite>"             
 
-### Together GRAPE_PSWS_ID + GRAPE_PSWS_ are the user+password used to authenticate rsync access to  WD1/grape.wsprdaemon.org
-### After those variables are defined, the WD user must register this server with the GRAPE server by executing 'wdg p'.  This command needs to be run successfully only once after which automatic uploads to the GRAPE server are enabled
+\# Together GRAPE_PSWS_ID + GRAPE_PSWS_ are the user+password used to authenticate rsync access to  WD1/grape.wsprdaemon.org
+\# After those variables are defined, the WD user must register this server with the GRAPE server by executing 'wdg p'.  This command needs to be run successfully only once after which automatic uploads to the GRAPE server are enabled
 
 declare RECEIVER_LIST=(
         "KA9Q_0                     wspr-pcm.local     <Your Callsign>         <Your Grid>    NULL"
