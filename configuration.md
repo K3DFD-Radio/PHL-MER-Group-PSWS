@@ -15,7 +15,6 @@
    - $nano wsprdaemon.conf
 > **Note:** Adjust these configuration items to match your PSWS PC environment. Refer to the [WSPRDaemon documents](https://wsprdaemon.readthedocs.io/en/master/configuration/wsprdaemon.conf.d/wsprdaemon.conf.html)
 
-3.
 !/bin/bash\
 \#The previous line signals to the editor that it should use its 'bash' editing mode when editing this file
 
