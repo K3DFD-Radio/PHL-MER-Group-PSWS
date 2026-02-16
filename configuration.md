@@ -1,4 +1,4 @@
-## WSPRDaemon Installation and Configuration - _includes ka9q-radio_
+## WSPRDaemon _aka WD_ Installation and Configuration - _includes ka9q-radio_
 1. Login as user _wsprdaemon_\
 > **Note** This assumes you have set the user _wsprdeamon_ to not require _sudo_ per the installation instructions. If you haven't, go back and complete that step.
 
@@ -16,9 +16,9 @@
 > **Note:** Adjust these configuration items to match your PSWS PC environment. Refer to the [WSPRDaemon documents](https://wsprdaemon.readthedocs.io/en/master/configuration/wsprdaemon.conf.d/wsprdaemon.conf.html)
 
 !/bin/bash\
-\#The previous line signals to the editor that it should use its 'bash' editing mode when editing this file
+\# The previous line signals to the editor that it should use its 'bash' editing mode when editing this file
 
-WD_CPU_CORES="8-15"
+WD_CPU_CORES="2-15"
 RADIOD_CPU_CORES="0-7"
 
 KA9Q_RADIO_COMMIT="main"
@@ -26,32 +26,26 @@ KA9Q_CONF_NAME="rx888-wsprdaemon"
 KA9Q_WEB_COMMIT_CHECK="main"
 KA9Q_WEB_TITLE="<Your Callsign>"
 
-\# Since these wav files are uncompressed audio they are quite large.  A 30 minute wav file which might contain a FST4W-1800 signal will be almost 50 MBytes. To avoid overflowing the ~/wsprdaemon/wav-archive.d file system, if that wave file will fill more than 75% of the file system, then some of the oldest wav files are deleted first
 ARCHIVE_WAV_FILES="yes"
 
-\# Whether and how to upload extended spots to wsprdaemon.org.  WD always attempts to upload spots to wsprnet.org
+\# WD always attempts to upload spots to wsprnet.org
 SIGNAL_LEVEL_UPLOAD="yes"
-\# SIGNAL_LEVEL_UPLOAD="no"         => (Default) Only upload spots directly to wsprnet.org   
+SIGNAL_LEVEL_UPLOAD_MODE="noise"  
 
-SIGNAL_LEVEL_UPLOAD_MODE="noise"    
-\# SIGNAL_LEVEL_UPLOAD_MODE="noise" => In addition, upload extended spots and noise data to wsprdaemon.org
-\# SIGNAL_LEVEL_UPLOAD_MODE="proxy" => Don't directly upload spots to wsprdaemon.org.  Instead, after uploading extended spots and noise data to wsprdaemon.org have it regenerate and upload those spots to wsprnet.org        
-\# This mode minimizes the use of Internet bandwidth, but makes getting spots to wsprnet.org dependent upon the wsprdameon.org services.
-
-\# If SIGNAL_LEVEL_UPLOAD in NOT "no", then you must modify SIGNAL_LEVEL_UPLOAD_ID from "K2MFF" to your call sign.  SIGNAL_LEVEL_UPLOAD_ID cannot include '/
-SIGNAL_LEVEL_UPLOAD_ID="<Your Callsign>"    
 \# The name put in upload log records, the title bar of the graph, and the name used to view spots and noise at that server
+SIGNAL_LEVEL_UPLOAD_ID="<Your Callsign>"    
 
-SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"   
 \# If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then FTP graphs of the last 24 hours to http://wsprdaemon.org/graphs/
+SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"   
 
-SIGNAL_LEVEL_LOCAL_GRAPHS="yes"    
 \# If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then make graphs visible at http://localhost/
+SIGNAL_LEVEL_LOCAL_GRAPHS="yes"    
 
 \# These two variables need to be defined in order to enable this WD GRAPE service:
 
 \# If this and GRAPE_PSWS_TOKEN are both defined, then each day soon after 00:00 UDT WD will upload the previous day's 24_hour_10sps-iq.wav file
 \# GRAPE_PSWS_ID has the form <SITE_ID>_<INSTRUMENT_ID>,  where those values are obtained from a PSWS user account which assigns these values for this site+receiver.  That PSWS site is at https://pswsnetwork.caps.ua.edu/home                                                   
+
 \# SITE_ID has the form 'S000nnn' while INSTRUMENT has the form 'NNN'
 GRAPE_PSWS_ID="<Your Station ID>_<Your Instrument ID>"
           
