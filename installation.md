@@ -38,37 +38,30 @@
       - $sudo systemctl daemon-reload
       - $sudo systemctl enable getty@tty1.service
 
-### Install web-based system performance monitoring
-1. Install 'Glances'
-      - $sudo apt install glances
-2. Test installation
-      - $glances
-3. Open UFW for Glaces web server
-      - $sudo ufw allow 61208/tcp
-      - $sudo ufw status
-4. Start glances web server
-      - glances -w
-5. Create a systemd service to run glances web automatically
-      - sudo nano /etc/systemd/system/glances-web.service
-
-Add this to glances-web.service:
-```ini
-[Unit]
-Description=Glances Web Server
-After=network.target
-[Service]
-ExecStart=/usr/bin/glances -w -t 5
-Restart=always
-User=wsprdaemon
-[Install]
-WantedBy=multi-user.target
+### Establish a TMux session to run wsprdaemon and btop monitoring. This session starts when wsprdaemon logs in
+1. Install TMux
+      - $sudo apt install tmux
+2. Install Btop
+      - $sudo apt install btop
+3. Edit _wsprdaemon_ user environment to start _wsprdaemon_ and _btop_
+      - nano ~/.bash_profile
 ```
-6. Enable and start
-      - $sudo systemctl daemon-reload
-      - $sudo systemctl enable glances-web
-      - $sudo systemctl start glances-web
+# Auto-start tmux session for PSWS monitoring and create the session if it does't exist
+if [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" || "$(tty)" == "/dev/tty1" ]]; then
+    if ! tmux has-session -t psws 2>/dev/null; then
+        # Create new session with btop
+        tmux new-session -d -s psws -n monitoring 'btop'
+        tmux new-window -t psws -n wsprdaemon
+        tmux new-window -t psws -n bash
+        tmux select-window -t psws:bash
+    fi
+    tmux attach-session -t psws
+fi
+```
+4. Save ~/.bash_profile
 
-7. Access the Glances performance page via a local network at _https://psws-host-ip:61208_
+5. Test
+      - $exit
 
 ### Dependency and Library Updates and Installations
 1. There are a large number of dependencies and tools to be installed. 
