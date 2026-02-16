@@ -18,7 +18,7 @@
 ### Update the OS
 1. Login as wsprdeamon
 2. Add the wsprdeamon user to the _sudo_ group
-      - $$sudo usermod -aG sudo wsprdaemon
+      - $sudo usermod -aG sudo wsprdaemon
 4. Update the OS
       - $sudo apt update
       - $sudo apt update
@@ -27,6 +27,17 @@
       - $sudo apt-mark hold snapd
 
 ### Dependency and Library Updates and Installations
-1. There are a large number of dependencies and tools to be installed. Do them individualy or by groups on the command line. Recommend installing each individually to be certain that each has been installed without error. Use the command line form:  
-      - $sudo apt install _library or utility_  
+1. There are a large number of dependencies and tools to be installed. 
+      - sudo apt update && sudo apt install -y \
+avahi-daemon avahi-discover avahi-utils btop build-essential \
+flac gcc git iputils-ping libairspy-dev libairspyhf-dev \
+libbsd-dev libfftw3-dev libhdf5-dev libiniparser-dev \
+libmp3lame-dev libncurses-dev libogg-dev libopus-dev \
+libopusfile-dev librtlsdr-dev libsamplerate-dev libsox-fmt-all \
+libusb-1.0-0-dev libvorbis-dev mdns-scan net-tools nmap \
+opus-tools portaudio19-dev tmux uuid-dev
+
+2. Perform the above command for _each_ of the following dependencies or utilities.
+   
+
       
