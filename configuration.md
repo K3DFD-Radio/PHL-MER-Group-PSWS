@@ -28,7 +28,7 @@ KA9Q_CONF_NAME="rx888-wsprdaemon"
 KA9Q_WEB_COMMIT_CHECK="main"
 KA9Q_WEB_TITLE="<Your Callsign>"
 
-_/# To avoid overflowing the file system, the oldest wav files are deleted first when storage reaches 75%_
+_\# To avoid overflowing the file system, the oldest wav files are deleted first when storage reaches 75%_
 ARCHIVE_WAV_FILES="yes"
 
 _\# WD always attempts to upload spots to wsprnet.org_
@@ -54,7 +54,7 @@ GRAPE_PSWS_TOKEN="<TokenFromPSWSsite>"
 
 _\# After those variables are defined, the WD user must register this server with the GRAPE server by executing 'wdg p'.  This command needs to be run successfully only once after which automatic uploads to the GRAPE server are enabled
 
-declare RECEIVER_LIST=/(
+\declare RECEIVER_LIST=/(
         "KA9Q_0                     wspr-pcm.local     <Your Callsign>         <Your Grid>    NULL"
         "KA9Q_0_WWV                   wwv-iq.local     <Your Callsign>         <Your Grid>    NULL"
 )
