@@ -1,5 +1,5 @@
 # PHIL-MER-HamSCI-PSWS
-The PHL-MER (Philadelphia-Mercer County, NJ) Group's HamSCI RX888WSPRDaemon SDR Personal Space Weather Station.
+The PHL-MER (Philadelphia-Mercer County, NJ) PSWS Group's HamSCI RX888WSPRDaemon SDR Personal Space Weather Station.
 
 > **Note:** This will be an 'essential' PSWS build. It will not incorporate WSPR transmitter, VLF or Magnetometer modules
 ---
@@ -12,9 +12,9 @@ This repository documents the build of a **Personal Space Weather Station (PSWS)
 
 ### Project Overview
 
-The goal of the PSWS project is to create a geographically distributed, multi-instrument system for ground-based space environment measurements. Data from this node is aggregated into a central database for space science research, specifically for analyzing phenomena like **Traveling Ionospheric Disturbances (TIDs)**.
+The goal of the PSWS project is to create a geographically distributed, multi-instrument system for ground-based space environment measurements. Data from this node is aggregated into a central HamSCI database for space science research, specifically for analyzing phenomena like **Traveling Ionospheric Disturbances (TIDs)**.
 
-This repository documents the PHIL-MER Group's process in the building, configuration, maintenance, operation and ongoing improvement of it's HamSCI PSWS located in maidenhead grid FN20lb.
+This repository documents the PHIL-MER PSWS Group's process in the building, configuration, maintenance, operation and ongoing improvement of it's HamSCI PSWS located in maidenhead grid FN20lb.
 
 ### Technology Stack and Target Radio Sources
 
@@ -27,6 +27,7 @@ The essential **RX888WSPRDaemon SDR** node is a low-cost, high-precision receive
 * **Computing:** HamSCI spec'd off-the-shelf Linux-based system - [Ubuntu 24.04 Server LTE](https://ubuntu.com/download/server).
 * **Timing:** [Leo Bodnar GPS-Disciplined Oscillator GPSDO includes GPS patch antenna](https://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=393&zenid=0c06e05cfbe1ec87514a52daab4ec452)
 * **Power Supply** [Low noise linear 5vdc Power Supply for SDR and GPSDO](https://www.amazon.com/SOLUPEAK-External-Adapter-Upgrade-Electronics/dp/B0F4DQ7859?xpid=KC5FPTd_ZmI4F)
+* **Antenna** TBD
 * **Integration:** [High-quality SMA connection cables](https://www.dxengineering.com/parts/cew-316ds001-2), [hardware](https://www.amazon.com/Saddle-Mounts-Tapping-Organizer-Holders/dp/B09B97326Z).
 
 ### Target Radio Sources
