@@ -50,11 +50,11 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 * **Case Western Reserve University**
 
 ---
-## Link: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
+## Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
 
 ---
-## Link: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
+## Step 2: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
 
 ---
-## Link: HamSCI Backhaul Data Upload
+## Step 3: HamSCI Backhaul Data Upload
 
