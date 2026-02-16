@@ -54,7 +54,7 @@ Confirm that ssh is running. Look for message 'Starting ssh.server - Open BSD Se
       - $sudo ufw enable ssh
       - $sudo ufw status
 
-6. Get the PC's IP address
+6. Get the PC's IP address and note it
       - $ip addr show
 
 8. Next, to configure the system to run sudo commands without a password, add text to /etc/sudoers.d/wsprsudo using the Nano editor:
