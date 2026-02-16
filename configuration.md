@@ -54,14 +54,14 @@ GRAPE_PSWS_TOKEN="<TokenFromPSWSsite>"
 
 _\# After those variables are defined, the WD user must register this server with the GRAPE server by executing 'wdg p'.  This command needs to be run successfully only once after which automatic uploads to the GRAPE server are enabled
 
-\declare RECEIVER_LIST=(
-\        "KA9Q_0                     wspr-pcm.local     <Your Callsign>         <Your Grid>    NULL"
-\        "KA9Q_0_WWV                   wwv-iq.local     <Your Callsign>         <Your Grid>    NULL"
-\)
+declare RECEIVER_LIST=/(
+        "KA9Q_0                     wspr-pcm.local     <Your Callsign>         <Your Grid>    NULL"
+        "KA9Q_0_WWV                   wwv-iq.local     <Your Callsign>         <Your Grid>    NULL"
+)
 
-\declare WSPR_SCHEDULE=(
-\    "00:00   KA9Q_0,2200,W2:F2:F5:F15:F30  KA9Q_0,630,W2:F2:F5  KA9Q_0,160,W2:F2:F5   KA9Q_0,80,W2:F2:F5    KA9Q_0,80eu,W2:F2:F5  KA9Q_0,60,W2:F2:F5  KA9Q_0,60eu,W2:F2:F5  KA9Q_0,40,W2:F2:F5
- \            KA9Q_0,30,W2:F2:F5            KA9Q_0,22,W2         KA9Q_0,20,W2:F2:F5    KA9Q_0,17,W2:F2:F5    KA9Q_0,15,W2:F2:F5    KA9Q_0,12,W2:F2:F5  KA9Q_0,10,W2:F2:F5
- \            KA9Q_0_WWV,WWV_2_5,I1         KA9Q_0_WWV,WWV_5,I1  KA9Q_0_WWV,WWV_10,I1  KA9Q_0_WWV,WWV_15,I1  KA9Q_0_WWV,WWV_20,I1  KA9Q_0_WWV,WWV_25,I1
- \            KA9Q_0_WWV,CHU_3,I1           KA9Q_0_WWV,CHU_7,I1  KA9Q_0_WWV,CHU_14,I1"
-\)
+declare WSPR_SCHEDULE=/(
+    "00:00   KA9Q_0,2200,W2:F2:F5:F15:F30  KA9Q_0,630,W2:F2:F5  KA9Q_0,160,W2:F2:F5   KA9Q_0,80,W2:F2:F5    KA9Q_0,80eu,W2:F2:F5  KA9Q_0,60,W2:F2:F5  KA9Q_0,60eu,W2:F2:F5  KA9Q_0,40,W2:F2:F5
+             KA9Q_0,30,W2:F2:F5            KA9Q_0,22,W2         KA9Q_0,20,W2:F2:F5    KA9Q_0,17,W2:F2:F5    KA9Q_0,15,W2:F2:F5    KA9Q_0,12,W2:F2:F5  KA9Q_0,10,W2:F2:F5
+             KA9Q_0_WWV,WWV_2_5,I1         KA9Q_0_WWV,WWV_5,I1  KA9Q_0_WWV,WWV_10,I1  KA9Q_0_WWV,WWV_15,I1  KA9Q_0_WWV,WWV_20,I1  KA9Q_0_WWV,WWV_25,I1
+             KA9Q_0_WWV,CHU_3,I1           KA9Q_0_WWV,CHU_7,I1  KA9Q_0_WWV,CHU_14,I1"
+)
