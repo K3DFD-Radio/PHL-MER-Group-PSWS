@@ -1,6 +1,6 @@
 ## WSPRDaemon _aka WD_ Installation and Configuration - _includes ka9q-radio_
 1. Login as user _wsprdaemon_\
-> **Note** This assumes you have set the user _wsprdeamon_ to not require _sudo_ per the installation instructions. If you haven't, go back and complete that step.
+> **Note** This assumes you have set the user _wsprdeamon_ to not require _sudo_ per the installation instructions. If you haven't, [go back](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md) and complete that step.
 
 2. Clone the _wsprdaemon_ github repository
 ```
@@ -12,12 +12,12 @@
 
 > **Note:** While the wsprdaemon.git repository is _public_, git can fail to recognize this and will challenge you for a user name and password. This may fail due to password authorization being disallowed at the command line. If this occurs, issue these two commands:\
 ```
-         $git config --global --unset credential.helper\
-         $GIT_TERMINAL_PROMPT=0 git clone https://github.com/rrobinett/wsprdaemon.git
+   $git config --global --unset credential.helper\
+   $GIT_TERMINAL_PROMPT=0 git clone https://github.com/rrobinett/wsprdaemon.git
 ```
 2. In the wsprdaemon directory open the configuration file in the Nano text editor
 ```
-   - $nano wsprdaemon.conf
+   $nano wsprdaemon.conf
 ```
 > **Note:** Adjust these configuration items to match your PSWS PC environment. Refer to the [WSPRDaemon documents](https://wsprdaemon.readthedocs.io/en/master/configuration/wsprdaemon.conf.d/wsprdaemon.conf.html)
 
