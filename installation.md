@@ -37,7 +37,14 @@ libopusfile-dev librtlsdr-dev libsamplerate-dev libsox-fmt-all \
 libusb-1.0-0-dev libvorbis-dev mdns-scan net-tools nmap \
 opus-tools portaudio19-dev tmux uuid-dev
 
-2. Perform the above command for _each_ of the following dependencies or utilities.
+2. Perform the above command. Should the make and compilation of ka9q-radio fail due to an unsatisfied dependency, it is most likely caused by a _legacy_ version not being installed. The compilation will generate error that may indicate which _legacy_ versions are not installed. In this case, refer to the table of dependencies in this [Legacy Library Link](https://docs.google.com/document/d/1jV4VKLIG7WG_zo5QeVL_GuvDyBTwUfN-SVxozEXIAcE/edit?usp=sharing) and install each one.
+
+3. Next, to configure the system to run sudo commands without a password, add text to /etc/sudoers.d/wsprsudo using the Nano editor:
+      - $sudo nano /etc/sudoers.d/wsprsudo
+      - Add the line wsprdaemon ALL=(ALL) NOPASSWD: ALL:
+      - Write the file and quit Nano
+
+
    
 
       
