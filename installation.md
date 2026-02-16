@@ -25,5 +25,6 @@
       - $sudo apt-mark hold snapd
 
 ### Dependency and Library Updates and Installations
-There are a large number of dependencies and tools to be installed. Do them individualy or by groups on the command line. Recommend installing each individually to be certain that each has been installed without error. Use the command line form: 
-      __$sudo apt install library or utility name per the following list__
+There are a large number of dependencies and tools to be installed. Do them individualy or by groups on the command line. Recommend installing each individually to be certain that each has been installed without error. Use the command line form:\ 
+      $sudo apt install _library or utility_\
+      
