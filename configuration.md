@@ -1,5 +1,6 @@
 ## WSPRDaemon Installation and Configuration - _includes ka9q-radio_
-1. Login as user _wsprdaemon_
+1. Login as user _wsprdaemon_\
+> **Note** This assumes you have set the user _wsprdeamon_ to not require _sudo_ per the installation instructions. If you haven't, go back and complete that step.
 
 1. Run the following commands to create the local wsprdaemon instance:
    - $cd ~
