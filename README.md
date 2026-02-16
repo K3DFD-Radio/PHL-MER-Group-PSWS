@@ -27,7 +27,7 @@ The essential **RX888WSPRDaemon SDR** node is a low-cost, high-precision receive
 * **Computing:** HamSCI spec'd off-the-shelf Linux-based system - [Ubuntu 24.04 Server LTE](https://ubuntu.com/download/server).
 * **Timing:** [Leo Bodnar GPS-Disciplined Oscillator GPSDO includes GPS patch antenna](https://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=393&zenid=0c06e05cfbe1ec87514a52daab4ec452)
 * **Power Supply** [Low noise linear 5vdc Power Supply for SDR and GPSDO](https://www.amazon.com/SOLUPEAK-External-Adapter-Upgrade-Electronics/dp/B0F4DQ7859?xpid=KC5FPTd_ZmI4F)
-* **Integration:** [High-quality SMA connection cables](https://www.dxengineering.com/parts/cew-316ds001-2), hardware.
+* **Integration:** [High-quality SMA connection cables](https://www.dxengineering.com/parts/cew-316ds001-2), [hardware](https://www.amazon.com/Saddle-Mounts-Tapping-Organizer-Holders/dp/B09B97326Z).
 
 ### Target Radio Sources
 * **Target:** Monitoring WWV frequency Doppler shift and WSPR signals.
