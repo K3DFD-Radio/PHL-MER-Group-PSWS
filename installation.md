@@ -45,7 +45,15 @@ opus-tools portaudio19-dev tmux uuid-dev
       - $sudo systemctl status ssh
 Confirm that ssh is running. Look for message 'Starting ssh.server - Open BSD Secure Shell server... Server listening on 0.0.0.0 port 22
 
-6. Next, to configure the system to run sudo commands without a password, add text to /etc/sudoers.d/wsprsudo using the Nano editor:
+5. Configure UFW to allow ssh on port 22
+      - $sudo ufw allow ssh
+      - $sudo ufw enable ssh
+      - $sudo ufw status
+
+6. Get the PC's IP address
+      - $ip addr show
+
+8. Next, to configure the system to run sudo commands without a password, add text to /etc/sudoers.d/wsprsudo using the Nano editor:
       - $sudo nano /etc/sudoers.d/wsprsudo
       - Add the line wsprdaemon ALL=(ALL) NOPASSWD: ALL:
       - Write the file and quit Nano
