@@ -7,8 +7,8 @@
    - $cd wsprdaemon
    - $./wsprdaemon.sh -V
 > **Note:** While the wsprdaemon.git repository is _public_, git can fail to recognize this and will challenge your for a user name and password. This may fail due to password authorization being disallowed at the command line. Issue these two commands:\
-$git config --global --unset credential.helper\
-$GIT_TERMINAL_PROMPT=0 git clone https://github.com/rrobinett/wsprdaemon.git
+         $git config --global --unset credential.helper\
+         $GIT_TERMINAL_PROMPT=0 git clone https://github.com/rrobinett/wsprdaemon.git
 
 2. In the wsprdaemon directory open the configuration file in the Nano text editor
    - $nano wsprdaemon.conf
