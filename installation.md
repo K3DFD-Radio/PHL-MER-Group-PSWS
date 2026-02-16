@@ -47,6 +47,10 @@ opus-tools portaudio19-dev tmux uuid-dev
 $touch /etc/sudoers.d/wsprsudo\
 $echo "wsprdaemon ALL=(ALL) NOPASSWD: ALL:" | sudo tee /etc/sudoers.d/wsprsudo
 
+4. This completes the essential build of the Ubuntu 24.04 Server LTS instance. Directions for installing useful Linux tools and performance monitoring utilities will be provided in the [optimization] file.
+
+5. Next, click on this link to install and configure the WSPRdaemon SDR environment which includes the ka9q-radio application
+
 
 
    
