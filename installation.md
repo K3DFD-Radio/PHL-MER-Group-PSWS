@@ -21,7 +21,5 @@
    -sudo apt update
    -$sudo apt upgrade
 4. Disable Snap if installed and running
-   *$sudo apt autoremove --purge snapd gnome-software-plugin-snap
-   *$sudo apt-mark hold snapd
-      - First list item
-      - - First nested list item
+      - sudo apt Update
+      - sudo apt update
