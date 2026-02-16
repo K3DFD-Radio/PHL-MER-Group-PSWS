@@ -1,5 +1,5 @@
 ## WSPRDaemon _aka WD_ Installation and Configuration - _includes ka9q-radio_
-1. Login as user _wsprdaemon_\
+1. Login as user _wsprdaemon_
 > **Note** This assumes you have set the user _wsprdeamon_ to not require _sudo_ per the installation instructions. If you haven't, [go back](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md) and complete that step.
 
 2. Clone the _wsprdaemon_ github repository
