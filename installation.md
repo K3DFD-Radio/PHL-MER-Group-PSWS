@@ -26,7 +26,6 @@
       - $sudo apt autoremove --purge snapd gnome-software-plugin-snap
       - $sudo apt-mark hold snapd
 6. If not automatically created, create a wsprdaemon home directory and set permissions
-      - $sudo apt
       - $sudo mkdir /home/wsprdaemon
       - $sudo chown wsprdaemon:wsprdaemon /home/wsprdaemon
       - $sudo chmod 755 /home/wsprdaemon
