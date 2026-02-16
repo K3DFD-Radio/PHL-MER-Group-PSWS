@@ -52,9 +52,9 @@ GRAPE_PSWS_ID="<Your Station ID>_<Your Instrument ID>"
 _\# This value is the "token" created for that user account by the PSWS server.  It is a very long string with 0-9 and a-z characters in it_
 GRAPE_PSWS_TOKEN="<TokenFromPSWSsite>"             
 
-_\# After those variables are defined, the WD user must register this server with the GRAPE server by executing 'wdg p'.  This command needs to be run successfully only once after which automatic uploads to the GRAPE server are enabled
+_\# After those variables are defined, the WD user must register this server with the GRAPE server by executing 'wdg p'.  This command needs to be run successfully only once after which automatic uploads to the GRAPE server are enabled_
 
-\declare RECEIVER_LIST=/(
+declare RECEIVER_LIST=/(
         "KA9Q_0                     wspr-pcm.local     <Your Callsign>         <Your Grid>    NULL"
         "KA9Q_0_WWV                   wwv-iq.local     <Your Callsign>         <Your Grid>    NULL"
 )
