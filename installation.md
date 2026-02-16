@@ -29,9 +29,12 @@
       - $sudo mkdir /home/wsprdaemon
       - $sudo chown wsprdaemon:wsprdaemon /home/wsprdaemon
       - $sudo chmod 755 /home/wsprdaemon
-  
+7. As a precaution, force change your shell evironment to _bash_ instead of _sh_
+      - $sudo chsh -s /bin/bash wsprdaemon
+8. Exit and log back in again as user _wsprdaemon_
+     
 ### Set the system up for automatic reboot in case of power failure. 
-> ** Note ** This is optional for systems withing battery backup
+> ** Note ** This is optional for systems without battery backup
 1. Create systemd override directory
       - $sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
       - $sudo nano /etc/systemd/system/getty@tty1.service.d/autologin.conf
@@ -62,6 +65,8 @@ fi
 
 5. Test
       - $exit
+
+6. If this test fails and tmux does not start, edit the ~/.bashrc with the same lines and $exit again
 
 ### Dependency and Library Updates and Installations
 1. There are a large number of dependencies and tools to be installed. 
