@@ -31,7 +31,38 @@
       - $sudo chmod 755 /home/wsprdaemon
   
 ### Set the system up for automatic reboot in case of power failure. 
-> ** Note ** This is optional for systems withing battery backup\
+> ** Note ** This is optional for systems withing battery backup
+1. Create systemd override directory
+      - $sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+      - $sudo nano /etc/systemd/system/getty@tty1.service.d/autologin.conf
+      - $sudo systemctl daemon-reload
+      - $sudo systemctl enable getty@tty1.service
+
+### Install web-based system performance monitoring
+1. Install 'Glances'
+      - $sudo apt install glances
+2. Test installation
+      - $glances
+3. Open UFW for Glaces web server
+      - $sudo ufw allow 61208/tcp
+      - $sudo ufw status
+4. Start glances web server
+      - glances -w
+5. Create a systemd service to run glances web automatically
+      - sudo nano /etc/systemd/system/glances-web.service
+
+Add this:
+```ini
+[Unit]
+Description=Glances Web Server
+After=network.target
+[Service]
+ExecStart=/usr/bin/glances -w -t 5
+Restart=always
+User=wsprdaemon
+[Install]
+WantedBy=multi-user.target
+```
 
 ### Dependency and Library Updates and Installations
 1. There are a large number of dependencies and tools to be installed. 
