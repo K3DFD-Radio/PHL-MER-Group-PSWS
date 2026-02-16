@@ -43,9 +43,9 @@ opus-tools portaudio19-dev tmux uuid-dev
       - $sudo nano /etc/sudoers.d/wsprsudo
       - Add the line wsprdaemon ALL=(ALL) NOPASSWD: ALL:
       - Write the file and quit Nano
-> **Note:** If Nano fails with permission errors, use redirect as follow to write directly to the /etc/sudoers.d/wsprsudo file
-> $touch /etc/sudoers.d/wsprsudo
-> $echo "wsprdaemon ALL=(ALL) NOPASSWD: ALL:" | sudo tee /etc/sudoers.d/wsprsudo
+> **Note:** If Nano fails with permission errors, use redirect as follow to write directly to the /etc/sudoers.d/wsprsudo file\
+$touch /etc/sudoers.d/wsprsudo\
+$echo "wsprdaemon ALL=(ALL) NOPASSWD: ALL:" | sudo tee /etc/sudoers.d/wsprsudo
 
 
 
