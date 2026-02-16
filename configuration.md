@@ -13,10 +13,11 @@
 
 2. In the wsprdaemon directory open the configuration file in the Nano text editor
    - $nano wsprdaemon.conf
+> **Note:** Adjust these configuration items to match your PSWS PC environment. Refer to the [WSPRDaemon documents](https://wsprdaemon.readthedocs.io/en/master/configuration/wsprdaemon.conf.d/wsprdaemon.conf.html)
 
 3.
-!/bin/bash
-\The previous line signals to the editor that it should use its 'bash' editing mode when editing this file
+!/bin/bash\
+\#The previous line signals to the editor that it should use its 'bash' editing mode when editing this file
 
 WD_CPU_CORES="8-15"
 RADIOD_CPU_CORES="0-7"
