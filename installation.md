@@ -6,9 +6,9 @@
 
 ### Ubuntu Linux Installation
 1. Create a bootable USB drive with Ubuntu 24.04 Server LTS
-2. Boot PC from USB drive and from options menu, select Try or Install Ubuntu Server with Enter
-3. Configure for WiFi or Ethernet as appropriate. Connect to you network and note the MAC and IP addresses. Test the connection if possible
-4. Deselect any option to set up this disk as an LVM group
+2. Boot target PC from USB drive. From options menu, select Try or Install Ubuntu Server with Enter
+3. Configure for WiFi or Ethernet as appropriate. Connect to your network and note the MAC and IP addresses. Test the connection if possible
+4. Deselect any option to set up disk as an LVM group. No compression or encryption.
 5. Select Use Entire Disk for OS installation
 6. Set up SSH and SFTP options if presented
 7. Begin installation
@@ -23,3 +23,6 @@
 4. Disable Snap if installed and running
       - $sudo apt autoremove --purge snapd gnome-software-plugin-snap
       - $sudo apt-mark hold snapd
+
+### Dependency and Library Updates and Installations
+There are a large number of dependencies and tools to be installed. Do them individualy or by groups on the command line. Recommend installing each individually to be certain that each has been installed without error. Use the command line form: $sudo apt install <library or utility name> per the following list
