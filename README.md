@@ -12,7 +12,7 @@ This repository documents the build of a **Personal Space Weather Station (PSWS)
 
 ### Project Overview
 
-The goal of the PSWS project is to create a geographically distributed, multi-instrument system for ground-based space environment measurements. Data from this node is aggregated into a central HamSCI database for space science research, specifically for analyzing phenomena like **Traveling Ionospheric Disturbances (TIDs)**.
+The goal of the PSWS project is to create a geographically distributed, multi-instrument system for ground-based space environment measurements. Data from this node is aggregated into a central HamSCI database for space science research, specifically for analyzing phenomena like **Traveling Ionospheric Disturbances (TIDs)**. Technically, it is a Wide spectrum receiving system that reports data in multiple formats:  WSPR/FST4w and Doppler shift monitoring in the Digital RF DRF format.  This data is useful for studying behavior of the ionosphere.
 
 This repository documents the PHIL-MER PSWS Group's process in the building, configuration, maintenance, operation and ongoing improvement of it's HamSCI PSWS located in maidenhead grid FN20lb.
 
@@ -49,6 +49,7 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 ---
 ## System Build and Integration
 
+## PSWS PC - Minimim AMD Ryzen 5 or Intel i5 processor (2 GHz/4 cores), 8 GB memory, 250 GB SSD. HamSCI Recommended AMD Ryzen 7 or Intel i7 (2 GHz /8 cores), 32 GB memory 
 ---
 ## ka9q-radio Configuration
 
