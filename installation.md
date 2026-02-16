@@ -1,16 +1,25 @@
 ### BIOS Settings
-1. Boot the computer and bring you to the BIOS setup screen by using the key specific to your computer
-2. In the BIOS setting:
-...Select Smart CPU_Fan Mode to Full-On mode
-Press Escape to exit the sub menus, until you return to the Advanced tab again
-Now, move down to AMD CBS and press Enter into the sub menu, then select FCH Common Options, then move down to Ac Power Loss Options and press Enter. Enter over Ac Loss Control, move the cursor down to Always On and select it
-Return to the Advanced Tab. Then, move to the Save & Exit tab, move down to Save Changes and Exit, and select Yes to confirm the changes
-You have now configured the computer to automatically turn back on in case of a power outage, and set the internal fans to always run at full speed to prevent overheating
+1. Boot the computer and bring you to the BIOS setup screen by using the key specific to your computer and make the following changes:
+2. Smart CPU_Fan Mode -Full-On mode
+3. AC Loss Control - Always On
+4. Save and Exit
 
+### Ubuntu Linux Installation
+1. Create a bootable USB drive with Ubuntu 24.04 Server LTS
+2. Boot PC from USB drive and from options menu, select Try or Install Ubuntu Server with Enter
+3. Configure for WiFi or Ethernet as appropriate. Connect to you network and note the MAC and IP addresses. Test the connection if possible
+4. Deselect any option to set up this disk as an LVM group
+5. Select Use Entire Disk for OS installation
+6. Set up SSH and SFTP options if presented
+7. Begin installation
+8. When prompted, create a default user named 'wsprdaemon' with a password of your choice. Write the password down for future reference
+9. When OS installation is complete, remove USB drive and reboot when prompted
 
-1. First ordered list item
-2. Another item
-⋅⋅⋅⋅* Unordered sub-list. 
-1. Actual numbers don't matter, just that it's a number
-⋅⋅⋅⋅1. Ordered sub-list
-4. And another item.
+### Update the OS
+1. Login as wsprdeamon
+2. Update the OS
+     $sudo apt update
+     $sudo apt upgrade
+3. Disable Snap if installed and running
+     $sudo apt autoremove --purge snapd gnome-software-plugin-snap
+     $sudo apt-mark hold snapd
