@@ -48,11 +48,11 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 * **Case Western Reserve University**
 
 ---
-## [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
+## Link: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
 
 ---
-## ka9q-radio Configuration
+## Link: ka9q-radio Configuration
 
 ---
-## HamSCI Backhaul Data Upload
+## Link: HamSCI Backhaul Data Upload
 
