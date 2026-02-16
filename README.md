@@ -24,7 +24,8 @@ The essential **RX888WSPRDaemon SDR** node is a low-cost, high-precision receive
 * **Alternative Source:** [OpenSourceLabs](https://opensourcesdrlab.com/products/rx888-mkii-16bit-sdr-receiver-radio-ltc2208-adc-upgrade-rx888-1)
 * **SDR Support:** [TAPR RX-888 Clock kit and thermal pad](https://tapr.org/product/rx888-clock-kit-and-thermal-pad/)
 * **Filter-Preamp:** [Turn Island Systems Low pass filter and preamp](https://turnislandsystems.com/product/filter-preamp-v1/)
-* **Computing:** HamSCI spec'd off-the-shelf Linux-based system - [Ubuntu 24.04 Server LTE](https://ubuntu.com/download/server).
+* **Computer:** [HamSCI Spec'd Beelink AMD Ryzen 5](Minimim AMD Ryzen 5 or Intel i5 processor (2 GHz/4 cores), 8 GB memory, 250 GB SSD or AMD Ryzen 7 or Intel i7 (2 GHz /8 cores), 32 GB memory. Recommended [Beelink PC](https://www.amazon.com/Beelink-SER5-Computer-Graphics-Support/dp/B0D6G965B)
+* **Operting System:** HamSCI spec'd off-the-shelf Linux-based system - [Ubuntu 24.04 Server LTE](https://ubuntu.com/download/server).
 * **Timing:** [Leo Bodnar GPS-Disciplined Oscillator GPSDO includes GPS patch antenna](https://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=393&zenid=0c06e05cfbe1ec87514a52daab4ec452)
 * **Power Supply:** [Low noise linear 5vdc Power Supply for SDR and GPSDO](https://www.amazon.com/SOLUPEAK-External-Adapter-Upgrade-Electronics/dp/B0F4DQ7859?xpid=KC5FPTd_ZmI4F)
 * **Antenna:** TBD
@@ -49,7 +50,10 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 ---
 ## System Build and Integration
 
-## PSWS PC - Minimim AMD Ryzen 5 or Intel i5 processor (2 GHz/4 cores), 8 GB memory, 250 GB SSD. HamSCI Recommended AMD Ryzen 7 or Intel i7 (2 GHz /8 cores), 32 GB memory 
+### PSWS PC - 
+C)
+
+
 ---
 ## ka9q-radio Configuration
 
