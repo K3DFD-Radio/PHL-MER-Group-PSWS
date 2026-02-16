@@ -51,7 +51,7 @@
 5. Create a systemd service to run glances web automatically
       - sudo nano /etc/systemd/system/glances-web.service
 
-Add this:
+Add this to glances-web.service:
 ```ini
 [Unit]
 Description=Glances Web Server
@@ -63,10 +63,17 @@ User=wsprdaemon
 [Install]
 WantedBy=multi-user.target
 ```
+6. Enable and start
+      - $sudo systemctl daemon-reload
+      - $sudo systemctl enable glances-web
+      - $sudo systemctl start glances-web
+
+7. Access the Glances performance page via a local network at _https://psws-host-ip:61208_
 
 ### Dependency and Library Updates and Installations
 1. There are a large number of dependencies and tools to be installed. 
-      - sudo apt update && sudo apt install -y \
+```
+$sudo apt update && sudo apt install -y \
 avahi-daemon avahi-discover avahi-utils btop build-essential \
 flac gcc git iputils-ping libairspy-dev libairspyhf-dev \
 libbsd-dev libfftw3-dev libhdf5-dev libiniparser-dev \
@@ -74,7 +81,7 @@ libmp3lame-dev libncurses-dev libogg-dev libopus-dev \
 libopusfile-dev librtlsdr-dev libsamplerate-dev libsox-fmt-all \
 libusb-1.0-0-dev libvorbis-dev mdns-scan net-tools nmap \
 opus-tools portaudio19-dev tmux uuid-dev
-
+```
 2. Perform the above command. Should the make and compilation of ka9q-radio fail due to an unsatisfied dependency, it is most likely caused by a _legacy_ version not being installed. The compilation will generate error that may indicate which _legacy_ versions are not installed. In this case, refer to the table of dependencies in this [Legacy Library Link](https://docs.google.com/document/d/1jV4VKLIG7WG_zo5QeVL_GuvDyBTwUfN-SVxozEXIAcE/edit?usp=sharing) and install each one.
 
 4. Install an ssh server and start it. This is to allow access for administration from authorized clients. Suggest Putty ssh client.
