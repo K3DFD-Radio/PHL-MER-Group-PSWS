@@ -23,62 +23,50 @@
 
 ```
 #!/bin/bash
-### The previous line signals to the vim editor that it should use its 'bash' editing mode when editing this file
+#### The previous line signals to the vim editor that it should use its 'bash' editing mode when editing this file
 
-WD_CPU_CORES="8-15"
-RADIOD_CPU_CORES="0-7"
-
-KA9Q_RADIO_COMMIT="main"
-KA9Q_CONF_NAME="rx888-wsprdaemon"
-KA9Q_WEB_COMMIT_CHECK="main"
-KA9Q_WEB_TITLE="<Your Callsign>"
-
-### Since these wav files are uncompressed audio they are quite large.  A 30 minute wav file which might contain a FST4W-1800 signal will be almost 50 MBytes
-### To avoid overflowing the ~/wsprdaemon/wav-archive.d file system, if that wave file will fill more than 75% of the file system, then some of the oldest wav files are deleted first
-ARCHIVE_WAV_FILES="yes"
-
-### Whether and how to upload extended spots to wsprdaemon.org.  WD always attempts to upload spots to wsprnet.org
-SIGNAL_LEVEL_UPLOAD="yes"
-### SIGNAL_LEVEL_UPLOAD="no"         => (Default) Only upload spots directly to wsprnet.org   
-
-SIGNAL_LEVEL_UPLOAD_MODE="noise"    
-### SIGNAL_LEVEL_UPLOAD_MODE="noise" => In addition, upload extended spots and noise data to wsprdaemon.org
-### SIGNAL_LEVEL_UPLOAD_MODE="proxy" => Don't directly upload spots to wsprdaemon.org.  Instead, after uploading extended spots and noise data to wsprdaemon.org have it regenerate and upload those spots to wsprnet.org        
-### This mode minimizes the use of Internet bandwidth, but makes getting spots to wsprnet.org dependent upon the wsprdameon.org services.
-
-### If SIGNAL_LEVEL_UPLOAD in NOT "no", then you must modify SIGNAL_LEVEL_UPLOAD_ID from "K2MFF" to your call sign.  SIGNAL_LEVEL_UPLOAD_ID cannot include '/
-SIGNAL_LEVEL_UPLOAD_ID="<Your Callsign>"    
-### The name put in upload log records, the title bar of the graph, and the name used to view spots and noise at that server
-
-SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"   
-### If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then FTP graphs of the last 24 hours to http://wsprdaemon.org/graphs/
-
-SIGNAL_LEVEL_LOCAL_GRAPHS="yes"    
-### If this variable is defined as "yes" AND SIGNAL_LEVEL_UPLOAD_ID is defined, then make graphs visible at http://localhost/
+### These first two bash variables *must* be changed from their default values.
+### To do so, uncomment the following two lines by removing the leading '#' and change the "<....>" fields
+WSPRNET_REPORTER_ID="<YOUR_REPORTER_ID>" #Ex. WSPRNET_REPORTER_ID="K2MFF" (NJIT's FCC Callsign)
+REPORTER_GRID="<YOUR_GRID>" #Ex. REPORTER_GRID="FN20vr" (NJIT's GRID Location)
 
 
-### These two variables need to be defined in order to enable this WD GRAPE service:
+WSPRNET_REPORTER_ID="${WSPRNET_REPORTER_ID-<NOT_DEFINED>}"           ### The ID of spots uploaded to wsprnet.org by this site
+REPORTER_GRID="${REPORTER_GRID-<NOT_DEFINED>}"
+ANTENNA_DESCRIPTION="<NOT_DEFINED>"   ### If defined, this is included in the reports to PSKReporter e.g '80m Dipole' and displayed on the KA9Q-web page
 
-### If this and GRAPE_PSWS_TOKEN are both defined, then each day soon after 00:00 UDT WD will upload the previous day's 24_hour_10sps-iq.wav file
-### GRAPE_PSWS_ID has the form <SITE_ID>_<INSTRUMENT_ID>,  where those values are obtained from a PSWS user account which assigns these values for this site+receiver.  That PSWS site is at https://pswsnetwork.caps.ua.edu/home                                                   
-### SITE_ID has the form 'S000nnn' while INSTRUMENT has the form 'NNN'
-GRAPE_PSWS_ID="<Your Station ID>_<Your Instrument ID>"
-          
-### This value is the "token" created for that user account by the PSWS server.  It is a very long string with 0-9 and a-z characters in it
-GRAPE_PSWS_TOKEN="<TokenFromPSWSsite>"             
+KA9Q_WEB_TITLE="${WSPRNET_REPORTER_ID}_@${REPORTER_GRID}_${ANTENNA_DESCRIPTION}"
 
-### Together GRAPE_PSWS_ID + GRAPE_PSWS_ are the user+password used to authenticate rsync access to  WD1/grape.wsprdaemon.org
-### After those variables are defined, the WD user must register this server with the GRAPE server by executing 'wdg p'.  This command needs to be run successfully only once after which automatic uploads to the GRAPE server are enabled
+### WD stations contirbuting to the HamSCI.org Personal Space Weather Project obtain these values from their dashboard at https://pswsnetwork.caps.ua.edu
+PSWS_STATION_ID="<PSWS_STATION_ID>" #Ex. PSWS_STATION_ID="S000333"
+PSWS_DEVICE_ID="<PSWS_DEVICE_ID>" #Ex. PSWS_DEVICE_ID="352"
+
+### The default is to upload extented spot and background noise level data to wsprdaemon.org.  These are small files, so they add little to the site's Internet bandwidth usage
+# SIGNAL_LEVEL_UPLOAD="no"
+
+## If "yes" the site uploads a 150 KByte .png file to wsprnet.org where it can be viewed at http://wsprdaemon.org/graphs/${WSPRNET_REPORTER_ID}/
+## Since better, configurable Grafana graphs are available from the wsprdeamon.org, to conserve your site's Internet usage I now discourage the use of this feature
+#SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"
 
 declare RECEIVER_LIST=(
-        "KA9Q_0                     wspr-pcm.local     <Your Callsign>         <Your Grid>    NULL"
-        "KA9Q_0_WWV                   wwv-iq.local     <Your Callsign>         <Your Grid>    NULL"
+        "KA9Q_0                     wspr-pcm.local     ${WSPRNET_REPORTER_ID}        ${REPORTER_GRID}    <SDR_PASSWORD_IF_NEEDED>"
+        "KA9Q_0_WWV                   wwv-iq.local     ${WSPRNET_REPORTER_ID}        ${REPORTER_GRID}    <SDR_PASSWORD_IF_NEEDED>"
 )
 
-declare WSPR_SCHEDULE=(
-    "00:00   KA9Q_0,2200,W2:F2:F5:F15:F30  KA9Q_0,630,W2:F2:F5  KA9Q_0,160,W2:F2:F5   KA9Q_0,80,W2:F2:F5    KA9Q_0,80eu,W2:F2:F5  KA9Q_0,60,W2:F2:F5  KA9Q_0,60eu,W2:F2:F5  KA9Q_0,40,W2:F2:F5
-             KA9Q_0,30,W2:F2:F5            KA9Q_0,22,W2         KA9Q_0,20,W2:F2:F5    KA9Q_0,17,W2:F2:F5    KA9Q_0,15,W2:F2:F5    KA9Q_0,12,W2:F2:F5  KA9Q_0,10,W2:F2:F5
-             KA9Q_0_WWV,WWV_2_5,I1         KA9Q_0_WWV,WWV_5,I1  KA9Q_0_WWV,WWV_10,I1  KA9Q_0_WWV,WWV_15,I1  KA9Q_0_WWV,WWV_20,I1  KA9Q_0_WWV,WWV_25,I1
-             KA9Q_0_WWV,CHU_3,I1           KA9Q_0_WWV,CHU_7,I1  KA9Q_0_WWV,CHU_14,I1"
+### Here are two examples of WSPR_SCHEDULEs.  Much more complex SDR configurations and schedules are desribed in wd_template_full.conf
+declare WSPR_SCHEDULE_only_rx888=(
+    "00:00             KA9Q_0,2200,W2:F2:F5:F15:F30  KA9Q_0,630,W2:F2:F5  KA9Q_0,160,W2:F2:F5   KA9Q_0,80,W2:F2:F5  KA9Q_0,80eu,W2:F2:F5  KA9Q_0,60,W2:F2:F5  KA9Q_0,60eu,W2:F2:F5  KA9Q_0,40,W2:F2:F5
+                       KA9Q_0,30,W2:F2:F5            KA9Q_0,22,W2         KA9Q_0,20,W2:F2:F5    KA9Q_0,17,W2:F2:F5  KA9Q_0,15,W2:F2:F5    KA9Q_0,12,W2:F2:F5  KA9Q_0,10,W2:F2:F5    KA9Q_0,6,W2:F2:F5
+
+                       KA9Q_0_WWV,WWVB,I1            KA9Q_0_WWV,WWV_2_5,I1  KA9Q_0_WWV,WWV_5,I1  KA9Q_0_WWV,WWV_10,I1   KA9Q_0_WWV,WWV_15,I1  KA9Q_0_WWV,WWV_20,I1  KA9Q_0_WWV,WWV_25,I1
+                       KA9Q_0_WWV,CHU_3,I1           KA9Q_0_WWV,CHU_7,I1    KA9Q_0_WWV,CHU_14,I1"
 )
+
+### Configure the Kiwi in 8 channel mode and this WSPR_SCHEDULE configuration will use the 6 audio-only Kiwi channels to record spots on the most trafficed WSPR bands
+###    while leaving the 2 Kiwi waterfall channels free for listeners
+
+### Default to use the WSPR_SCHEDULE_only_rx888 schedule
+declare WSPR_SCHEDULE=( "${WSPR_SCHEDULE_only_rx888[@]}" )
+
+### Source: https://hamsci.jmclynch.org/wsprdaemon-install.html
 ```
