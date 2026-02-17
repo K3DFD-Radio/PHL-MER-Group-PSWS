@@ -22,26 +22,22 @@
 > **Note:** Adjust these configuration items to match your PSWS PC environment. Refer to the [WSPRDaemon documents](https://wsprdaemon.readthedocs.io/en/master/configuration/wsprdaemon.conf.d/wsprdaemon.conf.html)
 
 ```
-#!/bin/bash
-#### The previous line signals to the vim editor that it should use its 'bash' editing mode when editing this file
+!/bin/bash
 
-### These first two bash variables *must* be changed from their default values.
-### To do so, uncomment the following two lines by removing the leading '#' and change the "<....>" fields
-WSPRNET_REPORTER_ID="<YOUR_REPORTER_ID>" #Ex. WSPRNET_REPORTER_ID="K2MFF" (NJIT's FCC Callsign)
-REPORTER_GRID="<YOUR_GRID>" #Ex. REPORTER_GRID="FN20vr" (NJIT's GRID Location)
+WSPRNET_REPORTER_ID="<YOUR_CALL>"  ###Ex. WSPRNET_REPORTER_ID="W1AW"
+REPORTER_GRID="<YOUR_GRID>"  ###Ex. REPORTER_GRID="FN20"
 
-
-WSPRNET_REPORTER_ID="${WSPRNET_REPORTER_ID-<NOT_DEFINED>}"           ### The ID of spots uploaded to wsprnet.org by this site
+WSPRNET_REPORTER_ID="${WSPRNET_REPORTER_ID-<NOT_DEFINED>}"  ### The ID of spots uploaded to wsprnet.org by this site
 REPORTER_GRID="${REPORTER_GRID-<NOT_DEFINED>}"
-ANTENNA_DESCRIPTION="<NOT_DEFINED>"   ### If defined, this is included in the reports to PSKReporter e.g '80m Dipole' and displayed on the KA9Q-web page
+ANTENNA_DESCRIPTION="<YOUR_ANTENNA>"  ###Ex. ANTENNA_DESCRIPTION="Longwire"
 
 KA9Q_WEB_TITLE="${WSPRNET_REPORTER_ID}_@${REPORTER_GRID}_${ANTENNA_DESCRIPTION}"
 
 ### WD stations contirbuting to the HamSCI.org Personal Space Weather Project obtain these values from their dashboard at https://pswsnetwork.caps.ua.edu
-PSWS_STATION_ID="<PSWS_STATION_ID>" #Ex. PSWS_STATION_ID="S000333"
-PSWS_DEVICE_ID="<PSWS_DEVICE_ID>" #Ex. PSWS_DEVICE_ID="352"
+PSWS_STATION_ID="<YOUR_PSWS_STATION_ID>" #Ex. PSWS_STATION_ID="S000333"
+PSWS_DEVICE_ID="<YOUR_PSWS_DEVICE_ID>" #Ex. PSWS_DEVICE_ID="352"
 
-### The default is to upload extented spot and background noise level data to wsprdaemon.org.  These are small files, so they add little to the site's Internet bandwidth usage
+### The default is to upload extented spot and background noise level data to wsprdaemon.org.
 # SIGNAL_LEVEL_UPLOAD="no"
 
 ## If "yes" the site uploads a 150 KByte .png file to wsprnet.org where it can be viewed at http://wsprdaemon.org/graphs/${WSPRNET_REPORTER_ID}/
