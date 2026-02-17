@@ -10,7 +10,7 @@
 3. Configure for WiFi or Ethernet as appropriate. Connect to your network and note the MAC and IP addresses. Test the connection if possible
 4. Deselect any option to set up disk as an LVM group. No compression or encryption.
 5. Select Use Entire Disk for OS installation
-6. Set up SSH and SFTP options if presented
+6. Set up SSH option if presented
 7. Begin installation
 8. When prompted, create a default user named 'wsprdaemon' with a password of your choice. Write the password down for future reference
 9. When OS installation is complete, remove USB drive and reboot when prompted
