@@ -1,15 +1,16 @@
 # PHIL-MER-HamSCI-PSWS
 The PHL-MER (Philadelphia-Mercer County, NJ) PSWS Group's HamSCI RX888WSPRDaemon SDR Personal Space Weather Station.
-
+<details>
+<summary>Jump-to Sections</summary>
+[Ubuntu OS Installation](#PHL-MER-Group-PSWS/blob/main/installation.md)
+[Wsprdaemon Configuration](#PHL-MER-Group-PSWS/blob/main/configuration.md)
+[Operations]
+[QOL Improvements]
+[Links & Sources]
+</details>
 > **Note:** This will be an 'essential' PSWS build. It will not incorporate WSPR transmitter, VLF or Magnetometer modules
 ---
-<details>
-<summary>Long list of technical details</summary>
 
-### All of the Nitty Gritty Details
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit...  
-</details>
 ## HamSCI RX888 WSPRDaemon SDR Station
 
 This repository documents the build of a **Personal Space Weather Station (PSWS)** node. This is a cooperative project involving a subgroup of Delaware Valley Radio Association (DVRA) members in association with **HamSCI**.
@@ -62,16 +63,10 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 ## Step 2: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
 
 ---
-## Step 3: HamSCI Backhaul Data Upload
+## Step 3: Operations
 
 ---
-## Step 4: Operations
+## Upgrades, enhancements and Quality-of-Life improvements
 
 ---
-## Step 5: Upgrades and Enhancements
-
----
-## Optional Items and Improvements
-
----
-## Important Links and Information Sources
+## Links and Information Sources
