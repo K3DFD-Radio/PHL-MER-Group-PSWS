@@ -1,22 +1,10 @@
 # PHIL-MER-HamSCI-PSWS
 The PHL-MER (Philadelphia-Mercer County, NJ) PSWS Group's HamSCI RX888WSPRDaemon SDR Personal Space Weather Station.
-<details>
-<summary>Jump-to Sections</summary>
-[Ubuntu OS Installation](#PHL-MER-Group-PSWS/blob/main/installation.md)
-[Wsprdaemon Configuration](#PHL-MER-Group-PSWS/blob/main/configuration.md)
-[Operations]
-[QOL Improvements]
-[Links & Sources]
-</details>
 > **Note:** This will be an 'essential' PSWS build. It will not incorporate WSPR transmitter, VLF or Magnetometer modules
 ---
-
 ## HamSCI RX888 WSPRDaemon SDR Station
-
 This repository documents the build of a **Personal Space Weather Station (PSWS)** node. This is a cooperative project involving a subgroup of Delaware Valley Radio Association (DVRA) members in association with **HamSCI**.
-
 > **Note:** While the participants are DVRA members, this project is independent of and not in association with the DVRA.
-
 ### Project Overview
 
 The goal of the PSWS project is to create a geographically distributed, multi-instrument system for ground-based space environment measurements. Data from this node is aggregated into a central HamSCI database for space science research, specifically for analyzing phenomena like **Traveling Ionospheric Disturbances (TIDs)**. Technically, it is a Wide spectrum receiving system that reports data in multiple formats:  WSPR/FST4w and Doppler shift monitoring in the Digital RF _DRF_ format.  This data is useful for studying the behavior of the ionosphere.
@@ -26,7 +14,6 @@ WSPRDeamon itelf is a Linux-based service designed to operate as a reliable, aut
 This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of K3DFD in the Fox Chase section of Philadelphia, Pa.
 
 ### Technology Stack and Target Radio Sources
-
 The essential **RX888WSPRDaemon SDR** node is a low-cost, high-precision receiver designed for scientific data collection:
 
 * **SDR:** [RX888 Software Defined Radio](https://www.amazon.com/Receiver-Luminum-Industrial-Beautiful-1kHz%E2%80%9164Mhz/dp/B09FZW89L8)
@@ -44,11 +31,9 @@ The essential **RX888WSPRDaemon SDR** node is a low-cost, high-precision receive
 * **Target:** Monitoring [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) and [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) time standard frequency Doppler shift, FT4, FT8 and [WSPR](https://wspr.rocks/) signals.
 
 ### Internet Connectivity
-
 * **Data backhaul to HamSCI/WSPRnet**
 
 ### Research & Collaboration
-
 Coordinated by the **University of Scranton**, this project supports a global network of "Citizen Science" monitors. Key partners include:
 
 * **TAPR** [Tucson Amateur Packet Radio](https://tapr.org/)
@@ -58,15 +43,11 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 
 ---
 ## Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
-
 ---
 ## Step 2: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
-
 ---
 ## Step 3: Operations
-
 ---
 ## Upgrades, enhancements and Quality-of-Life improvements
-
 ---
 ## Links and Information Sources
