@@ -126,12 +126,12 @@ opus-tools portaudio19-dev tmux uuid-dev
 ```
 8. Write the following line to the file, save and quit
 ```
-      wsprdaemon ALL=(ALL) NOPASSWD: ALL:      
+      wsprdaemon ALL=(ALL) NOPASSWD: ALL 
 ```
 > **Note:** If Nano fails with permission errors, use redirect as follow to write directly to the /etc/sudoers.d/wsprsudo file\
 ```
       touch /etc/sudoers.d/wsprsudo\
-      echo "wsprdaemon ALL=(ALL) NOPASSWD: ALL:" | sudo tee /etc/sudoers.d/wsprsudo
+      echo "wsprdaemon ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/wsprsudo
 ```
 9. This completes the essential build of the Ubuntu 24.04 Server LTS instance. Directions for installing useful Linux tools and performance monitoring utilities will be provided in the [optimization] file.
 
