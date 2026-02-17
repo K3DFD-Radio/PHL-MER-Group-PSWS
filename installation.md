@@ -69,14 +69,13 @@
 ### Auto-start tmux session for PSWS monitoring and create the session if it does't exist
 1. Edit the _wsprdaemon_ user's ~/.bash_profile and add the following lines
 ```
-      if [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" || "$(tty)" == "/dev/tty1" ]]; then
-          if ! tmux has-session -t psws 2>/dev/null; then
-              # Create new session with btop
-              tmux new-session -d -s psws -n monitoring 'btop'
-              tmux new-window -t psws -n wsprdaemon
-              tmux new-window -t psws -n bash
-              tmux select-window -t psws:bash
-      fi
+if [[ -z "$TMUX" ]] && [[ $(tty) == "/dev/tty1" ]]; then
+    if ! tmux has-session -t psws 2>/dev/null; then
+        tmux new-session -d -s psws -n monitoring 'btop'
+        tmux new-window -t psws -n wsprdaemon
+        tmux new-window -t psws -n bash
+        tmux select-window -t psws:bash
+    fi
     tmux attach-session -t psws
 fi
 ```
