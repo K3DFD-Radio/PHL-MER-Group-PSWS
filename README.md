@@ -58,3 +58,11 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 ---
 ## Step 3: HamSCI Backhaul Data Upload
 
+---
+## Step 4: Operations
+
+---
+## Step 5: Upgrades and Enhancements
+
+---
+## Optional Items and Improvements
