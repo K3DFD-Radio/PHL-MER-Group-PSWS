@@ -65,6 +65,7 @@
 ```
 
 ### Auto-start tmux session for PSWS monitoring and create the session if it does't exist
+1. Edit the wsprdaemon user's ~/.bash_profile and add the following lines
 ```
       if [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" || "$(tty)" == "/dev/tty1" ]]; then
           if ! tmux has-session -t psws 2>/dev/null; then
@@ -77,14 +78,13 @@
     tmux attach-session -t psws
 fi
 ```
-4. Save ~/.bash_profile
+2. Save ~/.bash_profile
 
-5. Test
+3. Test
 ```
       exit
 ```
-
-7. If this test fails and tmux does not start, edit the ~/.bashrc with the same lines and $exit again
+4. If this test fails and tmux does not start, edit the ~/.bashrc with the same lines and $exit again
 
 ### Dependency and Library Updates and Installations
 1. There are a large number of dependencies and tools to be installed. 
@@ -100,13 +100,13 @@ opus-tools portaudio19-dev tmux uuid-dev
 ```
 2. Perform the above dependency and utils installations. Should wsprdaemon (and possibly ka9q-radio) fail to run due to an unsatisfied dependency, it is most likely caused by a _legacy_ version not being installed. In this case, refer to the table of dependencies in this [Legacy Library Link](https://docs.google.com/document/d/1jV4VKLIG7WG_zo5QeVL_GuvDyBTwUfN-SVxozEXIAcE/edit?usp=sharing) and install each one.
 
-4. Install an ssh server and start it. This is to allow access for administration from authorized clients. Suggest Putty ssh client.
+3. Install an ssh server and start it. This is to allow access for administration from authorized clients. Suggest Putty ssh client.
 ```
       sudo systemctl enable ssh
       sudo systemctl start ssh
       sudo systemctl status ssh
 ```
-Confirm that ssh is running. Look for message 'Starting ssh.server - Open BSD Secure Shell server... Server listening on 0.0.0.0 port 22
+4. Confirm that ssh is running. Look for message 'Starting ssh.server - Open BSD Secure Shell server... Server listening on 0.0.0.0 port 22
 
 5. Configure UFW to allow ssh on port 22
    ```
@@ -114,15 +114,15 @@ Confirm that ssh is running. Look for message 'Starting ssh.server - Open BSD Se
       sudo ufw enable ssh
       sudo ufw status
    ```
-. Get the PC's IP address and note it
+6. Get the PC's IP address and note it
 ```
       ip addr show
 ```
-8. Next, to configure the system to run sudo commands without a password, add text to /etc/sudoers.d/wsprsudo using the Nano editor:
+7. Next, to configure the system to run sudo commands without a password, add text to /etc/sudoers.d/wsprsudo using the Nano editor:
 ```
       sudo nano /etc/sudoers.d/wsprsudo
 ```
-Write the following line to the file, save and quit
+8. Write the following line to the file, save and quit
 ```
       wsprdaemon ALL=(ALL) NOPASSWD: ALL:      
 ```
@@ -131,12 +131,10 @@ Write the following line to the file, save and quit
       touch /etc/sudoers.d/wsprsudo\
       echo "wsprdaemon ALL=(ALL) NOPASSWD: ALL:" | sudo tee /etc/sudoers.d/wsprsudo
 ```
-4. This completes the essential build of the Ubuntu 24.04 Server LTS instance. Directions for installing useful Linux tools and performance monitoring utilities will be provided in the [optimization] file.
+9. This completes the essential build of the Ubuntu 24.04 Server LTS instance. Directions for installing useful Linux tools and performance monitoring utilities will be provided in the [optimization] file.
 
-5. Next, click on this [Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md) link to install and configure the WSPRdaemon SDR environment, which includes the ka9q-radio application
+10. Next, click on this [Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md) link to install and configure the WSPRdaemon SDR environment, which includes the ka9q-radio application
 
 
 
    
-
-      
