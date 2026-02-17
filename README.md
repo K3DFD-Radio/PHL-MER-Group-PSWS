@@ -3,7 +3,13 @@ The PHL-MER (Philadelphia-Mercer County, NJ) PSWS Group's HamSCI RX888WSPRDaemon
 
 > **Note:** This will be an 'essential' PSWS build. It will not incorporate WSPR transmitter, VLF or Magnetometer modules
 ---
+<details>
+<summary>Long list of technical details</summary>
 
+### All of the Nitty Gritty Details
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit...  
+</details>
 ## HamSCI RX888 WSPRDaemon SDR Station
 
 This repository documents the build of a **Personal Space Weather Station (PSWS)** node. This is a cooperative project involving a subgroup of Delaware Valley Radio Association (DVRA) members in association with **HamSCI**.
