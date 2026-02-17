@@ -42,12 +42,12 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 * **Case Western Reserve University** [Case Western Reserve University](https://case.edu/)
 
 ---
-## Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
+### Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
 ---
-## Step 2: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
+### Step 2: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
 ---
-## Step 3: Operations
+### Step 3: Operations
 ---
-## Upgrades, enhancements and Quality-of-Life improvements
+### Upgrades, enhancements and Quality-of-Life improvements
 ---
 ## Links and Information Sources
