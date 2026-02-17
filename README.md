@@ -34,7 +34,7 @@ The essential **RX888WSPRDaemon SDR** node is a low-cost, high-precision receive
 * **Integration:** [High-quality SMA connection cables](https://www.dxengineering.com/parts/cew-316ds001-2), [hardware](https://www.amazon.com/Saddle-Mounts-Tapping-Organizer-Holders/dp/B09B97326Z).
 
 ### Target Radio Sources
-* **Target:** Monitoring WWV and CHU time standard frequency Doppler shift, FT4, FT8 and WSPR signals.
+* **Target:** Monitoring [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) and [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) time standard frequency Doppler shift, FT4, FT8 and [WSPR](https://wspr.rocks/) signals.
 
 ### Internet Connectivity
 
