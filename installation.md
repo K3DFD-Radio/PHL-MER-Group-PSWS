@@ -16,30 +16,32 @@
 9. When OS installation is complete, remove USB drive and reboot when prompted
 
 ### Update the OS
-1. Login as wsprdeamon
-2. Add the wsprdeamon user to the _sudo_ group
-      - $sudo usermod -aG sudo wsprdaemon
-4. Update the OS
+1. Login as user _wsprdeamon_
+2. Add the _wsprdeamon_ user to the _sudo_ group
+```
+      sudo usermod -aG sudo wsprdaemon
+```
+3. Update the OS
 ```      
       sudo apt update
       sudo apt update
 ```
-5. Disable Snap if installed and running
+4. Disable Snap if installed and running
 ``` 
       sudo apt autoremove --purge snapd gnome-software-plugin-snap
       sudo apt-mark hold snapd
 ```
-6. If not automatically created, create a wsprdaemon home directory and set permissions
+5. If not automatically created, create a wsprdaemon home directory and set permissions
 ```
       sudo mkdir /home/wsprdaemon
       sudo chown wsprdaemon:wsprdaemon /home/wsprdaemon
       sudo chmod 755 /home/wsprdaemon
 ```
-8. As a precaution, force change your shell evironment to _bash_ instead of _sh_
+6. As a precaution, force change your shell evironment to _bash_ instead of _sh_
 ```
       sudo chsh -s /bin/bash wsprdaemon
 ```
-10. Exit and log back in again as user _wsprdaemon_
+7. Exit and log back in again as user _wsprdaemon_
      
 ### Set the system up for automatic reboot in case of power failure. 
 > ** Note ** This is optional for systems without battery backup
@@ -65,7 +67,7 @@
 ```
 
 ### Auto-start tmux session for PSWS monitoring and create the session if it does't exist
-1. Edit the wsprdaemon user's ~/.bash_profile and add the following lines
+1. Edit the _wsprdaemon_ user's ~/.bash_profile and add the following lines
 ```
       if [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" || "$(tty)" == "/dev/tty1" ]]; then
           if ! tmux has-session -t psws 2>/dev/null; then
