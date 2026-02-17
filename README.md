@@ -66,3 +66,6 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 
 ---
 ## Optional Items and Improvements
+
+---
+## Important Links and Information Sources
