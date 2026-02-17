@@ -80,22 +80,26 @@ libopusfile-dev librtlsdr-dev libsamplerate-dev libsox-fmt-all \
 libusb-1.0-0-dev libvorbis-dev mdns-scan net-tools nmap \
 opus-tools portaudio19-dev tmux uuid-dev
 ```
-2. Perform the above command. Should the make and compilation of ka9q-radio fail due to an unsatisfied dependency, it is most likely caused by a _legacy_ version not being installed. The compilation will generate error that may indicate which _legacy_ versions are not installed. In this case, refer to the table of dependencies in this [Legacy Library Link](https://docs.google.com/document/d/1jV4VKLIG7WG_zo5QeVL_GuvDyBTwUfN-SVxozEXIAcE/edit?usp=sharing) and install each one.
+2. Perform the above dependency and utils installations. Should wsprdaemon (and possibly ka9q-radio) fail to run due to an unsatisfied dependency, it is most likely caused by a _legacy_ version not being installed. In this case, refer to the table of dependencies in this [Legacy Library Link](https://docs.google.com/document/d/1jV4VKLIG7WG_zo5QeVL_GuvDyBTwUfN-SVxozEXIAcE/edit?usp=sharing) and install each one.
 
 4. Install an ssh server and start it. This is to allow access for administration from authorized clients. Suggest Putty ssh client.
+```
       - $sudo systemctl enable ssh
       - $sudo systemctl start ssh
       - $sudo systemctl status ssh
+```
 Confirm that ssh is running. Look for message 'Starting ssh.server - Open BSD Secure Shell server... Server listening on 0.0.0.0 port 22
 
 5. Configure UFW to allow ssh on port 22
+   ```
       - $sudo ufw allow ssh
       - $sudo ufw enable ssh
       - $sudo ufw status
-
-6. Get the PC's IP address and note it
+   ```
+. Get the PC's IP address and note it
+```
       - $ip addr show
-
+```
 8. Next, to configure the system to run sudo commands without a password, add text to /etc/sudoers.d/wsprsudo using the Nano editor:
       - $sudo nano /etc/sudoers.d/wsprsudo
       - Add the line wsprdaemon ALL=(ALL) NOPASSWD: ALL:
