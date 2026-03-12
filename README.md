@@ -44,9 +44,13 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 ---
 ### Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
 ---
-### Step 2: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
+### Step 2: Hardware Build
+
+### Step 3: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
 ---
-### Step 3: Operations
+### Step 4: Hardware Build
+---
+### Step 5: Operation
 ---
 ### Upgrades, enhancements and Quality-of-Life improvements
 ---
