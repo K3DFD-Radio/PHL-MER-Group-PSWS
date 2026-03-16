@@ -12,11 +12,7 @@ The goal of the PSWS project is to create a geographically distributed, multi-in
 
 WSPRDeamon itelf is a Linux-based service designed to operate as a reliable, autonomous appliance for amateur radio operators and researchers. Its primary function is to decode WSPR and FST4W spots from one or more Software-Defined Radios (SDRs) and reliably upload them to public databases like wsprnet.org. The project emphasizes high reliability, advanced features, and scientific data collection, going far beyond the capabilities of standard tools like WSJT-X. It is the 'engine' behind the Personal Space Weather System and has been developed by Rob Robinette at [WSPRDaemon](https://wsprdaemon.readthedocs.io/en/master/index.html).  
 
-This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of K3DFD in the Fox Chase section of Philadelphia, Pa.  
-
-Technology Stack and Target Radio Sources  
-
-The essential RX888WSPRDaemon SDR node is a low-cost, high-precision receiver designed for scientific data collection:  
+This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of K3DFD in the Fox Chase section of Philadelphia, Pa.    
 
 SDR: [RX888 Software Defined Radio](https://www.amazon.com/Receiver-Luminum-Industrial-Beautiful-1kHz%E2%80%9164Mhz/dp/B09FZW89L8) | [Instructions](https://github.com/ik1xpv/ExtIO_sddc)  
 Alternative Source: [OpenSourceLabs](https://opensourcesdrlab.com/products/rx888-mkii-16bit-sdr-receiver-radio-ltc2208-adc-upgrade-rx888-1)  
