@@ -1,3 +1,5 @@
+> **Note**
+
 ### BIOS Settings
 1. Boot the computer and bring you to the BIOS setup screen by using the key specific to your computer and make the following changes:
 2. Smart CPU_Fan Mode -Full-On mode
@@ -135,6 +137,7 @@ opus-tools portaudio19-dev tmux uuid-dev
 9. This completes the essential build of the Ubuntu 24.04 Server LTS instance. Directions for installing useful Linux tools and performance monitoring utilities will be provided in the [optimization] file.
 
 10. Next, click on this [Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md) link to install and configure the WSPRdaemon SDR environment, which includes the ka9q-radio application
+
 
 
 
