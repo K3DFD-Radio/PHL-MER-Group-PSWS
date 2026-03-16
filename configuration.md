@@ -2,6 +2,8 @@
 1. Login as user _wsprdaemon_
 > **Note** This assumes you have set the user _wsprdeamon_ to not require _sudo_ per the installation instructions. If you haven't, [go back](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md) and complete that step.
 
+WSPRDaemon Github Source & Information: [here](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
+
 2. Clone the _wsprdaemon_ github repository
 ```
    $cd ~
