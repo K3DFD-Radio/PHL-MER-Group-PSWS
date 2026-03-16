@@ -40,12 +40,11 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 * **NJIT** [Center for Solar-Terrestrial Research](https://research.njit.edu/cstr/)
 * **MIT** [Haystack Observatory](https://www.haystack.mit.edu/)
 * **Case Western Reserve University** [Case Western Reserve University](https://case.edu/)
-
 ---
 ### Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
 ---
 ### Step 2: Hardware Build
-
+---
 ### Step 3: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
 ---
 ### Step 4: Hardware Build
