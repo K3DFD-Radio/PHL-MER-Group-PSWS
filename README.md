@@ -37,10 +37,10 @@ Internet Connectivity
 Research & Collaboration
 Coordinated by the **University of Scranton**, this project supports a global network of "Citizen Science" monitors. Key partners include:
 
-* **TAPR** [Tucson Amateur Packet Radio](https://tapr.org/)
-* **NJIT** [Center for Solar-Terrestrial Research](https://research.njit.edu/cstr/)
-* **MIT** [Haystack Observatory](https://www.haystack.mit.edu/)
-* **Case Western Reserve University** [Case Western Reserve University](https://case.edu/)
+APR [Tucson Amateur Packet Radio](https://tapr.org/)
+NJIT [Center for Solar-Terrestrial Research](https://research.njit.edu/cstr/)
+MIT [Haystack Observatory](https://www.haystack.mit.edu/)
+Case Western Reserve University [Case Western Reserve University](https://case.edu/)
 ---
 Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
 ---
