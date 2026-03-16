@@ -1,4 +1,6 @@
-> **Note**
+## Installation
+> **Note** This is from <ins>MY</ins> interpretation of the system installation. The step-by-step HamSCI instructions, which may be much more comprensive are
+> [here - HamSCI WSPRDaemon Installation Instructions:](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
 
 ### BIOS Settings
 1. Boot the computer and bring you to the BIOS setup screen by using the key specific to your computer and make the following changes:
