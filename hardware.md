@@ -3,9 +3,7 @@
 
 ## Reference and instruction manuals -
 
-### RX888 MkII SDR Source:
-
-### Clock Kit and Thermal Source: [Here](https://turnislandsystems.com/product/rx-888-external-clock-adaptor-kit/) Installation Instructions: [here](https://turnislandsystems.com/wp-content/uploads/2024/05/RX888-Kit-2.pdf)
-
-### GPS Disciplined Oscillator Source:
+### RX888 MkII SDR Source:[here](https://dc4ku.com/.cm4all/uproc.php/0/SDR%20-%20TEST-BERICHTE/RX888_english.pdf?cdp=a&_=1806ad658e7)
+### Clock kit and thermal Source: [here](https://turnislandsystems.com/wp-content/uploads/2024/05/RX888-Kit-2.pdf)
+### GPS Disciplined Oscillator:
 ###
