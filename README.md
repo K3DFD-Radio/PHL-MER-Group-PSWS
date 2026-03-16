@@ -7,7 +7,6 @@ This repository documents the build of a Personal Space Weather Station (PSWS) n
 > **Note:** While the participants are DVRA members, this project is independent of and not in association with the DVRA.  
 
 <ins>Project Overview</ins> 
-
 The goal of the PSWS project is to create a geographically distributed, multi-instrument system for ground-based space environment measurements. Data from this node is aggregated into a central HamSCI database for space science research, specifically for analyzing phenomena like **Traveling Ionospheric Disturbances (TIDs)**. Technically, it is a Wide spectrum receiving system that reports data in multiple formats:  WSPR/FST4w and Doppler shift monitoring in the Digital RF _DRF_ format.  This data is useful for studying the behavior of the ionosphere.  
 
 WSPRDeamon itelf is a Linux-based service designed to operate as a reliable, autonomous appliance for amateur radio operators and researchers. Its primary function is to decode WSPR and FST4W spots from one or more Software-Defined Radios (SDRs) and reliably upload them to public databases like wsprnet.org. The project emphasizes high reliability, advanced features, and scientific data collection, going far beyond the capabilities of standard tools like WSJT-X. It is the 'engine' behind the Personal Space Weather System and has been developed by Rob Robinette at [WSPRDaemon](https://wsprdaemon.readthedocs.io/en/master/index.html).  
@@ -26,13 +25,13 @@ Power Supply: [Low noise linear 5vdc Power Supply for SDR and GPSDO](https://www
 Antenna: TBD  
 Integration: [High-quality SMA connection cables](https://www.dxengineering.com/parts/cew-316ds001-2), [hardware](https://www.amazon.com/Saddle-Mounts-Tapping-Organizer-Holders/dp/B09B97326Z).  
 
-Target Radio Sources  
+<ins>Target Radio Sources</ins>  
 Target: Monitoring [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) and [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) time standard frequency Doppler shift, FT4, FT8 and [WSPR](https://wspr.rocks/) signals.  
 
-Internet Connectivity  
+<ins>Internet Connectivity</ins>  
 Data backhaul to HamSCI/WSPRnet  
 
-Research & Collaboration  
+<ins>Research & Collaboration</ins>  
 Coordinated by the University of Scranton, this project supports a global network of "Citizen Science" monitors. Key partners include:  
 
 TAPR [Tucson Amateur Packet Radio](https://tapr.org/)  
@@ -40,6 +39,7 @@ NJIT [Center for Solar-Terrestrial Research](https://research.njit.edu/cstr/)
 MIT [Haystack Observatory](https://www.haystack.mit.edu/)  
 Case Western Reserve University [Case Western Reserve University](https://case.edu/)  
 
+<ins>Instructions</ins>
 Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)  
 Step 2: [Hardware Build](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/hardware.md)  
 Step 3: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)  
