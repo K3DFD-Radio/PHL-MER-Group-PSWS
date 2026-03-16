@@ -1,4 +1,8 @@
 ## WSPRDaemon _aka WD_ Installation and Configuration - _includes ka9q-radio_  
+
+> **Note** The below is <ins>my</ins> interpretation of the configuration process. The <ins>official</ins> instructions are
+[WSPRDaemon Installation and Configuration](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
+
 WSPRDaemon Github Source & Information:  
 [Github](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
 [WSPRDaemon](https://wsprdaemon.readthedocs.io/en/latest/)  
