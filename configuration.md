@@ -1,5 +1,8 @@
 ## WSPRDaemon _aka WD_ Installation and Configuration - _includes ka9q-radio_  
-WSPRDaemon Github Source & Information: [here](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
+WSPRDaemon Github Source & Information:  
+[Github](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
+[WSPRDaemon](https://wsprdaemon.readthedocs.io/en/latest/)  
+
 
 1. Login as user _wsprdaemon_
 > **Note** This assumes you have set the user _wsprdeamon_ to not require _sudo_ per the installation instructions. If you haven't, [go back](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md) and complete that step.  
