@@ -14,7 +14,7 @@ WSPRDeamon itelf is a Linux-based service designed to operate as a reliable, aut
 
 This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of K3DFD in the Fox Chase section of Philadelphia, Pa.
 
-### Technology Stack and Target Radio Sources
+Technology Stack and Target Radio Sources
 The essential **RX888WSPRDaemon SDR** node is a low-cost, high-precision receiver designed for scientific data collection:
 
 * **SDR:** [RX888 Software Defined Radio](https://www.amazon.com/Receiver-Luminum-Industrial-Beautiful-1kHz%E2%80%9164Mhz/dp/B09FZW89L8) | [Instructions](https://github.com/ik1xpv/ExtIO_sddc)
@@ -28,13 +28,13 @@ The essential **RX888WSPRDaemon SDR** node is a low-cost, high-precision receive
 * **Antenna:** TBD
 * **Integration:** [High-quality SMA connection cables](https://www.dxengineering.com/parts/cew-316ds001-2), [hardware](https://www.amazon.com/Saddle-Mounts-Tapping-Organizer-Holders/dp/B09B97326Z).
 
-### Target Radio Sources
+Target Radio Sources
 * **Target:** Monitoring [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) and [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) time standard frequency Doppler shift, FT4, FT8 and [WSPR](https://wspr.rocks/) signals.
 
-### Internet Connectivity
+Internet Connectivity
 * **Data backhaul to HamSCI/WSPRnet**
 
-### Research & Collaboration
+Research & Collaboration
 Coordinated by the **University of Scranton**, this project supports a global network of "Citizen Science" monitors. Key partners include:
 
 * **TAPR** [Tucson Amateur Packet Radio](https://tapr.org/)
@@ -42,16 +42,16 @@ Coordinated by the **University of Scranton**, this project supports a global ne
 * **MIT** [Haystack Observatory](https://www.haystack.mit.edu/)
 * **Case Western Reserve University** [Case Western Reserve University](https://case.edu/)
 ---
-### Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
+Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)
 ---
-### Step 2: Hardware Build
+Step 2: Hardware Build
 ---
-### Step 3: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
+Step 3: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)
 ---
-### Step 4: Hardware Build
+Step 4: Hardware Build
 ---
-### Step 5: Operation
+Step 5: Operation
 ---
-### Upgrades, enhancements and Quality-of-Life improvements
+Upgrades, enhancements and Quality-of-Life improvements
 ---
-### Links and Information Sources
+Links and Information Sources
