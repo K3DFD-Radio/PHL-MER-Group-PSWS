@@ -1,20 +1,18 @@
-Content is user-generated and unverified.
+# **HamSCI Personal Space Weather Station - K3DFD Adaptation**
 
-# **HamSCI Personal Space Weather Station**
-
-## **HF wsprdaemon Receiver — Installation & Configuration Guide**
+## **HF RX888 WSPRdaemon Receiver — Installation & Configuration Guide**
 
 ---
 
 ## **Overview**
 
-The HF wsprdaemon Receiver is the core HF listening component of the HamSCI Personal Space Weather Station (PSWS). This guide walks through the complete setup: configuring the BIOS, installing Ubuntu Server, setting up the GPS-disciplined oscillator and RX-888 MkII SDR, and running the wsprdaemon software.
+The HF RX888 WSPRDaemon Receiver is the core HF listening component of the HamSCI Personal Space Weather Station (PSWS). This guide walks through the complete setup: configuring the BIOS, installing Ubuntu Server - with improved usability modifications, setting up the Leo Bodnar GPS-disciplined oscillator and RX-888 MkII SDR, running the wsprdaemon software and connecting to the HamSCI servers.
 
 ---
 
 ## **Part 1 — BIOS Configuration**
 
-Before installing the OS, you need to configure two important BIOS settings on the Beelink mini PC: fan speed (to prevent overheating) and power-loss behavior (so the system restarts automatically after a power outage).
+Before installing the OS, you may to configure two important BIOS settings on the Beelink mini PC: fan speed (to prevent overheating) and power-loss behavior (so the system restarts automatically after a power outage). This only applies if you are using the recommended Beelink PC.
 
 1. Plug in the Beelink PC and connect it to a monitor via HDMI or DisplayPort. Connect a keyboard — no mouse is needed.  
 2. Power on the PC and immediately tap **Delete** repeatedly to enter the BIOS setup screen. If the OS boots instead, shut down and try again.  
@@ -33,7 +31,7 @@ The system will now restart automatically after power outages, and the fans will
 
 You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server **24.04 LTS** .iso disk image, downloaded from the [Ubuntu website](https://ubuntu.com).
 
-**On Windows — using Rufus:**
+**On Windows 10/11 — using Rufus:**
 
 1. Download and open [Rufus](https://rufus.ie).  
 2. Insert the USB drive and select it from the **Device** dropdown.  
@@ -58,13 +56,7 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 4. A menu will appear. Select **Try or Install Ubuntu Server** and press **Enter**. Scrolling text is normal — everything is working.  
 5. Select **English** as your language and press **Space**.  
 6. Leave the keyboard layout at its default and select **Done**.  
-7. Scroll to **Ubuntu Server (minimized)**, select it with **Space**, then move down to **Done** and press **Enter**.
-
-### 
-
-### 
-
-### 
+7. Scroll to **Ubuntu Server (minimized)**, select it with **Space**, then move down to **Done** and press **Enter**. 
 
 ### **Connecting to the Network**
 
