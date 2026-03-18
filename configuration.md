@@ -3,8 +3,7 @@
 ## Table of Contents
 1. [Installing wsprdaemon](#1-installing-wsprdaemon)
 2. [Configuring wsprdaemon](#2-configuring-wsprdaemon)
-3. [Setting up the GPS Disciplined Oscillator](#3-setting-up-the-gps-disciplined-oscillator)
-4. [Setting up wsprdaemon to Run on the PSWS Computer](#4-setting-up-wsprdaemon-to-run-on-the-psws-computer)
+3. [Setting up wsprdaemon to Run on the PSWS Computer](#4-setting-up-wsprdaemon-to-run-on-the-psws-computer)
 
 ---
 
