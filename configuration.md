@@ -1,4 +1,4 @@
-# Installing and Configuring wsprdaemon
+# Installing and Configuring wsprdaemon + GPS Clock
 
 ## Table of Contents
 1. [Installing wsprdaemon](#1-installing-wsprdaemon)
@@ -127,7 +127,7 @@ From inside your `~/wsprdaemon` directory, open the configuration file:
 
 | Field | Description |
 |-------|-------------|
-| Instrument | Describe your instrument (e.g., `RX-888 MK II - Beelink Mini PC`) |
+| Instrument | Describe your instrument (e.g., `RX-888 MK II - Your PC`) |
 | Date Instrument Added | Date you connect the instrument to the PSWS server |
 | Date Instrument Removed | Date you shut down the instrument |
 | Nickname | Useful if you have multiple identical instruments |
