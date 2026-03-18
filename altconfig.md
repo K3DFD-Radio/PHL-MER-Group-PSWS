@@ -250,9 +250,9 @@ Press **Enter** 3–4 times, including when asked for a passphrase.
 
 ### Register with the PSWS server
 
-> ⚠️ The PSWS website is currently under construction. To be manually added to the server, email **wdengelke@retiree.ua.edu** with:
-> - Your generated SSH public key
-> - Your station details
+> The PSWS website is currently under construction. To be manually added to the server, email **wdengelke@retiree.ua.edu** with:
+> Your generated SSH public key
+> Your station details
 
 ### Enable services and reboot
 
@@ -294,6 +294,4 @@ Then, to confirm that the server is running, run wds into the console. Then, you
 wds
 ```
 
-You should see a status display showing all running jobs and daemons — similar to the example output in the [wds status reference](wds_output.md).
-
-Your server should also now show up as active on the [PSWS Website](https://pswsnetwork.caps.ua.edu/home)
+You should see a status display showing all running jobs and daemons and your server should also now show up as active on the [PSWS Website](https://pswsnetwork.caps.ua.edu/home)
