@@ -296,3 +296,4 @@ wds
 
 You should see a status display showing all running jobs and daemons — similar to the example output in the [wds status reference](wds_output.md).
 
+Your server should also now show up as active on the [PSWS Website](https://pswsnetwork.caps.ua.edu/home)
