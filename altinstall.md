@@ -60,9 +60,7 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 
 ### **Connecting to the Network**
 
-**If using Ethernet:** Simply plug in the cable and skip to step 4 below.
-
-**If using Wi-Fi:**
+**If using wired Ethernet:** Simply plug in the cable and skip to step 4 below, otherwise if using Wi-Fi:**
 
 1. On the network screen, find the **wlo1** section. Below it you'll see a MAC address (formatted like 12:34:a5:b6:7c) — write this down, as you may need it to register the device on a university or institutional network.  
 2. Select **wlo1**, choose **Edit Wifi**, then **Choose a visible network**, and connect to your Wi-Fi network.  
@@ -90,40 +88,37 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 
 Log in with the username and password you created. Then run the following commands to update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:
 
-sudo apt update  
-sudo apt upgrade
+> sudo apt update  
+> sudo apt upgrade
 
 Wait for each command to finish — you'll know it's done when the terminal prompt reappears as \[username\]@\[server-name\]:\~$.
 
 Next, disable **snap** (a software management tool that can auto-update programs and interfere with wsprdaemon's scripts):
 
-bash  
-sudo apt autoremove \--purge snapd gnome-software-plugin-snap  
-sudo apt-mark hold snapd
+> sudo apt autoremove \--purge snapd gnome-software-plugin-snap  
+> sudo apt-mark hold snapd
 
 ### **Install Prerequisites**
 
 Install the required tools and libraries with the following command (type **y** to any prompts):
 
-```sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libnss-mdns mdns-scan avahi-utils avahi-discover build-essential make cmake gcc libairspy-dev libairspyhf-dev libavahi-client-dev libbsd-dev libfftw3-dev libhackrf-dev libiniparser-dev libncurses5-dev libopus-dev librtlsdr-dev libusb-1.0-0-dev libusb-dev portaudio19-dev libasound2-dev uuid-dev rsync sox libsox-fmt-all opus-tools flac tcpdump libhdf5-dev libsamplerate-dev```
+> sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libnss-mdns mdns-scan avahi-utils avahi-discover build-essential make cmake gcc libairspy-dev libairspyhf-dev libavahi-client-dev libbsd-dev libfftw3-dev libhackrf-dev libiniparser-dev libncurses5-dev libopus-dev librtlsdr-dev libusb-1.0-0-dev libusb-dev portaudio19-dev libasound2-dev uuid-dev rsync sox libsox-fmt-all opus-tools flac tcpdump libhdf5-dev libsamplerate-dev
 
 ### **Allow Password-Free sudo**
 
 wsprdaemon's scripts require the ability to run sudo commands without a password prompt. To configure this:
 
-1. Install the **neovim** text editor:
+1. Optional: Install the **neovim** text editor or just use the Nano editor.
 
-bash  
-  sudo apt install neovim
+> sudo apt install neovim
 
 2. Open the sudoers configuration file:
 
-bash  
-  sudo nvim /etc/sudoers.d/wsprsudo
+>  sudo nvim /etc/sudoers.d/wsprsudo
 
-3. Press **i** to enter insert mode and type the following exactly:
+3. Enter insert mode and type the following <ins>exactly</ins>:
 
-  wsprdaemon ALL=(ALL) NOPASSWD: ALL
+>  wsprdaemon ALL=(ALL) NOPASSWD: ALL
 
 4. Press **Escape**, then type :wq\! and press **Enter** to save and exit. *(The \! is needed because the directory is write-protected.)*
 
