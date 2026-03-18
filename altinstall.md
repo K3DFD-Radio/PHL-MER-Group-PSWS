@@ -145,15 +145,15 @@ _This **TMux** session starts when wsprdaemon logs in_
 
 2. Edit the _wsprdaemon_ user's ~/.bash_profile and add the following lines
 ```
-if [[ -z "$TMUX" ]] && [[ $(tty) == "/dev/tty1" ]]; then
-    if ! tmux has-session -t psws 2>/dev/null; then
-        tmux new-session -d -s psws -n monitoring 'btop'
-        tmux new-window -t psws -n wsprdaemon
-        tmux new-window -t psws -n bash
-        tmux select-window -t psws:bash
-    fi
-    tmux attach-session -t psws
-fi
+      if [[ -z "$TMUX" ]] && [[ $(tty) == "/dev/tty1" ]]; then
+          if ! tmux has-session -t psws 2>/dev/null; then
+              tmux new-session -d -s psws -n monitoring 'btop'
+              tmux new-window -t psws -n wsprdaemon
+              tmux new-window -t psws -n bash
+              tmux select-window -t psws:bash
+          fi
+          tmux attach-session -t psws
+      fi
 ```  
 3. Save ~/.bash_profile
 
@@ -161,14 +161,14 @@ fi
 
 Install the required tools and libraries with the following command (type **y** to any prompts):
 ```
-$sudo apt update && sudo apt install -y \
-avahi-daemon avahi-discover avahi-utils btop build-essential \
-flac gcc git iputils-ping libairspy-dev libairspyhf-dev \
-libbsd-dev libfftw3-dev libhdf5-dev libiniparser-dev \
-libmp3lame-dev libncurses-dev libogg-dev libopus-dev \
-libopusfile-dev librtlsdr-dev libsamplerate-dev libsox-fmt-all \
-libusb-1.0-0-dev libvorbis-dev mdns-scan net-tools nmap \
-opus-tools portaudio19-dev tmux uuid-dev
+      $sudo apt update && sudo apt install -y \
+      avahi-daemon avahi-discover avahi-utils btop build-essential \
+      flac gcc git iputils-ping libairspy-dev libairspyhf-dev \
+      libbsd-dev libfftw3-dev libhdf5-dev libiniparser-dev \
+      libmp3lame-dev libncurses-dev libogg-dev libopus-dev \
+      libopusfile-dev librtlsdr-dev libsamplerate-dev libsox-fmt-all \
+      libusb-1.0-0-dev libvorbis-dev mdns-scan net-tools nmap \
+      opus-tools portaudio19-dev tmux uuid-dev
 ```  
 ### **Allow Password-Free sudo**  
 
@@ -177,13 +177,13 @@ wsprdaemon's scripts require the ability to run sudo commands without a password
 1. Open the sudoers configuration file:
 
 ```
-sudo nvim /etc/sudoers.d/wsprsudo
+      sudo nvim /etc/sudoers.d/wsprsudo
 ```
 
 3. Enter insert mode and type the following <ins>exactly</ins>:
 
 ```
-wsprdaemon ALL=(ALL) NOPASSWD: ALL
+      wsprdaemon ALL=(ALL) NOPASSWD: ALL
 ```
 
 4. Press **Escape**, then type :wq\! and press **Enter** to save and exit. *(The \! is needed because the directory is write-protected.)*  
@@ -193,11 +193,11 @@ wsprdaemon ALL=(ALL) NOPASSWD: ALL
 Install **git** and then clone the wsprdaemon repository:
 
 ```
-sudo apt install git  
-cd \~  
-git clone https://github.com/rrobinett/wsprdaemon.git  
-cd wsprdaemon  
-./wsprdaemon.sh \-V
+      sudo apt install git  
+      cd \~  
+      git clone https://github.com/rrobinett/wsprdaemon.git  
+      cd wsprdaemon  
+      ./wsprdaemon.sh \-V
 ```
 
 This will run the setup script and create a template configuration file for you to edit.
