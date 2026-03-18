@@ -1,77 +1,275 @@
-## WSPRDaemon _aka WD_ Installation and Configuration - _includes ka9q-radio_  
+# Installing and Configuring wsprdaemon
 
-> **Note** The below is <ins>my</ins> interpretation of the configuration process. The <ins>official</ins> instructions are
-[WSPRDaemon Installation and Configuration](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
+## Table of Contents
+1. [Installing wsprdaemon](#1-installing-wsprdaemon)
+2. [Configuring wsprdaemon](#2-configuring-wsprdaemon)
+3. [Setting up the GPS Disciplined Oscillator](#3-setting-up-the-gps-disciplined-oscillator)
+4. [Setting up wsprdaemon to Run on the PSWS Computer](#4-setting-up-wsprdaemon-to-run-on-the-psws-computer)
 
-WSPRDaemon Github Source & Information:  
-[Github](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
-[WSPRDaemon](https://wsprdaemon.readthedocs.io/en/latest/)  
+---
 
+## 1. Installing wsprdaemon
 
-1. Login as user _wsprdaemon_
-> **Note** This assumes you have set the user _wsprdeamon_ to not require _sudo_ per the installation instructions. If you haven't, [go back](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md) and complete that step.  
+Install prerequisite tools and utilities. Type `y` to agree to any prompts.
 
-2. Clone the _wsprdaemon_ github repository
+```bash
+sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libnss-mdns mdns-scan \
+  avahi-utils avahi-discover build-essential make cmake gcc libairspy-dev libairspyhf-dev \
+  libavahi-client-dev libbsd-dev libfftw3-dev libhackrf-dev libiniparser-dev libncurses5-dev \
+  libopus-dev librtlsdr-dev libusb-1.0-0-dev libusb-dev portaudio19-dev libasound2-dev uuid-dev \
+  rsync sox libsox-fmt-all opus-tools flac tcpdump libhdf5-dev libsamplerate-dev
 ```
-   $cd ~
-   $git clone https://github.com/rrobinett/wsprdaemon.git
-   $cd wsprdaemon
-   $./wsprdaemon.sh -V
+
+### Configure passwordless sudo
+
+Install neovim and edit the sudoers file:
+
+```bash
+sudo apt install neovim
+sudo nvim /etc/sudoers.d/wsprsudo
 ```
 
-> **Note:** While the wsprdaemon.git repository is _public_, git can fail to recognize this and will challenge you for a user name and password. This may fail due to password authorization being disallowed at the command line. If this occurs, issue these two commands:\
-```
-   $git config --global --unset credential.helper\
-   $GIT_TERMINAL_PROMPT=0 git clone https://github.com/rrobinett/wsprdaemon.git
-```  
-2. In the wsprdaemon directory open the configuration file in the Nano text editor
-```
-   $nano wsprdaemon.conf
-```  
-> **Note:** Adjust these configuration items to match your PSWS PC environment. Refer to the [WSPRDaemon documents](https://wsprdaemon.readthedocs.io/en/master/configuration/wsprdaemon.conf.d/wsprdaemon.conf.html)
+In neovim, press `i` to enter insert mode and type:
 
 ```
-!/bin/bash
+wsprdaemon ALL=(ALL) NOPASSWD: ALL
+```
 
-WSPRNET_REPORTER_ID="<YOUR_CALL>"  ###Ex. WSPRNET_REPORTER_ID="W1AW"
-REPORTER_GRID="<YOUR_GRID>"  ###Ex. REPORTER_GRID="FN20"
+Press `Esc`, then type `:wq!` to save and exit.
+> `w` = save, `q` = quit, `!` = force (required since the directory is protected)
 
-WSPRNET_REPORTER_ID="${WSPRNET_REPORTER_ID-<NOT_DEFINED>}"  ### The ID of spots uploaded to wsprnet.org by this site
+### Clone the wsprdaemon repository
+
+```bash
+sudo apt install git
+cd ~
+git clone https://github.com/rrobinett/wsprdaemon.git
+cd wsprdaemon
+./wsprdaemon.sh -V
+```
+
+---
+
+## 2. Configuring wsprdaemon
+
+From inside your `~/wsprdaemon` directory, open the configuration file:
+
+```bash
+nvim wsprdaemon.conf
+```
+
+### Template configuration file
+
+```bash
+#!/bin/bash
+
+### These first two bash variables *must* be changed from their default values.
+### To do so, uncomment the following two lines by removing the leading '#' and change the "<....>" fields
+# WSPRNET_REPORTER_ID="<YOUR_REPORTER_ID>
+# REPORTER_GRID="<YOUR_GRID>" #Ex. REPORTER_GRID="FN20vr" (NJIT's GRID Location)
+
+
+WSPRNET_REPORTER_ID="${WSPRNET_REPORTER_ID-<NOT_DEFINED>}"
 REPORTER_GRID="${REPORTER_GRID-<NOT_DEFINED>}"
-ANTENNA_DESCRIPTION="<YOUR_ANTENNA>"  ###Ex. ANTENNA_DESCRIPTION="Longwire"
+ANTENNA_DESCRIPTION="<NOT_DEFINED>"
 
 KA9Q_WEB_TITLE="${WSPRNET_REPORTER_ID}_@${REPORTER_GRID}_${ANTENNA_DESCRIPTION}"
 
-### WD stations contirbuting to the HamSCI.org Personal Space Weather Project obtain these values from their dashboard at https://pswsnetwork.caps.ua.edu
-PSWS_STATION_ID="<YOUR_PSWS_STATION_ID>" #Ex. PSWS_STATION_ID="S000333"
-PSWS_DEVICE_ID="<YOUR_PSWS_DEVICE_ID>" #Ex. PSWS_DEVICE_ID="352"
+# WD stations contributing to the HamSCI.org Personal Space Weather Project obtain these values from their dashboard at https://pswsnetwork.caps.ua.edu
+# PSWS_STATION_ID="<PSWS_STATION_ID>"
+# PSWS_DEVICE_ID="<PSWS_DEVICE_ID>"
 
-### The default is to upload extented spot and background noise level data to wsprdaemon.org.
 # SIGNAL_LEVEL_UPLOAD="no"
 
-## If "yes" the site uploads a 150 KByte .png file to wsprnet.org where it can be viewed at http://wsprdaemon.org/graphs/${WSPRNET_REPORTER_ID}/
-## Since better, configurable Grafana graphs are available from the wsprdeamon.org, to conserve your site's Internet usage I now discourage the use of this feature
 #SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"
 
 declare RECEIVER_LIST=(
-        "KA9Q_0                     wspr-pcm.local     ${WSPRNET_REPORTER_ID}        ${REPORTER_GRID}    <SDR_PASSWORD_IF_NEEDED>"
-        "KA9Q_0_WWV                   wwv-iq.local     ${WSPRNET_REPORTER_ID}        ${REPORTER_GRID}    <SDR_PASSWORD_IF_NEEDED>"
+        "KA9Q_0         wspr-pcm.local  ${WSPRNET_REPORTER_ID}  ${REPORTER_GRID}  <SDR_PASSWORD_IF_NEEDED>"
+        "KA9Q_0_WWV     wwv-iq.local    ${WSPRNET_REPORTER_ID}  ${REPORTER_GRID}  <SDR_PASSWORD_IF_NEEDED>"
 )
 
-### Here are two examples of WSPR_SCHEDULEs.  Much more complex SDR configurations and schedules are desribed in wd_template_full.conf
 declare WSPR_SCHEDULE_only_rx888=(
-    "00:00             KA9Q_0,2200,W2:F2:F5:F15:F30  KA9Q_0,630,W2:F2:F5  KA9Q_0,160,W2:F2:F5   KA9Q_0,80,W2:F2:F5  KA9Q_0,80eu,W2:F2:F5  KA9Q_0,60,W2:F2:F5  KA9Q_0,60eu,W2:F2:F5  KA9Q_0,40,W2:F2:F5
-                       KA9Q_0,30,W2:F2:F5            KA9Q_0,22,W2         KA9Q_0,20,W2:F2:F5    KA9Q_0,17,W2:F2:F5  KA9Q_0,15,W2:F2:F5    KA9Q_0,12,W2:F2:F5  KA9Q_0,10,W2:F2:F5    KA9Q_0,6,W2:F2:F5
+    "00:00   KA9Q_0,2200,W2:F2:F5:F15:F30  KA9Q_0,630,W2:F2:F5   KA9Q_0,160,W2:F2:F5  KA9Q_0,80,W2:F2:F5
+             KA9Q_0,80eu,W2:F2:F5          KA9Q_0,60,W2:F2:F5    KA9Q_0,60eu,W2:F2:F5 KA9Q_0,40,W2:F2:F5
+             KA9Q_0,30,W2:F2:F5            KA9Q_0,22,W2          KA9Q_0,20,W2:F2:F5   KA9Q_0,17,W2:F2:F5
+             KA9Q_0,15,W2:F2:F5            KA9Q_0,12,W2:F2:F5    KA9Q_0,10,W2:F2:F5   KA9Q_0,6,W2:F2:F5
 
-                       KA9Q_0_WWV,WWVB,I1            KA9Q_0_WWV,WWV_2_5,I1  KA9Q_0_WWV,WWV_5,I1  KA9Q_0_WWV,WWV_10,I1   KA9Q_0_WWV,WWV_15,I1  KA9Q_0_WWV,WWV_20,I1  KA9Q_0_WWV,WWV_25,I1
-                       KA9Q_0_WWV,CHU_3,I1           KA9Q_0_WWV,CHU_7,I1    KA9Q_0_WWV,CHU_14,I1"
+             KA9Q_0_WWV,WWVB,I1            KA9Q_0_WWV,WWV_2_5,I1 KA9Q_0_WWV,WWV_5,I1  KA9Q_0_WWV,WWV_10,I1
+             KA9Q_0_WWV,WWV_15,I1          KA9Q_0_WWV,WWV_20,I1  KA9Q_0_WWV,WWV_25,I1
+             KA9Q_0_WWV,CHU_3,I1           KA9Q_0_WWV,CHU_7,I1   KA9Q_0_WWV,CHU_14,I1"
 )
 
-### Configure the Kiwi in 8 channel mode and this WSPR_SCHEDULE configuration will use the 6 audio-only Kiwi channels to record spots on the most trafficed WSPR bands
-###    while leaving the 2 Kiwi waterfall channels free for listeners
-
-### Default to use the WSPR_SCHEDULE_only_rx888 schedule
 declare WSPR_SCHEDULE=( "${WSPR_SCHEDULE_only_rx888[@]}" )
-
-### Source: https://hamsci.jmclynch.org/wsprdaemon-install.html
 ```
+
+### Required edits
+
+| Line | Action |
+|------|--------|
+| 5 | Uncomment and replace `<YOUR_REPORTER_ID>` with your FCC call sign (or club/university call sign, or a short nickname) |
+| 6 | Uncomment and replace `<YOUR_GRID>` with your [grid square](https://www.qrz.com/gridmapper) — looks like `AA11aa` |
+| 14 | Optionally update `ANTENNA_DESCRIPTION` (e.g., `80m Dipole`) |
+| 19–20 | Uncomment and fill in `PSWS_STATION_ID` and `PSWS_DEVICE_ID` (see below) |
+| 27 | Uncomment `SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"` |
+
+### Setting up your PSWS account
+
+1. Create an account at the [PSWS Central Control System](https://pswsnetwork.caps.ua.edu)
+2. Go to the **Station** tab and click **Add New Station**
+3. Fill out the form *(only Station Nickname and Grid Square are required)*:
+   - **Station Nickname:** Include your call sign and organization if applicable
+   - **Grid Square:** Same as in the config file
+   - **Elevation:** Meters above sea level
+   - **Antenna:** Type of antenna installed
+   - Add address and contact info, then click **Add Station**
+4. From **View My Stations**, note your **Station ID** (e.g., `S000111`)
+5. Click **Add New Instrument** and fill out the form *(Instrument and Instrument Type are required)*:
+
+| Field | Description |
+|-------|-------------|
+| Instrument | Describe your instrument (e.g., `RX-888 MK II - Beelink Mini PC`) |
+| Date Instrument Added | Date you connect the instrument to the PSWS server |
+| Date Instrument Removed | Date you shut down the instrument |
+| Nickname | Useful if you have multiple identical instruments |
+| Serial Number | Instrument serial number |
+| Status | `Operational` or `Inactive` |
+| Instrument Type | Select `rx888` from the drop-down |
+
+6. Click **Add Instrument** and note your **Instrument ID** (e.g., `111`)
+
+### Example completed configuration
+
+```bash
+#!/bin/bash
+
+WSPRNET_REPORTER_ID="XX7XXX"
+REPORTER_GRID="AA11aa"
+
+WSPRNET_REPORTER_ID="${WSPRNET_REPORTER_ID-<NOT_DEFINED>}"
+REPORTER_GRID="${REPORTER_GRID-<NOT_DEFINED>}"
+ANTENNA_DESCRIPTION="<NOT_DEFINED>"
+
+KA9Q_WEB_TITLE="${WSPRNET_REPORTER_ID}_@${REPORTER_GRID}_${ANTENNA_DESCRIPTION}"
+
+PSWS_STATION_ID="S000111"
+PSWS_DEVICE_ID="111"
+
+# SIGNAL_LEVEL_UPLOAD="no"
+
+SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"
+
+declare RECEIVER_LIST=(
+        "KA9Q_0         wspr-pcm.local  ${WSPRNET_REPORTER_ID}  ${REPORTER_GRID}  <SDR_PASSWORD_IF_NEEDED>"
+        "KA9Q_0_WWV     wwv-iq.local    ${WSPRNET_REPORTER_ID}  ${REPORTER_GRID}  <SDR_PASSWORD_IF_NEEDED>"
+)
+
+declare WSPR_SCHEDULE_only_rx888=(
+    "00:00   KA9Q_0,2200,W2:F2:F5:F15:F30  KA9Q_0,630,W2:F2:F5   KA9Q_0,160,W2:F2:F5  KA9Q_0,80,W2:F2:F5
+             KA9Q_0,80eu,W2:F2:F5          KA9Q_0,60,W2:F2:F5    KA9Q_0,60eu,W2:F2:F5 KA9Q_0,40,W2:F2:F5
+             KA9Q_0,30,W2:F2:F5            KA9Q_0,22,W2          KA9Q_0,20,W2:F2:F5   KA9Q_0,17,W2:F2:F5
+             KA9Q_0,15,W2:F2:F5            KA9Q_0,12,W2:F2:F5    KA9Q_0,10,W2:F2:F5   KA9Q_0,6,W2:F2:F5
+
+             KA9Q_0_WWV,WWVB,I1            KA9Q_0_WWV,WWV_2_5,I1 KA9Q_0_WWV,WWV_5,I1  KA9Q_0_WWV,WWV_10,I1
+             KA9Q_0_WWV,WWV_15,I1          KA9Q_0_WWV,WWV_20,I1  KA9Q_0_WWV,WWV_25,I1
+             KA9Q_0_WWV,CHU_3,I1           KA9Q_0_WWV,CHU_7,I1   KA9Q_0_WWV,CHU_14,I1"
+)
+
+declare WSPR_SCHEDULE=( "${WSPR_SCHEDULE_only_rx888[@]}" )
+```
+
+Once editing is complete, press `Esc`, then type `:wq!` to save.
+
+### Run the installer
+
+```bash
+./wsprdaemon.sh -V
+```
+
+> ⚠️ This will install many packages and may take **several hours** to complete.
+
+When finished, you should see a message like:
+> *"ka9q-radio added your user to the radio group, log out and log back in to save changes"*
+
+**If you receive an error** such as `Update_ini_file_section_variable /etc/radio .....`:
+
+1. Run `./wsprdaemon.sh -V` again
+2. If the error persists, reboot:
+
+```bash
+sudo reboot now
+```
+
+Then re-run:
+
+```bash
+cd ~/wsprdaemon
+./wsprdaemon.sh -V
+```
+
+Once complete, you should get a prompt indicating the **RX-888 MkII is not attached to a USB port** — this is expected at this stage.
+
+---
+
+
+
+## 4. Setting up wsprdaemon to Run on the PSWS Computer
+
+### Final installation run
+
+```bash
+./wsprdaemon.sh -V
+```
+
+When prompted:
+```
+Enter file in which to save the key (/home/wsprdaemon/.ssh/id_ed25519):
+```
+Press **Enter** 3–4 times, including when asked for a passphrase.
+
+### Register with the PSWS server
+
+> The PSWS website is currently under construction. To be manually added to the server, email **wdengelke@retiree.ua.edu** with:
+> Your generated SSH public key
+> Your station details
+
+### Enable services and reboot
+
+```bash
+sudo systemctl enable radiod@rx888-wsprdaemon
+sudo systemctl enable ft8-decode.service
+sudo systemctl enable ft4-decode.service
+sudo reboot now
+```
+
+Then run:
+
+```bash
+cd ~/wsprdaemon
+./wsprdaemon.sh -V
+```
+
+This time, the version number should print to the console.
+
+### Start wsprdaemon
+
+This time, it should print out the version number on the console.
+Once that happens  
+```bash
+wd -A        # Start wsprdaemon and add it as a login startup item
+wdg p        # Initialize PSWS recording
+```  
+
+If you run into any errors, you can reference the wsprdaemon Operation Guide.  
+Then, to confirm that the server is running, run wds into the console. Then, you should get a display like this:
+<img width="812" height="1267" alt="image" src="https://github.com/user-attachments/assets/e2f983be-cc8b-4a28-b341-6f569bcc1c7b" />
+
+
+> If you encounter errors, refer to the [wsprdaemon Operation Guide](https://github.com/rrobinett/wsprdaemon).
+
+### Verify operation
+
+```bash
+wds
+```
+
+You should see a status display showing all running jobs and daemons and your server should also now show up as active on the [PSWS Website](https://pswsnetwork.caps.ua.edu/home)
