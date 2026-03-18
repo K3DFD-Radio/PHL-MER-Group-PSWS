@@ -73,15 +73,15 @@
 ### Auto-start tmux session for PSWS monitoring and create the session if it does't exist
 1. Edit the _wsprdaemon_ user's ~/.bash_profile and add the following lines
 ```
-if [[ -z "$TMUX" ]] && [[ $(tty) == "/dev/tty1" ]]; then
-    if ! tmux has-session -t psws 2>/dev/null; then
-        tmux new-session -d -s psws -n monitoring 'btop'
-        tmux new-window -t psws -n wsprdaemon
-        tmux new-window -t psws -n bash
-        tmux select-window -t psws:bash
-    fi
-    tmux attach-session -t psws
-fi
+      if [[ -z "$TMUX" ]] && [[ $(tty) == "/dev/tty1" ]]; then
+          if ! tmux has-session -t psws 2>/dev/null; then
+              tmux new-session -d -s psws -n monitoring 'btop'
+              tmux new-window -t psws -n wsprdaemon
+              tmux new-window -t psws -n bash
+              tmux select-window -t psws:bash
+          fi
+          tmux attach-session -t psws
+      fi               
 ```
 2. Save ~/.bash_profile
 
@@ -94,14 +94,14 @@ fi
 ### Dependency and Library Updates and Installations
 1. There are a large number of dependencies and tools to be installed. 
 ```
-$sudo apt update && sudo apt install -y \
-avahi-daemon avahi-discover avahi-utils btop build-essential \
-flac gcc git iputils-ping libairspy-dev libairspyhf-dev \
-libbsd-dev libfftw3-dev libhdf5-dev libiniparser-dev \
-libmp3lame-dev libncurses-dev libogg-dev libopus-dev \
-libopusfile-dev librtlsdr-dev libsamplerate-dev libsox-fmt-all \
-libusb-1.0-0-dev libvorbis-dev mdns-scan net-tools nmap \
-opus-tools portaudio19-dev tmux uuid-dev
+      $sudo apt update && sudo apt install -y \
+      avahi-daemon avahi-discover avahi-utils btop build-essential \
+      flac gcc git iputils-ping libairspy-dev libairspyhf-dev \
+      libbsd-dev libfftw3-dev libhdf5-dev libiniparser-dev \
+      libmp3lame-dev libncurses-dev libogg-dev libopus-dev \
+      libopusfile-dev librtlsdr-dev libsamplerate-dev libsox-fmt-all \
+      libusb-1.0-0-dev libvorbis-dev mdns-scan net-tools nmap \
+      opus-tools portaudio19-dev tmux uuid-dev
 ```
 2. Perform the above dependency and utils installations. Should wsprdaemon (and possibly ka9q-radio) fail to run due to an unsatisfied dependency, it is most likely caused by a _legacy_ version not being installed. In this case, refer to the table of dependencies in this [Legacy Library Link](https://docs.google.com/document/d/1jV4VKLIG7WG_zo5QeVL_GuvDyBTwUfN-SVxozEXIAcE/edit?usp=sharing) and install each one.
 
