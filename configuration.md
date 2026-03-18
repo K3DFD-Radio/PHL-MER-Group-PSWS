@@ -10,14 +10,14 @@
 
 ## 1. Installing wsprdaemon
 
-Install prerequisite tools and utilities. Type `y` to agree to any prompts.
+###Install prerequisite tools and utilities. Type `y` to agree to any prompts.
 
 ```bash
-sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libnss-mdns mdns-scan \
-  avahi-utils avahi-discover build-essential make cmake gcc libairspy-dev libairspyhf-dev \
-  libavahi-client-dev libbsd-dev libfftw3-dev libhackrf-dev libiniparser-dev libncurses5-dev \
-  libopus-dev librtlsdr-dev libusb-1.0-0-dev libusb-dev portaudio19-dev libasound2-dev uuid-dev \
-  rsync sox libsox-fmt-all opus-tools flac tcpdump libhdf5-dev libsamplerate-dev
+      sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libnss-mdns mdns-scan \
+      avahi-utils avahi-discover build-essential make cmake gcc libairspy-dev libairspyhf-dev \
+      libavahi-client-dev libbsd-dev libfftw3-dev libhackrf-dev libiniparser-dev libncurses5-dev \
+      libopus-dev librtlsdr-dev libusb-1.0-0-dev libusb-dev portaudio19-dev libasound2-dev uuid-dev \
+      rsync sox libsox-fmt-all opus-tools flac tcpdump libhdf5-dev libsamplerate-dev
 ```
 
 ### Configure passwordless sudo
@@ -25,14 +25,14 @@ sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libn
 Install neovim and edit the sudoers file:
 
 ```bash
-sudo apt install neovim
-sudo nvim /etc/sudoers.d/wsprsudo
+      sudo apt install neovim
+      sudo nvim /etc/sudoers.d/wsprsudo
 ```
 
 In neovim, press `i` to enter insert mode and type:
 
 ```
-wsprdaemon ALL=(ALL) NOPASSWD: ALL
+      wsprdaemon ALL=(ALL) NOPASSWD: ALL
 ```
 
 Press `Esc`, then type `:wq!` to save and exit.
@@ -41,11 +41,11 @@ Press `Esc`, then type `:wq!` to save and exit.
 ### Clone the wsprdaemon repository
 
 ```bash
-sudo apt install git
-cd ~
-git clone https://github.com/rrobinett/wsprdaemon.git
-cd wsprdaemon
-./wsprdaemon.sh -V
+      sudo apt install git
+      cd ~
+      git clone https://github.com/rrobinett/wsprdaemon.git
+      cd wsprdaemon
+      ./wsprdaemon.sh -V
 ```
 
 ---
@@ -55,51 +55,51 @@ cd wsprdaemon
 From inside your `~/wsprdaemon` directory, open the configuration file:
 
 ```bash
-nvim wsprdaemon.conf
+      nano wsprdaemon.conf
 ```
 
 ### Template configuration file
 
 ```bash
-#!/bin/bash
-
-### These first two bash variables *must* be changed from their default values.
-### To do so, uncomment the following two lines by removing the leading '#' and change the "<....>" fields
-# WSPRNET_REPORTER_ID="<YOUR_REPORTER_ID>
-# REPORTER_GRID="<YOUR_GRID>" #Ex. REPORTER_GRID="FN20vr" (NJIT's GRID Location)
-
-
-WSPRNET_REPORTER_ID="${WSPRNET_REPORTER_ID-<NOT_DEFINED>}"
-REPORTER_GRID="${REPORTER_GRID-<NOT_DEFINED>}"
-ANTENNA_DESCRIPTION="<NOT_DEFINED>"
-
-KA9Q_WEB_TITLE="${WSPRNET_REPORTER_ID}_@${REPORTER_GRID}_${ANTENNA_DESCRIPTION}"
-
-# WD stations contributing to the HamSCI.org Personal Space Weather Project obtain these values from their dashboard at https://pswsnetwork.caps.ua.edu
-# PSWS_STATION_ID="<PSWS_STATION_ID>"
-# PSWS_DEVICE_ID="<PSWS_DEVICE_ID>"
-
-# SIGNAL_LEVEL_UPLOAD="no"
-
-#SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"
-
-declare RECEIVER_LIST=(
-        "KA9Q_0         wspr-pcm.local  ${WSPRNET_REPORTER_ID}  ${REPORTER_GRID}  <SDR_PASSWORD_IF_NEEDED>"
-        "KA9Q_0_WWV     wwv-iq.local    ${WSPRNET_REPORTER_ID}  ${REPORTER_GRID}  <SDR_PASSWORD_IF_NEEDED>"
-)
-
-declare WSPR_SCHEDULE_only_rx888=(
-    "00:00   KA9Q_0,2200,W2:F2:F5:F15:F30  KA9Q_0,630,W2:F2:F5   KA9Q_0,160,W2:F2:F5  KA9Q_0,80,W2:F2:F5
-             KA9Q_0,80eu,W2:F2:F5          KA9Q_0,60,W2:F2:F5    KA9Q_0,60eu,W2:F2:F5 KA9Q_0,40,W2:F2:F5
-             KA9Q_0,30,W2:F2:F5            KA9Q_0,22,W2          KA9Q_0,20,W2:F2:F5   KA9Q_0,17,W2:F2:F5
-             KA9Q_0,15,W2:F2:F5            KA9Q_0,12,W2:F2:F5    KA9Q_0,10,W2:F2:F5   KA9Q_0,6,W2:F2:F5
-
-             KA9Q_0_WWV,WWVB,I1            KA9Q_0_WWV,WWV_2_5,I1 KA9Q_0_WWV,WWV_5,I1  KA9Q_0_WWV,WWV_10,I1
-             KA9Q_0_WWV,WWV_15,I1          KA9Q_0_WWV,WWV_20,I1  KA9Q_0_WWV,WWV_25,I1
-             KA9Q_0_WWV,CHU_3,I1           KA9Q_0_WWV,CHU_7,I1   KA9Q_0_WWV,CHU_14,I1"
-)
-
-declare WSPR_SCHEDULE=( "${WSPR_SCHEDULE_only_rx888[@]}" )
+      #!/bin/bash
+      
+      ### These first two bash variables *must* be changed from their default values.
+      ### To do so, uncomment the following two lines by removing the leading '#' and change the "<....>" fields
+      # WSPRNET_REPORTER_ID="<YOUR_REPORTER_ID>
+      # REPORTER_GRID="<YOUR_GRID>" #Ex. REPORTER_GRID="FN20vr" (NJIT's GRID Location)
+      
+      
+      WSPRNET_REPORTER_ID="${WSPRNET_REPORTER_ID-<NOT_DEFINED>}"
+      REPORTER_GRID="${REPORTER_GRID-<NOT_DEFINED>}"
+      ANTENNA_DESCRIPTION="<NOT_DEFINED>"
+      
+      KA9Q_WEB_TITLE="${WSPRNET_REPORTER_ID}_@${REPORTER_GRID}_${ANTENNA_DESCRIPTION}"
+      
+      # WD stations contributing to the HamSCI.org Personal Space Weather Project obtain these values from their dashboard at https://pswsnetwork.caps.ua.edu
+      # PSWS_STATION_ID="<PSWS_STATION_ID>"
+      # PSWS_DEVICE_ID="<PSWS_DEVICE_ID>"
+      
+      # SIGNAL_LEVEL_UPLOAD="no"
+      
+      #SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"
+      
+      declare RECEIVER_LIST=(
+              "KA9Q_0         wspr-pcm.local  ${WSPRNET_REPORTER_ID}  ${REPORTER_GRID}  <SDR_PASSWORD_IF_NEEDED>"
+              "KA9Q_0_WWV     wwv-iq.local    ${WSPRNET_REPORTER_ID}  ${REPORTER_GRID}  <SDR_PASSWORD_IF_NEEDED>"
+      )
+      
+      declare WSPR_SCHEDULE_only_rx888=(
+          "00:00   KA9Q_0,2200,W2:F2:F5:F15:F30  KA9Q_0,630,W2:F2:F5   KA9Q_0,160,W2:F2:F5  KA9Q_0,80,W2:F2:F5
+                   KA9Q_0,80eu,W2:F2:F5          KA9Q_0,60,W2:F2:F5    KA9Q_0,60eu,W2:F2:F5 KA9Q_0,40,W2:F2:F5
+                   KA9Q_0,30,W2:F2:F5            KA9Q_0,22,W2          KA9Q_0,20,W2:F2:F5   KA9Q_0,17,W2:F2:F5
+                   KA9Q_0,15,W2:F2:F5            KA9Q_0,12,W2:F2:F5    KA9Q_0,10,W2:F2:F5   KA9Q_0,6,W2:F2:F5
+      
+                   KA9Q_0_WWV,WWVB,I1            KA9Q_0_WWV,WWV_2_5,I1 KA9Q_0_WWV,WWV_5,I1  KA9Q_0_WWV,WWV_10,I1
+                   KA9Q_0_WWV,WWV_15,I1          KA9Q_0_WWV,WWV_20,I1  KA9Q_0_WWV,WWV_25,I1
+                   KA9Q_0_WWV,CHU_3,I1           KA9Q_0_WWV,CHU_7,I1   KA9Q_0_WWV,CHU_14,I1"
+      )
+      
+      declare WSPR_SCHEDULE=( "${WSPR_SCHEDULE_only_rx888[@]}" )
 ```
 
 ### Required edits
