@@ -87,10 +87,10 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 ### **Log In and Update the System**
 
 Log in with the username and password you created. Then run the following commands to update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:
-
+```
 > sudo apt update  
 > sudo apt upgrade
-
+```
 Wait for each command to finish — you'll know it's done when the terminal prompt reappears as \[username\]@\[server-name\]:\~$.
 
 Next, disable **snap** (a software management tool that can auto-update programs and interfere with wsprdaemon's scripts):
