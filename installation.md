@@ -26,23 +26,23 @@
       sudo usermod -aG sudo wsprdaemon
 ```
 3. Update the OS
-```      
+```bash      
       sudo apt update
       sudo apt update
 ```
 4. Disable Snap if installed and running
-``` 
+```bash 
       sudo apt autoremove --purge snapd gnome-software-plugin-snap
       sudo apt-mark hold snapd
 ```
 5. If not automatically created, create a wsprdaemon home directory and set permissions
-```
+```bash
       sudo mkdir /home/wsprdaemon
       sudo chown wsprdaemon:wsprdaemon /home/wsprdaemon
       sudo chmod 755 /home/wsprdaemon
 ```
 6. As a precaution, force change your shell evironment to _bash_ instead of _sh_
-```
+```bash
       sudo chsh -s /bin/bash wsprdaemon
 ```
 7. Exit and log back in again as user _wsprdaemon_
@@ -50,7 +50,7 @@
 ### Set the system up for automatic reboot in case of power failure. 
 > ** Note ** This is optional for systems without battery backup
 1. Create systemd override directory
-```
+```bash
       sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
       sudo nano /etc/systemd/system/getty@tty1.service.d/autologin.conf
       sudo systemctl daemon-reload
@@ -58,11 +58,11 @@
 ```
 ### Establish a TMux session to run wsprdaemon and btop monitoring. This session starts when wsprdaemon logs in
 1. Install TMux
-```
+```bash
       sudo apt install tmux
 ```
 3. Install Btop
-```
+```bash
       sudo apt install btop
 ```
 4. Edit _wsprdaemon_ user environment to start _wsprdaemon_ and _btop_
@@ -72,7 +72,7 @@
 
 ### Auto-start tmux session for PSWS monitoring and create the session if it does't exist
 1. Edit the _wsprdaemon_ user's ~/.bash_profile and add the following lines
-```
+```bash
       if [[ -z "$TMUX" ]] && [[ $(tty) == "/dev/tty1" ]]; then
           if ! tmux has-session -t psws 2>/dev/null; then
               tmux new-session -d -s psws -n monitoring 'btop'
@@ -86,14 +86,14 @@
 2. Save ~/.bash_profile
 
 3. Test
-```
+```bash
       exit
 ```
 4. If this test fails and tmux does not start, edit the ~/.bashrc with the same lines and $exit again
 
 ### Dependency and Library Updates and Installations
 1. There are a large number of dependencies and tools to be installed. 
-```
+```bash
       $sudo apt update && sudo apt install -y \
       avahi-daemon avahi-discover avahi-utils btop build-essential \
       flac gcc git iputils-ping libairspy-dev libairspyhf-dev \
@@ -106,7 +106,7 @@
 2. Perform the above dependency and utils installations. Should wsprdaemon (and possibly ka9q-radio) fail to run due to an unsatisfied dependency, it is most likely caused by a _legacy_ version not being installed. In this case, refer to the table of dependencies in this [Legacy Library Link](https://docs.google.com/document/d/1jV4VKLIG7WG_zo5QeVL_GuvDyBTwUfN-SVxozEXIAcE/edit?usp=sharing) and install each one.
 
 3. Install an ssh server and start it. This is to allow access for administration from authorized clients. Suggest Putty ssh client.
-```
+```bash
       sudo systemctl enable ssh
       sudo systemctl start ssh
       sudo systemctl status ssh
@@ -114,25 +114,25 @@
 4. Confirm that ssh is running. Look for message 'Starting ssh.server - Open BSD Secure Shell server... Server listening on 0.0.0.0 port 22
 
 5. Configure UFW to allow ssh on port 22
-   ```
+   ```bash
       sudo ufw allow ssh
       sudo ufw enable ssh
       sudo ufw status
    ```
 6. Get the PC's IP address and note it
-```
+```bash
       ip addr show
 ```
 7. Next, to configure the system to run sudo commands without a password, add text to /etc/sudoers.d/wsprsudo using the Nano editor:
-```
+```bash
       sudo nano /etc/sudoers.d/wsprsudo
 ```
 8. Write the following line to the file, save and quit
-```
+```bash
       wsprdaemon ALL=(ALL) NOPASSWD: ALL 
 ```
 > **Note:** If Nano fails with permission errors, use redirect as follow to write directly to the /etc/sudoers.d/wsprsudo file\
-```
+```bash
       touch /etc/sudoers.d/wsprsudo\
       echo "wsprdaemon ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/wsprsudo
 ```
