@@ -51,12 +51,13 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 ### **Running the OS Installer**
 
 1. With the PC powered off, insert the USB drive.  
-2. Power on the PC and immediately and repeatedly press **F7** to enter the Boot Menu. *(If you're using a different PC, look up its boot menu key.)*  
-3. In the Boot Menu, select the USB drive. If both a **UEFI** and a non-UEFI option appear, choose the **UEFI** option.  
-4. A menu will appear. Select **Try or Install Ubuntu Server** and press **Enter**. Scrolling text is normal — everything is working.  
-5. Select **English** as your language and press **Space**.  
-6. Leave the keyboard layout at its default and select **Done**.  
-7. Scroll to **Ubuntu Server (minimized)**, select it with **Space**, then move down to **Done** and press **Enter**. 
+2. Power on the PC and immediately and repeatedly press **F7** to enter the Boot Menu.
+   *(If you're using a different PC, look up its boot menu key.)*  
+4. In the Boot Menu, select the USB drive. If both a **UEFI** and a non-UEFI option appear, choose the **UEFI** option.  
+5. A menu will appear. Select **Try or Install Ubuntu Server** and press **Enter**. Scrolling text is normal — everything is working.  
+6. Select **English** as your language and press **Space**.  
+7. Leave the keyboard layout at its default and select **Done**.  
+8. Scroll to **Ubuntu Server (minimized)**, select it with **Space**, then move down to **Done** and press **Enter**. 
 
 ### **Connecting to the Network**
 
