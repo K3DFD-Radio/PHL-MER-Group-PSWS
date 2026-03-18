@@ -6,13 +6,14 @@
 
 ## **Overview**
 
-The HF RX888 WSPRDaemon Receiver is the core HF listening component of the HamSCI Personal Space Weather Station (PSWS). This guide walks through the complete setup: configuring the BIOS, installing Ubuntu Server - with improved usability modifications, setting up the Leo Bodnar GPS-disciplined oscillator and RX-888 MkII SDR, running the wsprdaemon software and connecting to the HamSCI servers.
+The HF RX888 WSPRDaemon Receiver is the core component of the HamSCI Personal Space Weather Station (PSWS). This guide walks you through the complete setup: configuring the PC's BIOS, installing Ubuntu Server - with useful tools and modifications, installing the TAPR RX888 clock kit and thermal pad, setting up the Leo Bodnar GPS-disciplined oscillator, attaching the Turn Island Systems filter-preamp, running the wsprdaemon software and connecting to the HamSCI servers.
 
 ---
 
 ## **Part 1 — BIOS Configuration**
 
-Before installing the OS, you may to configure two important BIOS settings on the Beelink mini PC: fan speed (to prevent overheating) and power-loss behavior (so the system restarts automatically after a power outage). This only applies if you are using the recommended Beelink PC.
+Before installing the OS, you may to configure two important BIOS settings on _your_ PC: fan speed (to prevent overheating) and power-loss behavior (so the system restarts automatically after a power outage).  
+***This only applies if you are using the HamSCI-recommended Beelink PC. Otherwise, make changes as applies to _your_ PC**
 
 1. Plug in the Beelink PC and connect it to a monitor via HDMI or DisplayPort. Connect a keyboard — no mouse is needed.  
 2. Power on the PC and immediately tap **Delete** repeatedly to enter the BIOS setup screen. If the OS boots instead, shut down and try again.  
@@ -86,57 +87,62 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 
 ## **Part 3 — Configuring the Operating System & Create wsprdaemon Uuser**
 
-### **Log In and Update the System**
-1. As a precaution, force change your shell evironment to _bash_ instead of _sh_
+### **Log In, change the shell environment and Update the System**
+1. Log in with the _wsprdaemon_ and _password_ you created when you installed the OS. Then run the following commands: This will change your shell to _bash_ and update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:  
 ```
       sudo chsh -s /bin/bash wsprdaemon
-```
-2. Log in with the _wsprdaemon_ and _password_ you created when you installed the OS. Then run the following commands to update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:
-```
-sudo apt update  
-sudo apt upgrade
-```
-Wait for each command to finish — you'll know it's done when the terminal prompt reappears as \[username\]@\[server-name\]:\~$.
+      sudo apt update  
+      sudo apt upgrade
+```  
+Wait for each command to finish — you'll know it's done when the terminal prompt reappears as \[username\]@\[server-name\]:\~$.  
 
-3. If not automatically created, create a wsprdaemon home directory and set permissions
+**Optional:** Install the **neovim** text editor or just use the Nano editor (suggest using Nano).
+
+```
+sudo apt install neovim
+```  
+
+2. If not automatically created, create a _wsprdaemon_ home directory and set permissions
 ```
       sudo mkdir /home/wsprdaemon
       sudo chown wsprdaemon:wsprdaemon /home/wsprdaemon
       sudo chmod 755 /home/wsprdaemon
 ```
-4. Exit and log back in again as user _wsprdaemon_  
 
 ### Disable **snap** - a software management tool that can auto-update programs and interfere with wsprdaemon's scripts:
+1. Disable _snap_
 ```
-sudo apt autoremove \--purge snapd gnome-software-plugin-snap  
-sudo apt-mark hold snapd
-```
+      sudo apt autoremove \--purge snapd gnome-software-plugin-snap  
+      sudo apt-mark hold snapd
+```  
 
-### Set the system up for automatic reboot in case of power failure. 
-> ** Note ** This is optional for systems without battery backup
+### Set the system up for automatic reboot in case of power failure.  
+
 1. Create systemd override directory
 ```
       sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
       sudo nano /etc/systemd/system/getty@tty1.service.d/autologin.conf
       sudo systemctl daemon-reload
       sudo systemctl enable getty@tty1.service
-```
-### Establish a TMux session to run wsprdaemon and btop monitoring. This session starts when wsprdaemon logs in
+```  
+
+### Establish a TMux session to run wsprdaemon and btop monitoring. This **TMux** session starts when wsprdaemon logs in  
 1. Install TMux
 ```
       sudo apt install tmux
-```
-3. Install Btop
+```   
+2. Install Btop
 ```
       sudo apt install btop
 ```
-4. Edit _wsprdaemon_ user environment to start _wsprdaemon_ and _btop_
-```
-      nano ~/.bash_profile
-```
 
 ### Auto-start tmux session for PSWS monitoring and create the session if it does't exist
-1. Edit the _wsprdaemon_ user's ~/.bash_profile and add the following lines
+1. Edit _wsprdaemon_ user environment to start _wsprdaemon_ and _btop_
+```
+      nano ~/.bash_profile
+```  
+
+2. Edit the _wsprdaemon_ user's ~/.bash_profile and add the following lines
 ```
 if [[ -z "$TMUX" ]] && [[ $(tty) == "/dev/tty1" ]]; then
     if ! tmux has-session -t psws 2>/dev/null; then
@@ -147,35 +153,25 @@ if [[ -z "$TMUX" ]] && [[ $(tty) == "/dev/tty1" ]]; then
     fi
     tmux attach-session -t psws
 fi
-```
-2. Save ~/.bash_profile
+```  
+3. Save ~/.bash_profile
 
-3. Test
-```
-      exit
-```
-
-
-### **Install Helpful Tools**
-
-1. 
-
-### **Install Prerequisites**
+### **Install Linux/Ubuntu Prerequisites for WSPRDaemon**  
 
 Install the required tools and libraries with the following command (type **y** to any prompts):
-      
 ```
-sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libnss-mdns mdns-scan avahi-utils avahi-discover build-essential make cmake gcc libairspy-dev libairspyhf-dev libavahi-client-dev libbsd-dev libfftw3-dev libhackrf-dev libiniparser-dev libncurses5-dev libopus-dev librtlsdr-dev libusb-1.0-0-dev libusb-dev portaudio19-dev libasound2-dev uuid-dev rsync sox libsox-fmt-all opus-tools flac tcpdump libhdf5-dev libsamplerate-dev
-```
-Optional: Install the **neovim** text editor or just use the Nano editor.
+$sudo apt update && sudo apt install -y \
+avahi-daemon avahi-discover avahi-utils btop build-essential \
+flac gcc git iputils-ping libairspy-dev libairspyhf-dev \
+libbsd-dev libfftw3-dev libhdf5-dev libiniparser-dev \
+libmp3lame-dev libncurses-dev libogg-dev libopus-dev \
+libopusfile-dev librtlsdr-dev libsamplerate-dev libsox-fmt-all \
+libusb-1.0-0-dev libvorbis-dev mdns-scan net-tools nmap \
+opus-tools portaudio19-dev tmux uuid-dev
+```  
+### **Allow Password-Free sudo**  
 
-```
-sudo apt install neovim
-```
-
-### **Allow Password-Free sudo**
-
-wsprdaemon's scripts require the ability to run sudo commands without a password prompt. To configure this:
+wsprdaemon's scripts require the ability to run sudo commands without a password prompt. To configure this:  
 
 1. Open the sudoers configuration file:
 
@@ -189,10 +185,7 @@ sudo nvim /etc/sudoers.d/wsprsudo
 wsprdaemon ALL=(ALL) NOPASSWD: ALL
 ```
 
-4. Press **Escape**, then type :wq\! and press **Enter** to save and exit. *(The \! is needed because the directory is write-protected.)*
-
-5. 
----
+4. Press **Escape**, then type :wq\! and press **Enter** to save and exit. *(The \! is needed because the directory is write-protected.)*  
 
 ## **Part 4 — Installing wsprdaemon**
 
