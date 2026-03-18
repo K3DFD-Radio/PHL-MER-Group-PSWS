@@ -102,8 +102,10 @@ sudo apt-mark hold snapd
 ### **Install Prerequisites**
 
 Install the required tools and libraries with the following command (type **y** to any prompts):
-
-> sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libnss-mdns mdns-scan avahi-utils avahi-discover build-essential make cmake gcc libairspy-dev libairspyhf-dev libavahi-client-dev libbsd-dev libfftw3-dev libhackrf-dev libiniparser-dev libncurses5-dev libopus-dev librtlsdr-dev libusb-1.0-0-dev libusb-dev portaudio19-dev libasound2-dev uuid-dev rsync sox libsox-fmt-all opus-tools flac tcpdump libhdf5-dev libsamplerate-dev
+      
+```
+sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libnss-mdns mdns-scan avahi-utils avahi-discover build-essential make cmake gcc libairspy-dev libairspyhf-dev libavahi-client-dev libbsd-dev libfftw3-dev libhackrf-dev libiniparser-dev libncurses5-dev libopus-dev librtlsdr-dev libusb-1.0-0-dev libusb-dev portaudio19-dev libasound2-dev uuid-dev rsync sox libsox-fmt-all opus-tools flac tcpdump libhdf5-dev libsamplerate-dev
+```
 
 ### **Allow Password-Free sudo**
 
@@ -135,7 +137,6 @@ wsprdaemon ALL=(ALL) NOPASSWD: ALL
 
 Install **git** and then clone the wsprdaemon repository:
 
-bash  
 ```
 sudo apt install git  
 cd \~  
