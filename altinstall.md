@@ -126,7 +126,8 @@ sudo apt install neovim
       sudo systemctl enable getty@tty1.service
 ```  
 
-### Establish a TMux session to run wsprdaemon and btop monitoring. This **TMux** session starts when wsprdaemon logs in  
+### Establish a TMux session to run wsprdaemon and btop monitoring.  
+_This **TMux** session starts when wsprdaemon logs in_    
 1. Install TMux
 ```
       sudo apt install tmux
