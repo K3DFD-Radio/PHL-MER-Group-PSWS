@@ -90,7 +90,6 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 
 Log in with the username and password you created. Then run the following commands to update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:
 
-bash  
 sudo apt update  
 sudo apt upgrade
 
@@ -106,8 +105,7 @@ sudo apt-mark hold snapd
 
 Install the required tools and libraries with the following command (type **y** to any prompts):
 
-bash  
-sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libnss-mdns mdns-scan avahi-utils avahi-discover build-essential make cmake gcc libairspy-dev libairspyhf-dev libavahi-client-dev libbsd-dev libfftw3-dev libhackrf-dev libiniparser-dev libncurses5-dev libopus-dev librtlsdr-dev libusb-1.0-0-dev libusb-dev portaudio19-dev libasound2-dev uuid-dev rsync sox libsox-fmt-all opus-tools flac tcpdump libhdf5-dev libsamplerate-dev
+```sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libnss-mdns mdns-scan avahi-utils avahi-discover build-essential make cmake gcc libairspy-dev libairspyhf-dev libavahi-client-dev libbsd-dev libfftw3-dev libhackrf-dev libiniparser-dev libncurses5-dev libopus-dev librtlsdr-dev libusb-1.0-0-dev libusb-dev portaudio19-dev libasound2-dev uuid-dev rsync sox libsox-fmt-all opus-tools flac tcpdump libhdf5-dev libsamplerate-dev```
 
 ### **Allow Password-Free sudo**
 
