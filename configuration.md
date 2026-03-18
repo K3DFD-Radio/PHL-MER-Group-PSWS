@@ -185,22 +185,24 @@ Once editing is complete, press `Esc`, then type `:wq!` to save.
 ./wsprdaemon.sh -V
 ```
 
-> ⚠️ This will install many packages and may take **several hours** to complete.
+> This will install many packages and could take **several hours** to complete.
 
 When finished, you should see a message like:
 > *"ka9q-radio added your user to the radio group, log out and log back in to save changes"*
 
 **If you receive an error** such as `Update_ini_file_section_variable /etc/radio .....`:
 
-1. Run `./wsprdaemon.sh -V` again
-2. If the error persists, reboot:
+Run the below -
+```bash
+3. ./wsprdaemon.sh -V` again
+4. If the error persists, reboot:
+```
 
 ```bash
 sudo reboot now
 ```
 
 Then re-run:
-
 ```bash
 cd ~/wsprdaemon
 ./wsprdaemon.sh -V
@@ -221,7 +223,7 @@ Once complete, you should get a prompt indicating the **RX-888 MkII is not attac
 ```
 
 When prompted:
-```
+```bash
 Enter file in which to save the key (/home/wsprdaemon/.ssh/id_ed25519):
 ```
 Press **Enter** 3–4 times, including when asked for a passphrase.
