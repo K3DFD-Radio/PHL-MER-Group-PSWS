@@ -87,19 +87,34 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 ## **Part 3 — Configuring the Operating System & create wsprdaemon user**
 
 ### **Log In and Update the System**
-
-1. Log in with the username and password you created when you installed the OS. Then run the following commands to update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:
+1. As a precaution, force change your shell evironment to _bash_ instead of _sh_
+```
+      sudo chsh -s /bin/bash wsprdaemon
+```
+2. Log in with the username and password you created when you installed the OS. Then run the following commands to update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:
 ```
 sudo apt update  
 sudo apt upgrade
 ```
 Wait for each command to finish — you'll know it's done when the terminal prompt reappears as \[username\]@\[server-name\]:\~$.
 
-Next, disable **snap** (a software management tool that can auto-update programs and interfere with wsprdaemon's scripts):
+3. If not automatically created, create a wsprdaemon home directory and set permissions
+```
+      sudo mkdir /home/wsprdaemon
+      sudo chown wsprdaemon:wsprdaemon /home/wsprdaemon
+      sudo chmod 755 /home/wsprdaemon
+```
+4. Exit and log back in again as user _wsprdaemon_  
+
+5. Next, disable **snap** (a software management tool that can auto-update programs and interfere with wsprdaemon's scripts):
 ```
 sudo apt autoremove \--purge snapd gnome-software-plugin-snap  
 sudo apt-mark hold snapd
 ```
+
+### **Install Helpful Tools**
+
+1. 
 
 ### **Install Prerequisites**
 
@@ -132,6 +147,7 @@ wsprdaemon ALL=(ALL) NOPASSWD: ALL
 
 4. Press **Escape**, then type :wq\! and press **Enter** to save and exit. *(The \! is needed because the directory is write-protected.)*
 
+5. 
 ---
 
 ## **Part 4 — Installing wsprdaemon**
