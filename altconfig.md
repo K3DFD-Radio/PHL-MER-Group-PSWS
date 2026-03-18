@@ -274,10 +274,17 @@ This time, the version number should print to the console.
 
 ### Start wsprdaemon
 
+This time, it should print out the version number on the console.
+Once that happens  
 ```bash
 wd -A        # Start wsprdaemon and add it as a login startup item
 wdg p        # Initialize PSWS recording
-```
+```  
+
+If you run into any errors, you can reference the wsprdaemon Operation Guide.  
+Then, to confirm that the server is running, run wds into the console. Then, you should get a display like this:
+<img width="812" height="1267" alt="image" src="https://github.com/user-attachments/assets/e2f983be-cc8b-4a28-b341-6f569bcc1c7b" />
+
 
 > If you encounter errors, refer to the [wsprdaemon Operation Guide](https://github.com/rrobinett/wsprdaemon).
 
