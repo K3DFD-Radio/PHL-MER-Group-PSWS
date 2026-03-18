@@ -84,14 +84,14 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 
 ---
 
-## **Part 3 — Configuring the Operating System & create wsprdaemon user**
+## **Part 3 — Configuring the Operating System & Create wsprdaemon Uuser**
 
 ### **Log In and Update the System**
 1. As a precaution, force change your shell evironment to _bash_ instead of _sh_
 ```
       sudo chsh -s /bin/bash wsprdaemon
 ```
-2. Log in with the username and password you created when you installed the OS. Then run the following commands to update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:
+2. Log in with the _wsprdaemon_ and _password_ you created when you installed the OS. Then run the following commands to update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:
 ```
 sudo apt update  
 sudo apt upgrade
@@ -106,11 +106,55 @@ Wait for each command to finish — you'll know it's done when the terminal prom
 ```
 4. Exit and log back in again as user _wsprdaemon_  
 
-5. Next, disable **snap** (a software management tool that can auto-update programs and interfere with wsprdaemon's scripts):
+### Disable **snap** - a software management tool that can auto-update programs and interfere with wsprdaemon's scripts:
 ```
 sudo apt autoremove \--purge snapd gnome-software-plugin-snap  
 sudo apt-mark hold snapd
 ```
+
+### Set the system up for automatic reboot in case of power failure. 
+> ** Note ** This is optional for systems without battery backup
+1. Create systemd override directory
+```
+      sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+      sudo nano /etc/systemd/system/getty@tty1.service.d/autologin.conf
+      sudo systemctl daemon-reload
+      sudo systemctl enable getty@tty1.service
+```
+### Establish a TMux session to run wsprdaemon and btop monitoring. This session starts when wsprdaemon logs in
+1. Install TMux
+```
+      sudo apt install tmux
+```
+3. Install Btop
+```
+      sudo apt install btop
+```
+4. Edit _wsprdaemon_ user environment to start _wsprdaemon_ and _btop_
+```
+      nano ~/.bash_profile
+```
+
+### Auto-start tmux session for PSWS monitoring and create the session if it does't exist
+1. Edit the _wsprdaemon_ user's ~/.bash_profile and add the following lines
+```
+if [[ -z "$TMUX" ]] && [[ $(tty) == "/dev/tty1" ]]; then
+    if ! tmux has-session -t psws 2>/dev/null; then
+        tmux new-session -d -s psws -n monitoring 'btop'
+        tmux new-window -t psws -n wsprdaemon
+        tmux new-window -t psws -n bash
+        tmux select-window -t psws:bash
+    fi
+    tmux attach-session -t psws
+fi
+```
+2. Save ~/.bash_profile
+
+3. Test
+```
+      exit
+```
+
 
 ### **Install Helpful Tools**
 
