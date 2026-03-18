@@ -88,15 +88,16 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 
 Log in with the username and password you created. Then run the following commands to update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:
 ```
-> sudo apt update  
-> sudo apt upgrade
+sudo apt update  
+sudo apt upgrade
 ```
 Wait for each command to finish — you'll know it's done when the terminal prompt reappears as \[username\]@\[server-name\]:\~$.
 
 Next, disable **snap** (a software management tool that can auto-update programs and interfere with wsprdaemon's scripts):
-
-> sudo apt autoremove \--purge snapd gnome-software-plugin-snap  
-> sudo apt-mark hold snapd
+```
+sudo apt autoremove \--purge snapd gnome-software-plugin-snap  
+sudo apt-mark hold snapd
+```
 
 ### **Install Prerequisites**
 
@@ -110,15 +111,21 @@ wsprdaemon's scripts require the ability to run sudo commands without a password
 
 1. Optional: Install the **neovim** text editor or just use the Nano editor.
 
-> sudo apt install neovim
+```
+sudo apt install neovim
+```
 
 2. Open the sudoers configuration file:
 
->  sudo nvim /etc/sudoers.d/wsprsudo
+```
+sudo nvim /etc/sudoers.d/wsprsudo
+```
 
 3. Enter insert mode and type the following <ins>exactly</ins>:
 
->  wsprdaemon ALL=(ALL) NOPASSWD: ALL
+```
+wsprdaemon ALL=(ALL) NOPASSWD: ALL
+```
 
 4. Press **Escape**, then type :wq\! and press **Enter** to save and exit. *(The \! is needed because the directory is write-protected.)*
 
@@ -129,11 +136,13 @@ wsprdaemon's scripts require the ability to run sudo commands without a password
 Install **git** and then clone the wsprdaemon repository:
 
 bash  
+```
 sudo apt install git  
 cd \~  
 git clone https://github.com/rrobinett/wsprdaemon.git  
 cd wsprdaemon  
 ./wsprdaemon.sh \-V
+```
 
 This will run the setup script and create a template configuration file for you to edit.
 
