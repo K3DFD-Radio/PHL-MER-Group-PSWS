@@ -84,12 +84,6 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 
 ---
 
-## 
-
-## 
-
-## 
-
 ## **Part 3 — Configuring the Operating System**
 
 ### **Log In and Update the System**
