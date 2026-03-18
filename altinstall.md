@@ -51,7 +51,7 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 ### **Running the OS Installer**
 
 1. With the PC powered off, insert the USB drive.  
-2. Power on the PC and immediately and repeatedly press **F7** to enter the Boot Menu.
+2. Power on the PC and immediately and repeatedly press **F7** to enter the Boot Menu.  
    *(If you're using a different PC, look up its boot menu key.)*  
 4. In the Boot Menu, select the USB drive. If both a **UEFI** and a non-UEFI option appear, choose the **UEFI** option.  
 5. A menu will appear. Select **Try or Install Ubuntu Server** and press **Enter**. Scrolling text is normal — everything is working.  
@@ -73,7 +73,8 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 1. If prompted to update the installer, select **Update to the new installer** and wait.  
 2. On the storage configuration screen, **deselect** the option labeled **Set up this disk as an LVM group** (the brackets should be empty). Leave **Use an entire disk** enabled. Select **Done**.  
 3. Review the storage summary and select **Done**, then confirm the destructive action by selecting **Continue**.  
-4. Set up your user account. **Recommended username: wsprdaemon.** Whatever you choose, write down both the username and password. Select **Done**.  
+4. Set up your user account.  
+> **Recommended username: wsprdaemon.** Select **Done**.  
 5. On the Ubuntu Pro screen, select **Skip for Now**.  
 6. Configure SSH if desired (useful if you have a VPN and want remote access), then continue.  
 7. Select any applicable third-party drivers, then **Continue**.  
@@ -83,11 +84,11 @@ You'll need a USB flash drive with at least 8 GB of space and an Ubuntu Server *
 
 ---
 
-## **Part 3 — Configuring the Operating System**
+## **Part 3 — Configuring the Operating System & create wsprdaemon user**
 
 ### **Log In and Update the System**
 
-Log in with the username and password you created. Then run the following commands to update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:
+1. Log in with the username and password you created when you installed the OS. Then run the following commands to update all pre-installed software. You'll be prompted for your password, and may be asked to confirm with **y**:
 ```
 sudo apt update  
 sudo apt upgrade
@@ -107,18 +108,17 @@ Install the required tools and libraries with the following command (type **y** 
 ```
 sudo apt install btop nmap git tmux vim net-tools iputils-ping avahi-daemon libnss-mdns mdns-scan avahi-utils avahi-discover build-essential make cmake gcc libairspy-dev libairspyhf-dev libavahi-client-dev libbsd-dev libfftw3-dev libhackrf-dev libiniparser-dev libncurses5-dev libopus-dev librtlsdr-dev libusb-1.0-0-dev libusb-dev portaudio19-dev libasound2-dev uuid-dev rsync sox libsox-fmt-all opus-tools flac tcpdump libhdf5-dev libsamplerate-dev
 ```
-
-### **Allow Password-Free sudo**
-
-wsprdaemon's scripts require the ability to run sudo commands without a password prompt. To configure this:
-
-1. Optional: Install the **neovim** text editor or just use the Nano editor.
+Optional: Install the **neovim** text editor or just use the Nano editor.
 
 ```
 sudo apt install neovim
 ```
 
-2. Open the sudoers configuration file:
+### **Allow Password-Free sudo**
+
+wsprdaemon's scripts require the ability to run sudo commands without a password prompt. To configure this:
+
+1. Open the sudoers configuration file:
 
 ```
 sudo nvim /etc/sudoers.d/wsprsudo
