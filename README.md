@@ -30,8 +30,8 @@ Integration: [High-quality SMA connection cables](https://www.dxengineering.com/
 |------|--------|--------|
 | RX888 MkII SDR | [OpenSourceLabs](https://opensourcesdrlab.com/products/rx888-mkii-16bit-sdr-receiver-radio-ltc2208-adc-upgrade-rx888-1) | * |
 | RX888 Drivers | * | * |
-| GPS DO | [Leo Bodner LBE-1420](https://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=393&zenid=0c06e05cfbe1ec87514a52daab4ec452)  | * |
-
+| GPS Clock | [Leo Bodner LBE-1420](https://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=393&zenid=0c06e05cfbe1ec87514a52daab4ec452)  | * |
+| Filter-Preamp | [Turn Island Systems Low pass filter and preamp](https://turnislandsystems.com/product/filter-preamp-v1/) | * |
 
 <ins>Target Radio Sources</ins>  
 Target: Monitoring [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) and [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) time standard frequency Doppler shift, FT4, FT8 and [WSPR](https://wspr.rocks/) signals.  
