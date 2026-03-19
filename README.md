@@ -26,6 +26,14 @@ Power Supply: [Low noise linear 5vdc Power Supply for SDR and GPSDO](https://www
 Antenna: TBD  
 Integration: [High-quality SMA connection cables](https://www.dxengineering.com/parts/cew-316ds001-2), [hardware](https://www.amazon.com/Saddle-Mounts-Tapping-Organizer-Holders/dp/B09B97326Z).  
 
+| Item | Source |
+|------|--------|
+| RX888 MkII SDR | [RX888 Software Defined Radio](https://www.amazon.com/Receiver-Luminum-Industrial-Beautiful-1kHz%E2%80%9164Mhz/dp/B09FZW89L8) | [Instructions](https://github.com/ik1xpv/ExtIO_sddc) | [Win10-11 Drivers](https://irp-cdn.multiscreensite.com/46d0be53/files/uploaded/Cypress%20FX3%20Win10.zip) |
+| 6 | Uncomment and replace `<YOUR_GRID>` with your [grid square](https://www.qrz.com/gridmapper) — looks like `AA11aa` |
+| 14 | Optionally update `ANTENNA_DESCRIPTION` (e.g., `80m Dipole`) |
+| 19–20 | Uncomment and fill in `PSWS_STATION_ID` and `PSWS_DEVICE_ID` (see below) |
+| 27 | Uncomment `SIGNAL_LEVEL_UPLOAD_GRAPHS="yes"` |
+
 <ins>Target Radio Sources</ins>  
 Target: Monitoring [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) and [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) time standard frequency Doppler shift, FT4, FT8 and [WSPR](https://wspr.rocks/) signals.  
 
