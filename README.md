@@ -28,7 +28,8 @@ Integration: [High-quality SMA connection cables](https://www.dxengineering.com/
 
 | Item | Source |
 |------|--------|
-| RX888 MkII SDR | [RX888 Software Defined Radio](https://www.amazon.com/Receiver-Luminum-Industrial-Beautiful-1kHz%E2%80%9164Mhz/dp/B09FZW89L8) | [Instructions](https://github.com/ik1xpv/ExtIO_sddc) | [Win10-11 Drivers](https://irp-cdn.multiscreensite.com/46d0be53/files/uploaded/Cypress%20FX3%20Win10.zip) |
+| RX888 MkII SDR | [OpenSourceLabs](https://opensourcesdrlab.com/products/rx888-mkii-16bit-sdr-receiver-radio-ltc2208-adc-upgrade-rx888-1) |
+| Drivers | * |
 | 6 | Uncomment and replace `<YOUR_GRID>` with your [grid square](https://www.qrz.com/gridmapper) — looks like `AA11aa` |
 | 14 | Optionally update `ANTENNA_DESCRIPTION` (e.g., `80m Dipole`) |
 | 19–20 | Uncomment and fill in `PSWS_STATION_ID` and `PSWS_DEVICE_ID` (see below) |
