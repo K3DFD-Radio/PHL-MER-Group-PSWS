@@ -1,6 +1,6 @@
 # PHIL-MER-HamSCI-PSWS
 The PHL-MER (Philadelphia-Mercer County, NJ) PSWS Group's HamSCI RX888WSPRDaemon SDR Personal Space Weather Station.
-> **Note:** This build will not incorporate WSPRsonde, VLF receiver or Magnetometer
+> **Note:** This build will not incorporate WSPRsonde, VLF receiver or Magnetometer  
 > **Note-2:** If you want to skip all of this an get to the official HamSCI WSPRDaemon PSWS build, go [here:](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
 ---
 ### HamSCI RX888 WSPRDaemon SDR Station
