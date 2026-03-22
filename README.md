@@ -14,9 +14,6 @@ WSPRDeamon itelf is a Linux-based service designed to operate as a reliable, aut
 
 This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of K3DFD in the Fox Chase section of Philadelphia, Pa.    
 
-<ins>Hardware</ins>  
-SDR: [RX888 Software Defined Radio](https://www.amazon.com/Receiver-Luminum-Industrial-Beautiful-1kHz%E2%80%9164Mhz/dp/B09FZW89L8) | [Instructions](https://github.com/ik1xpv/ExtIO_sddc) | [Win10-11 Drivers](https://irp-cdn.multiscreensite.com/46d0be53/files/uploaded/Cypress%20FX3%20Win10.zip) | [Linux Drivers](https://github.com/cozycactus/SoapyRX888)  
-
 
 Operting System: HamSCI spec'd off-the-shelf Linux-based system - [Ubuntu 24.04 Server LTE](https://ubuntu.com/download/server)  
  
@@ -29,12 +26,15 @@ Antenna: TBD
 | GPS Clock | [Leo Bodner LBE-1420](https://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=393&zenid=0c06e05cfbe1ec87514a52daab4ec452)  | * |
 | Filter-Preamp | [Turn Island Systems Low pass filter and preamp](https://turnislandsystems.com/product/filter-preamp-v1/) | [12VDC Linear Power Supply](https://www.jameco.com/z/DDU120100Z7972-Jameco-ReliaPro-AC-to-DC-Wall-Adapter-Transformer-12-Volt-1-Amp-12-Watt_100870.html) |
 | GPS Clock+Thermal kit | [TAPR RX-888 Clock kit and thermal pad](https://tapr.org/product/rx888-clock-kit-and-thermal-pad/) | [Instructions](https://turnislandsystems.com/wp-content/uploads/2024/05/RX888-Kit-2.pdf) |
-| Computer | [Beelink or spec'd PC](https://www.amazon.com/Beelink-SER5-Computer-Graphics-Support/dp/B0D6G965B)  | * |
+| Computer | [Beelink or spec'd PC](https://www.amazon.com/Beelink-SER5-Computer-Graphics-Support/dp/B0D6G965B)  | [Ubuntu 24.04 Server LTE](https://ubuntu.com/download/server) |
 | Integration | [High-quality SMA connection cables](https://www.dxengineering.com/parts/cew-316ds001-2), [hardware](https://www.amazon.com/Saddle-Mounts-Tapping-Organizer-Holders/dp/B09B97326Z). | * |
-
+| Cooling Fan | [Sunon 40mm
+| Antenna | Dipole, Longwire or Active 
 
 <ins>Target Radio Sources</ins>  
-Target: Monitoring [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) and [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) time standard frequency Doppler shift, FT4, FT8 and [WSPR](https://wspr.rocks/) signals.  
+| Item | Source |
+|------|--------|
+| Monitoring | [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) [WSPR](https://wspr.rocks/) |
 
 <ins>Internet Connectivity</ins>  
 Data backhaul to HamSCI/WSPRnet  
