@@ -14,12 +14,7 @@ WSPRDeamon itelf is a Linux-based service designed to operate as a reliable, aut
 
 This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of K3DFD in the Fox Chase section of Philadelphia, Pa.    
 
-
-Operting System: HamSCI spec'd off-the-shelf Linux-based system - [Ubuntu 24.04 Server LTE](https://ubuntu.com/download/server)  
- 
-Antenna: TBD  
-
-
+### System Components
 | Item | Source | Drivers, Information, Support |
 |------|--------|--------|
 | RX888 MkII SDR | [OpenSourceLabs](https://opensourcesdrlab.com/products/rx888-mkii-16bit-sdr-receiver-radio-ltc2208-adc-upgrade-rx888-1) | [Instructions](https://github.com/ik1xpv/ExtIO_sddc) [Win10-11 Drivers](https://irp-cdn.multiscreensite.com/46d0be53/files/uploaded/Cypress%20FX3%20Win10.zip) [Linux Drivers](https://github.com/cozycactus/SoapyRX888) |
