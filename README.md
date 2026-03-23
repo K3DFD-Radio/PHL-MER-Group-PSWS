@@ -28,7 +28,7 @@ Antenna: TBD
 | GPS Clock+Thermal kit | [TAPR RX-888 Clock kit and thermal pad](https://tapr.org/product/rx888-clock-kit-and-thermal-pad/) | [Instructions](https://turnislandsystems.com/wp-content/uploads/2024/05/RX888-Kit-2.pdf) |
 | Computer | [Beelink or spec'd PC](https://www.amazon.com/Beelink-SER5-Computer-Graphics-Support/dp/B0D6G965B)  | [Ubuntu 24.04 Server LTE](https://ubuntu.com/download/server) |
 | Integration | [High-quality SMA connection cables](https://www.dxengineering.com/parts/cew-316ds001-2), [hardware](https://www.amazon.com/Saddle-Mounts-Tapping-Organizer-Holders/dp/B09B97326Z) | * |
-| Cooling Fan | [Sunon 40mm](https://www.jameco.com/z/HA40101V4-0000-999-Sunon-12-Volt-40mm-DC-Brushless-Fan_2167630.html) |
+| Case Cooling Fan | [Sunon 40mm](https://www.jameco.com/z/HA40101V4-0000-999-Sunon-12-Volt-40mm-DC-Brushless-Fan_2167630.html) |
 | Antenna | Dipole, Longwire or [DX Engineering Active](https://www.dxengineering.com/parts/dxe-rseav-1) |
 
 <ins>Target Radio Sources</ins>  
