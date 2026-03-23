@@ -1,4 +1,4 @@
-## Installation
+# Installation
 > **Note** The below is <ins>my</ins> interpretation of the system installation. The step-by-step HamSCI instructions, which are much more comprensive are
 > [here - HamSCI WSPRDaemon Installation Instructions:](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
 
