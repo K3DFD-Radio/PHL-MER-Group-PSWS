@@ -15,7 +15,7 @@ WSPRDeamon itelf is a Linux-based service designed to operate as a reliable, aut
 This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of [K3DFD](https://www.qrz.com/db/K3DFD) in the Fox Chase section of Philadelphia, Pa.    
 
 ### System Components
-<img width="672" height="451" alt="PSWS drawio" src="https://github.com/user-attachments/assets/e2d46ba7-2c67-44b5-be66-eff1e0989076" />  
+<img width="1254" height="712" alt="PSWS drawio" src="https://github.com/user-attachments/assets/d4185718-2765-41ba-ad02-023ebcf7a1e1" />     
 
 | Item | Source | Drivers, Information, Support |
 |------|--------|--------|
