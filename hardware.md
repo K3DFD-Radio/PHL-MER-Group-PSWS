@@ -1,5 +1,5 @@
 # Hardware Diagram
-<img width="998" height="604" alt="image" src="https://github.com/user-attachments/assets/c3c788eb-aacb-4c4f-a333-d1c6cd8f5dd2" />
+<img width="1254" height="712" alt="PSWS drawio" src="https://github.com/user-attachments/assets/51a333b6-179d-403c-b5b3-31d64b3e0da9" />  
 
 ### Reference and instruction manuals -
 
