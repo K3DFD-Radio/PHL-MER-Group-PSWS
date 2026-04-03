@@ -29,9 +29,11 @@ This repository documents the PHIL-MER PSWS Group's process of building, configu
 | Antenna | Dipole, Longwire or [DX Engineering Active](https://www.dxengineering.com/parts/dxe-rseav-1) |
 
 <ins>Target Radio Sources</ins>  
-| Item | Source |
+| Source | Information |
 |------|--------|
-| Monitoring | [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) [WSPR](https://wspr.rocks/) |
+| WWV | [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) | 
+| CHU | [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu)
+| WSPR | [WSPR](https://wspr.rocks/) |
 
 <ins>Internet Connectivity</ins>  
 Data backhaul to HamSCI/WSPRnet  
@@ -47,6 +49,6 @@ Case Western Reserve University [Case Western Reserve University](https://case.e
 Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)  
 Step 2: [Hardware Build](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/hardware.md)  
 Step 3: [WSPRDaemon Configuration](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/configuration.md)  
-Step 4: Operation  
+Step 4: [Data Integration with HamSCI](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/data.md)  
 Upgrades, enhancements and Quality-of-Life improvements  
 Links and Information Sources  
