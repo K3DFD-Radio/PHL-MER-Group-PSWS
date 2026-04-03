@@ -6,16 +6,14 @@ The PHL-MER (Philadelphia-Mercer County, NJ) PSWS Group's HamSCI RX888WSPRDaemon
 ### Project Overview  
 The goal of the PSWS project is to create a geographically distributed, multi-instrument system for ground-based space environment measurements. Data from this node is aggregated into a central HamSCI database for space science research, specifically for analyzing phenomena like **Traveling Ionospheric Disturbances (TIDs)**. Technically, it is a Wide spectrum receiving system that reports data in multiple formats:  WSPR/FST4w and Doppler shift monitoring in the Digital RF _DRF_ format.  This data is useful for studying the behavior of the ionosphere.  
 
-WSPRDeamon itelf is a Linux-based service designed to operate as a reliable, autonomous appliance for amateur radio operators and researchers. Its primary function is to decode WSPR and FST4W spots from one or more Software-Defined Radios (SDRs) and reliably upload them to public databases like wsprnet.org. The project emphasizes high reliability, advanced features, and scientific data collection, going far beyond the capabilities of standard tools like WSJT-X. It is the 'engine' behind the Personal Space Weather System and has been developed by Rob Robinette at [WSPRDaemon](https://wsprdaemon.readthedocs.io/en/master/index.html).  
+WSPRDeamon (incorporating ka9q-radio) is a Linux-based service designed to operate as a reliable, autonomous appliance for amateur radio operators and researchers. Its primary function is to decode WSPR and FST4W spots from one or more Software-Defined Radios (SDRs) and reliably upload them to public databases like wsprnet.org. The project emphasizes high reliability, advanced features, and scientific data collection, going far beyond the capabilities of standard tools like WSJT-X. It is the 'engine' behind the Personal Space Weather System and has been developed by Rob Robinette at [WSPRDaemon](https://wsprdaemon.readthedocs.io/en/master/index.html).  
 
-This project's research & collaboration is coordinated by the University of Scranton and supports a global network of "Citizen Science" monitors. Key partners include:  
-TAPR [Tucson Amateur Packet Radio](https://tapr.org/) NJIT [Center for Solar-Terrestrial Research](https://research.njit.edu/cstr/) MIT [Haystack Observatory](https://www.haystack.mit.edu/) Case Western Reserve University [Case Western Reserve University](https://case.edu/)  
+This project's research & collaboration is coordinated by the University of Scranton and supports a global network of "Citizen Science" monitors. Key partners include: TAPR [Tucson Amateur Packet Radio](https://tapr.org/) - NJIT [Center for Solar-Terrestrial Research](https://research.njit.edu/cstr/) - MIT - [Haystack Observatory](https://www.haystack.mit.edu/) - Case Western Reserve University [Case Western Reserve University](https://case.edu/) et.al.
 
-### Building a RX888 WSPRDaemon SDR Station for HamSCI
-This repository documents the build of a Personal Space Weather Station (PSWS) node. This is a cooperative project involving a subgroup of Delaware Valley Radio Association [(DVRA)](https://www.w2zq.com/) members in association with HamSCI. Note that while the participants are DVRA members, this project is independent of and not in association with the DVRA. This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of [K3DFD](https://www.qrz.com/db/K3DFD) in the Fox Chase section of Philadelphia, Pa.  
+### Building our RX888 WSPRDaemon SDR Station for HamSCI
+This repository documents the build of a Personal Space Weather Station (PSWS) node. This is a cooperative project involving a subgroup of Delaware Valley Radio Association [(DVRA)](https://www.w2zq.com/) members in association with HamSCI. Note that while the participants are DVRA members, this project is independent of and not in association with the DVRA. This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of [K3DFD](https://www.qrz.com/db/K3DFD) in the Fox Chase section of Philadelphia, Pa. Our build will not incorporate WSPRsonde, VLF receiver or Magnetometer.
 
-This build will not incorporate WSPRsonde, VLF receiver or Magnetometer  
-The official HamSCI WSPRDaemon PSWS build, go [here:](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
+The official HamSCI WSPRDaemon PSWS build instructions are [here:](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
 
 ### System Components
 <img width="1254" height="712" alt="PSWS drawio" src="https://github.com/user-attachments/assets/d4185718-2765-41ba-ad02-023ebcf7a1e1" />     
@@ -37,6 +35,7 @@ The official HamSCI WSPRDaemon PSWS build, go [here:](https://github.com/HamSCI/
 | WWV | [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) | 
 | CHU | [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu)
 | WSPR | [WSPR](https://wspr.rocks/) |
+| FST4W | [FST4W](https://www.wsprdaemon.org/fst4w) |
 
 <ins>Internet Connectivity</ins>  
 Data backhaul to HamSCI/WSPRnet  
