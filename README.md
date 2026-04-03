@@ -30,8 +30,8 @@ The official HamSCI WSPRDaemon PSWS build instructions are [here:](https://githu
 | Antenna | Dipole, Longwire or [DX Engineering Active](https://www.dxengineering.com/parts/dxe-rseav-1) |
 
 <ins>Target Radio Sources</ins>  
-| Source | Information |
-|------|--------|
+| Source | Information | * | * |
+|------|--------|--|--|
 | WWV | [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) | CHU | [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) | WSPR | [WSPR](https://wspr.rocks/) | FST4W | [FST4W](https://www.wsprdaemon.org/fst4w) |
 
 <ins>Internet Connectivity</ins>  
