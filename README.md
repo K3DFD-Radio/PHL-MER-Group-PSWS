@@ -4,8 +4,7 @@ The PHL-MER (Philadelphia-Mercer County, NJ) PSWS Group's HamSCI RX888WSPRDaemon
 > **Note-2:** If you want to skip all of this an get to the official HamSCI WSPRDaemon PSWS build, go [here:](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
 ---
 ### HamSCI RX888 WSPRDaemon SDR Station
-This repository documents the build of a Personal Space Weather Station (PSWS) node. This is a cooperative project involving a subgroup of Delaware Valley Radio Association [(DVRA)](https://www.w2zq.com/) members in association with HamSCI.
-> **Note:** While the participants are DVRA members, this project is independent of and not in association with the DVRA.  
+This repository documents the build of a Personal Space Weather Station (PSWS) node. This is a cooperative project involving a subgroup of Delaware Valley Radio Association [(DVRA)](https://www.w2zq.com/) members in association with HamSCI. Note that while the participants are DVRA members, this project is independent of and not in association with the DVRA.  
 
 ### Project Overview  
 The goal of the PSWS project is to create a geographically distributed, multi-instrument system for ground-based space environment measurements. Data from this node is aggregated into a central HamSCI database for space science research, specifically for analyzing phenomena like **Traveling Ionospheric Disturbances (TIDs)**. Technically, it is a Wide spectrum receiving system that reports data in multiple formats:  WSPR/FST4w and Doppler shift monitoring in the Digital RF _DRF_ format.  This data is useful for studying the behavior of the ionosphere.  
