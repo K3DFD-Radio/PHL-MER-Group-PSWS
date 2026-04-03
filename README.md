@@ -1,7 +1,6 @@
 # PHIL-MER-HamSCI-PSWS
 The PHL-MER (Philadelphia-Mercer County, NJ) PSWS Group's HamSCI RX888WSPRDaemon SDR Personal Space Weather Station.
-> **Note-1:** This build will not incorporate WSPRsonde, VLF receiver or Magnetometer  
-> **Note-2:** If you want to skip all of this an get to the official HamSCI WSPRDaemon PSWS build, go [here:](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
+
 ---
 
 ### Project Overview  
@@ -14,6 +13,9 @@ TAPR [Tucson Amateur Packet Radio](https://tapr.org/) NJIT [Center for Solar-Ter
 
 ### Building a RX888 WSPRDaemon SDR Station for HamSCI
 This repository documents the build of a Personal Space Weather Station (PSWS) node. This is a cooperative project involving a subgroup of Delaware Valley Radio Association [(DVRA)](https://www.w2zq.com/) members in association with HamSCI. Note that while the participants are DVRA members, this project is independent of and not in association with the DVRA. This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of [K3DFD](https://www.qrz.com/db/K3DFD) in the Fox Chase section of Philadelphia, Pa.  
+
+This build will not incorporate WSPRsonde, VLF receiver or Magnetometer  
+The official HamSCI WSPRDaemon PSWS build, go [here:](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
 
 ### System Components
 <img width="1254" height="712" alt="PSWS drawio" src="https://github.com/user-attachments/assets/d4185718-2765-41ba-ad02-023ebcf7a1e1" />     
