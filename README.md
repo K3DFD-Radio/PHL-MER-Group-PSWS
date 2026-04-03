@@ -29,18 +29,11 @@ The official HamSCI WSPRDaemon PSWS build instructions are [here:](https://githu
 | Case Cooling Fan | [Sunon 40mm](https://www.jameco.com/z/HA40101V4-0000-999-Sunon-12-Volt-40mm-DC-Brushless-Fan_2167630.html) |
 | Antenna | Dipole, Longwire or [DX Engineering Active](https://www.dxengineering.com/parts/dxe-rseav-1) |
 
-<ins>Target Radio Sources</ins>  
+<ins>Radio Sources</ins>  
 | [WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) | [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) | [WSPR](https://wspr.rocks/)  | [FST4W](https://www.wsprdaemon.org/fst4w) |
 
 <ins>Internet Connectivity</ins>  
 Data backhaul to HamSCI/WSPRnet  
-
-<ins>Research & Collaboration</ins>  
-Coordinated by the University of Scranton, this project supports a global network of "Citizen Science" monitors. Key partners include:  
-TAPR [Tucson Amateur Packet Radio](https://tapr.org/)  
-NJIT [Center for Solar-Terrestrial Research](https://research.njit.edu/cstr/)  
-MIT [Haystack Observatory](https://www.haystack.mit.edu/)  
-Case Western Reserve University [Case Western Reserve University](https://case.edu/)  
 
 ## Step-by-Step Instructions  
 Step 1: [Ubuntu OS Installation](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/installation.md)  
