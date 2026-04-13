@@ -136,6 +136,33 @@
       touch /etc/sudoers.d/wsprsudo\
       echo "wsprdaemon ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/wsprsudo
 ```
+9. Keeping the system running with the lid closed. Optional For using a laptop as the PSWS server
+Open the configuration file with root access:
+```bash
+      sudo nano /etc/systemd/logind.conf 
+```
+Find these two lines. They'll have a # at the start:
+```bash
+      #HandleLidSwitch=suspend
+      #HandleLidSwitchDocked=suspend
+```
+Make these changes
+```bash
+      HandleLidSwitch=ignore
+      HandleLidSwitchDocked=ignore
+```
+Save the changes and restart the service
+```bash
+      sudo systemctl restart systemd-logind
+```
+Verify the change is working
+```bash
+      systemctl status systemd-logind
+```
+Or you can check the system journal
+```bash
+      journalctl -u systemd-logind | tail
+```
 9. This completes the essential build of the Ubuntu 24.04 Server LTS instance. Directions for installing useful Linux tools and performance monitoring utilities will be provided in the [optimization] file.
 
 10. Next, click on this [Hardware Assembly](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/hardware.md) link to install and configure the WSPRdaemon SDR environment.
