@@ -137,7 +137,7 @@
       echo "wsprdaemon ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/wsprsudo
 ```
 9. Keeping the system running with the lid closed. Optional For using a laptop as the PSWS server
-Open the configuration file with root access:
+Open the configuration file with root access:  
 ```bash
       sudo nano /etc/systemd/logind.conf 
 ```
@@ -163,9 +163,9 @@ Or you can check the system journal
 ```bash
       journalctl -u systemd-logind | tail
 ```
-9. This completes the essential build of the Ubuntu 24.04 Server LTS instance. Directions for installing useful Linux tools and performance monitoring utilities will be provided in the [optimization] file.
+10. This completes the essential build of the Ubuntu 24.04 Server LTS instance. Directions for installing useful Linux tools and performance monitoring utilities will be provided in the [optimization] file.  
 
-10. Next, click on this [Hardware Assembly](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/hardware.md) link to install and configure the WSPRdaemon SDR environment.
+11. Next, click on this [Hardware Assembly](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/hardware.md) link to install and configure the WSPRdaemon SDR environment.
 
 
 
