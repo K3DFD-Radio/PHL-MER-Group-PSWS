@@ -29,6 +29,10 @@ Also, attach the rubber pad to the underside of the SDR's board and the copper t
    > This sets the output to **27 MHz**, which is the required clock frequency for the RX-888
 5. Disconnect the GPS from your personal computer
 
+### Component Layout
+In this instance the system components are mounted on an 8" X 6.5" aluminum sheet and contained in a [Zultech 9.1" x 7.3" x 3.9" Project Enclosure](https://www.amazon.com/dp/B08Y7GWKGR)
+![PXL_20260410_221232372 MP~2](https://github.com/user-attachments/assets/1a9a317c-5d46-4505-9145-090bfe5736d8)
+
 ### Connect the hardware
 
 Connect the GPS clock's **OUTPUT 1 SMA connector** to the RX-888, then connect both devices to the PSWS computer via USB.
@@ -38,7 +42,8 @@ Connect the GPS clock's **OUTPUT 1 SMA connector** to the RX-888, then connect b
 > - 🔴 Red — GPS Oscillator to PC
 > - 🟢 Green — RX-888 to PC
 
-### Case Layout
+
+
 
 ---
 
