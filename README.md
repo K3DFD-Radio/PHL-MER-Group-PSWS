@@ -1,5 +1,5 @@
-# PHIL-MER-HamSCI-PSWS
-The PHL-MER (Philadelphia-Mercer County, NJ) PSWS Group's HamSCI RX888WSPRDaemon SDR Personal Space Weather Station.
+# K3DFD-PSWS
+The K3DFD PSWS HamSCI RX888WSPRDaemon SDR Personal Space Weather Station.
 
 ---
 
