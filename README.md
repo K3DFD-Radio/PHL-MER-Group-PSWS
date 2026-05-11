@@ -1,6 +1,7 @@
 ## K3DFD HamSCi RX888 WSPRDaemon SDR Personal Space Weather Station  
 
 ---
+<img width="1707" height="960" alt="image" src="https://github.com/user-attachments/assets/ab836dde-0132-4e4b-95d8-efa7d719f4fc" />
 
 ### Project Overview  
 The goal of the PSWS project is to create a geographically distributed, multi-instrument system for ground-based space environment measurements. Data from this node is aggregated into a central HamSCI database for space science research, specifically for analyzing phenomena like **Traveling Ionospheric Disturbances (TIDs)**. Technically, it is a Wide spectrum receiving system that reports data in multiple formats:  WSPR/FST4w and Doppler shift monitoring in the Digital RF _DRF_ format.  This data is useful for studying the behavior of the ionosphere.  
