@@ -32,8 +32,8 @@ The official HamSCI WSPRDaemon PSWS build instructions written by HamSCI's Emma 
 <ins>Radio Sources</ins>  
 |[WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) | [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) | [WSPR](https://wspr.rocks/)  | [FST4W](https://www.wsprdaemon.org/fst4w) |
 
-<ins>Internet Connectivity</ins>  
-Data backhaul to HamSCI/WSPRnet  
+## Data Connectivity
+[PSWS Control and Data Analysis](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/operation.md)  
 
 ## Step-by-Step Instructions  
 Step 1: [Hardware Build](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/hardware.md)  
