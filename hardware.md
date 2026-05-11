@@ -2,6 +2,8 @@
 
 The actual construction style and design of the RX888 WSPRDaemon SDR PSWS is up to the builder although certain tasks are requied regardless of how the build is performed. The use of the below cabinet, layout and hardware is not required but represents the quality that was put into the K3DFD PSWS build. How you do it is of course, up to you. Regardless, the system must meet the operational performance levels to provide useful data to HamSCI.
 
+Essentially, the entire PSWS consists of: BeeLink SER Pro 7i 16-32GB 8-core NUC PC with Linux 24.04.x server and WSPRDaemon installed, a RX888 MkII 16-bit ADC Software-defined Radio that provides 30Mhz of spectrum coverage, a Leo Bodnar LBE-1420 GPS-disciplined Oscillator that drives the RX888 for GPS sourced timing, a Turn Island Systems (Dual) 30Mhz Filter-preamp to provide antialiasing filtering of signals above 30Mhz, and a low-noise DX Engineering RSEAV1 active vertical antenna.
+
 ## Reference and instruction manuals -  
 [RX888 MkII SDR Source](https://dc4ku.com/.cm4all/uproc.php/0/SDR%20-%20TEST-BERICHTE/RX888_english.pdf?cdp=a&_=1806ad658e7)  
 [TAPR Clock kit and thermal Pad](https://turnislandsystems.com/wp-content/uploads/2024/05/RX888-Kit-2.pdf)    
