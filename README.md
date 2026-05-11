@@ -1,6 +1,6 @@
-## The K3DFD HamSCi RX888 WSPRDaemon SDR Personal Space Weather Station.  
+## K3DFD HamSCi RX888 WSPRDaemon SDR Personal Space Weather Station  
 
---
+---
 
 ### Project Overview  
 The goal of the PSWS project is to create a geographically distributed, multi-instrument system for ground-based space environment measurements. Data from this node is aggregated into a central HamSCI database for space science research, specifically for analyzing phenomena like **Traveling Ionospheric Disturbances (TIDs)**. Technically, it is a Wide spectrum receiving system that reports data in multiple formats:  WSPR/FST4w and Doppler shift monitoring in the Digital RF _DRF_ format.  This data is useful for studying the behavior of the ionosphere.  
@@ -12,7 +12,7 @@ This project's research & collaboration is coordinated by Dr. Nathaniel Frissell
 ### Building our RX888 WSPRDaemon SDR Station for HamSCI
 This repository documents the build of a Personal Space Weather Station (PSWS) node by located in maidenhead grid FN20lb at the QTH of [K3DFD](https://www.qrz.com/db/K3DFD) in the Fox Chase section of Philadelphia, Pa. This build will not incorporate WSPRsonde, VLF receiver or Magnetometer.   
 
-## Build Instructions  
+### Build Instructions  
 [Hardware Build](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/hardware.md)  
 [Official HamSCI System Installation & Configuration](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
 [Use of the PSWS & WSPRDaemon](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/operation.md)  
@@ -37,5 +37,5 @@ This repository documents the build of a Personal Space Weather Station (PSWS) n
 <ins>Radio Sources</ins>  
 |[WWV](https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwv) | [CHU](https://nrc.canada.ca/en/certifications-evaluations-standards/canadas-official-time/nrc-shortwave-station-broadcasts-chu) | [WSPR](https://wspr.rocks/)  | [FST4W](https://www.wsprdaemon.org/fst4w) |
 
-## Operation & Data Connectivity
+### Operation & Data Connectivity
 [PSWS Operation, Control and Data Analysis](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/operation.md)  
