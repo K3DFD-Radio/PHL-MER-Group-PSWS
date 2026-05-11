@@ -1,4 +1,4 @@
-# Block Diagram
+# Hardware Build
 <img width="1143" height="796" alt="image" src="https://github.com/user-attachments/assets/043a80f4-6c80-440a-9ddd-17a968e08e52" />  
 
 ### Reference and instruction manuals -
