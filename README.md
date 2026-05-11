@@ -13,7 +13,11 @@ This project's research & collaboration is coordinated by Dr. Nathaniel Frissell
 ### Building our RX888 WSPRDaemon SDR Station for HamSCI
 This repository documents the build of a Personal Space Weather Station (PSWS) node by located in maidenhead grid FN20lb at the QTH of [K3DFD](https://www.qrz.com/db/K3DFD) in the Fox Chase section of Philadelphia, Pa. This build will not incorporate WSPRsonde, VLF receiver or Magnetometer.   
 
-The official HamSCI WSPRDaemon PSWS build instructions written by HamSCI's Emma Moran, Dr. Kristina Collins, et.al. are [here:](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
+## Build Instructions  
+[Hardware Build](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/hardware.md)  
+[Official HamSCI System Installation & Configuration](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
+[Use of the PSWS & WSPRDaemon](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/operation.md)  
+[Links and Information Sources](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/sources_links.md)    
 
 ---
 
@@ -36,9 +40,3 @@ The official HamSCI WSPRDaemon PSWS build instructions written by HamSCI's Emma 
 
 ## Operation & Data Connectivity
 [PSWS Operation, Control and Data Analysis](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/operation.md)  
-
-## Build Instructions  
-[Hardware Build](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/hardware.md)  
-[System Installation](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
-[Use of the PSWS & WSPRDaemon](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/operation.md)  
-[Links and Information Sources](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/sources_links.md)    
