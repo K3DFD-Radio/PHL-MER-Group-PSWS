@@ -8,7 +8,8 @@ Filter-preamp: [here](https://turnislandsystems.com/wp-content/uploads/2024/10/F
 ### Block Diagram
 <img width="1143" height="796" alt="image" src="https://github.com/user-attachments/assets/043a80f4-6c80-440a-9ddd-17a968e08e52" />  
 
-### Component Layout
+### Component Layout  
+In this instance the system components are mounted on a [6"x8"x1/16" 6061/T651 Aluminum Sheet Metal aluminum plate](https://www.amazon.com/PATIKIL-Aluminum-Protective-Rectangle-Lndustry/dp/B0DHR7TLNX?pd_rd_w=YnrUL&content-id=amzn1.sym.6bb79025-718b-4ad1-b8ec-68027fb35564&pf_rd_p=6bb79025-718b-4ad1-b8ec-68027fb35564&pf_rd_r=T4XHH2GPPG2ZPEGDFS6F&pd_rd_wg=xPK13&pd_rd_r=6daeec44-af98-4005-ae55-ffafdbc088e7&pd_rd_i=B0DHR7TLNX&ref_=pd_bap_d_grid_rp_hxwhrp_sspa_dk_bia_0_18_t&th=1) and contained in a [Zultech 9.1"x7.3"x3.9" Project Enclosure](https://www.amazon.com/dp/B08Y7GWKGR)  
 <img width="1143" height="796" alt="image" src="https://github.com/user-attachments/assets/4a2492c1-d869-4780-b1e3-4608127e056e" />
 
 
@@ -31,9 +32,6 @@ Also, attach the rubber pad to the underside of the SDR's board and the copper t
 4. In the `OUT1` box, enter `27000000` and click **Set**
    > This sets the output to **27 MHz**, which is the required clock frequency for the RX-888
 5. Disconnect the GPS from your personal computer
-
-### Component Layout
-In this instance the system components are mounted on a [6"x8"x1/16" 6061/T651 Aluminum Sheet Metal aluminum plate](https://www.amazon.com/PATIKIL-Aluminum-Protective-Rectangle-Lndustry/dp/B0DHR7TLNX?pd_rd_w=YnrUL&content-id=amzn1.sym.6bb79025-718b-4ad1-b8ec-68027fb35564&pf_rd_p=6bb79025-718b-4ad1-b8ec-68027fb35564&pf_rd_r=T4XHH2GPPG2ZPEGDFS6F&pd_rd_wg=xPK13&pd_rd_r=6daeec44-af98-4005-ae55-ffafdbc088e7&pd_rd_i=B0DHR7TLNX&ref_=pd_bap_d_grid_rp_hxwhrp_sspa_dk_bia_0_18_t&th=1) and contained in a [Zultech 9.1"x7.3"x3.9" Project Enclosure](https://www.amazon.com/dp/B08Y7GWKGR)![PXL_20260410_221232372 MP~2](https://github.com/user-attachments/assets/1a9a317c-5d46-4505-9145-090bfe5736d8)
 
 ### Set the LBE-1420 GPS DO's clock output for 27.000Mhz
 
