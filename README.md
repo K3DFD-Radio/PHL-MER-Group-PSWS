@@ -1,5 +1,4 @@
-# K3DFD-PSWS
-The K3DFD PSWS HamSCI RX888WSPRDaemon SDR Personal Space Weather Station.
+# The K3DFD PSWS HamSCI RX888WSPRDaemon SDR Personal Space Weather Station.
 
 ---
 
