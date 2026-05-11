@@ -1,10 +1,13 @@
-## Hardware Mods, Configuration, BeeLing PC Linux Install & System Build  
+## Hardware Mods, Configuration, BeeLing PC Linux Install, DXE Active Antenna & System Build  
+
+The actual construction style and design of the RX888 WSPRDaemon SDR PSWS is up to the builder although certain tasks are requied regardless of how the build is performed. The use of the below cabinet, layout and hardware is not required but represents the quality that was put into the K3DFD PSWS build. How you do it is of course, up to you. Regardless, the system must meet the operational performance levels to provide useful data to HamSCI.
 
 ## Reference and instruction manuals -  
-RX888 MkII SDR Source: [here](https://dc4ku.com/.cm4all/uproc.php/0/SDR%20-%20TEST-BERICHTE/RX888_english.pdf?cdp=a&_=1806ad658e7)  
-Clock kit and thermal Pad: [here](https://turnislandsystems.com/wp-content/uploads/2024/05/RX888-Kit-2.pdf)    
-GPS Disciplined Oscillator: [here](https://github.com/simontheu/lbe-1420)  
-Filter-preamp: [here](https://turnislandsystems.com/wp-content/uploads/2024/10/Filter-Preamp-v1-rev-6.pdf)  
+[RX888 MkII SDR Source](https://dc4ku.com/.cm4all/uproc.php/0/SDR%20-%20TEST-BERICHTE/RX888_english.pdf?cdp=a&_=1806ad658e7)  
+[TAPR Clock kit and thermal Pad](https://turnislandsystems.com/wp-content/uploads/2024/05/RX888-Kit-2.pdf)    
+[Leo Bodnae LBE-1420 GPS Disciplined Oscillator](https://github.com/simontheu/lbe-1420)  
+[TIS 30Mhz Filter-preamp](https://turnislandsystems.com/wp-content/uploads/2024/10/Filter-Preamp-v1-rev-6.pdf)  
+[DX Engineering DXE-RSEAV1 Active Antenna](https://static.dxengineering.com/global/images/instructions/dxe-rseav-1fvi.pdf?_gl=1*aiifno*_gcl_au*MjY1MDA5NDMzLjE3NzcxMjkxODI.*_ga*ODc1MzkyNjAxLjE3NzcxMjkxODI.*_ga_NZB590FMHY*czE3Nzg1MjAwMzUkbzYkZzEkdDE3Nzg1MjAwNTgkajM3JGwwJGgw)
 
 ### Component Layout  
 In this instance the system components are mounted on a [6"x8"x1/16" 6061/T651 Aluminum Sheet Metal aluminum plate](https://www.amazon.com/PATIKIL-Aluminum-Protective-Rectangle-Lndustry/dp/B0DHR7TLNX?pd_rd_w=YnrUL&content-id=amzn1.sym.6bb79025-718b-4ad1-b8ec-68027fb35564&pf_rd_p=6bb79025-718b-4ad1-b8ec-68027fb35564&pf_rd_r=T4XHH2GPPG2ZPEGDFS6F&pd_rd_wg=xPK13&pd_rd_r=6daeec44-af98-4005-ae55-ffafdbc088e7&pd_rd_i=B0DHR7TLNX&ref_=pd_bap_d_grid_rp_hxwhrp_sspa_dk_bia_0_18_t&th=1) and contained in a [Zultech 9.1"x7.3"x3.9" Project Enclosure](https://www.amazon.com/dp/B08Y7GWKGR) using metric M3 hardware  
@@ -13,7 +16,6 @@ In this instance the system components are mounted on a [6"x8"x1/16" 6061/T651 A
 ### Drill Baseplate Mounting Holes
 Use a 4mm drill bit to open holes in the aluminum base plateplate and use M3 screws and nuts to place and affix the 3D hold downs. 
 <img width="1143" height="796" alt="image" src="https://github.com/user-attachments/assets/cc9186c5-f339-4bc0-ba5c-c18ac4f96f91" />  
-
 
 ### 3D printed Component Hold Downs
 You can use these .stl file to print the component hold down parts that affix the RX888, GPSDO and Filter-Preamp to the aluminum plate. ABS recommended although .20mm layer/20% infill PLS works well
