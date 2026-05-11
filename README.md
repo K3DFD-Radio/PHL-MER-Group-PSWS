@@ -11,9 +11,9 @@ WSPRDeamon by Rob Robinette (incorporating Phil Karn's ka9q-radio) is a Linux-ba
 This project's research & collaboration is coordinated by the Dr. Nathaniel Frissell W2NAF at the University of Scranton W3USR and supports a global network of "Citizen Science" monitors. Key partners include: TAPR [Tucson Amateur Packet Radio](https://tapr.org/) - NJIT [Center for Solar-Terrestrial Research](https://research.njit.edu/cstr/) - MIT - [Haystack Observatory](https://www.haystack.mit.edu/) - Case Western Reserve University [Case Western Reserve University](https://case.edu/) et.al.
 
 ### Building our RX888 WSPRDaemon SDR Station for HamSCI
-This repository documents the build of a Personal Space Weather Station (PSWS) node by K3DFD. This is a cooperative project with assistance from a small subgroup of Delaware Valley Radio Association [(DVRA)](https://www.w2zq.com/) members who live in Mercer County, NJ. Note that while the participants are all DVRA members, this project is independent of the DVRA. This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of [K3DFD](https://www.qrz.com/db/K3DFD) in the Fox Chase section of Philadelphia, Pa. This build will not incorporate WSPRsonde, VLF receiver or Magnetometer.
+This repository documents the build of a Personal Space Weather Station (PSWS) node by K3DFD. This is a cooperative project with assistance from a small subgroup of Delaware Valley Radio Association [(DVRA)](https://www.w2zq.com/) members who live in Mercer County, NJ. Note that while the participants are all DVRA members, this project is independent of the DVRA. This repository documents the PHIL-MER PSWS Group's process of building, configuring, operating and improving it's HamSCI PSWS, located in maidenhead grid FN20lb at the QTH of [K3DFD](https://www.qrz.com/db/K3DFD) in the Fox Chase section of Philadelphia, Pa. This build will not incorporate WSPRsonde, VLF receiver or Magnetometer.  
 
-The official HamSCI WSPRDaemon PSWS build instructions written by HamSCI's Emma Moran, Dr. Kristina Collins, et.al. are [here:](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)
+The official HamSCI WSPRDaemon PSWS build instructions written by HamSCI's Emma Moran, Dr. Kristina Collins, et.al. are [here:](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
 
 ### System Block Diagram
 <img width="1143" height="796" alt="image" src="https://github.com/user-attachments/assets/f20a7ee4-881c-4ba0-92e2-a33dcc595e65" />
@@ -36,8 +36,8 @@ The official HamSCI WSPRDaemon PSWS build instructions written by HamSCI's Emma 
 Data backhaul to HamSCI/WSPRnet  
 
 ## Step-by-Step Instructions  
-Step 1: [Hardware Build](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/hardware.md) 
-Step 2: [Complete Installation](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver) 
-Step 3: [Data Integration with HamSCI](https://github.com/K3DFD-Radio/PHL-MER-Group-PSWS/blob/main/data.md)  
+Step 1: [Hardware Build](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/hardware.md))  
+Step 2: [Complete Installation](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
+Step 3: [Data Integration with HamSCI](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/data.md)    
 Upgrades, enhancements and Quality-of-Life improvements  
 Links and Information Sources  
