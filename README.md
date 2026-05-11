@@ -5,14 +5,13 @@
 ### Project Overview  
 The goal of the PSWS project is to create a geographically distributed, multi-instrument system for ground-based space environment measurements. Data from this node is aggregated into a central HamSCI database for space science research, specifically for analyzing phenomena like **Traveling Ionospheric Disturbances (TIDs)**. Technically, it is a Wide spectrum receiving system that reports data in multiple formats:  WSPR/FST4w and Doppler shift monitoring in the Digital RF _DRF_ format.  This data is useful for studying the behavior of the ionosphere.  
 
-[WSPRDeamon](https://wsprdaemon.readthedocs.io/en/master/index.html) by Rob Robinette AI6VN, incorporating Phil Karn's [ka9q-radio](https://ka9q-radio.org) is a Linux-based service designed to operate as a reliable, autonomous appliance for amateur radio operators and researchers. Its primary function is to decode WSPR and FST4W spots from one or more Software-Defined Radios (SDRs) and reliably upload them to public databases like [wsprnet.org](https://wsprnet.org) and [wspr.rocks](https://wspr.rocks). The project emphasizes high reliability, advanced features, and scientific data collection, going beyond the capabilities of applications like WSJT-X.
+[WSPRDeamon](https://wsprdaemon.readthedocs.io/en/master/index.html) by Rob Robinette AI6VN, incorporating Phil Karn's [ka9q-radio](https://ka9q-radio.org) is a Linux-based service designed to operate as a reliable, autonomous appliance for amateur radio operators and researchers. Its primary function is to decode WSPR and FST4W spots from one or more Software-Defined Radios (SDRs) and reliably upload them to public databases like [wsprnet.org](https://wsprnet.org) and [wspr.rocks](https://wspr.rocks). The project emphasizes high reliability, advanced features, and scientific data collection, going beyond the capabilities of applications like WSJT-X.  
 
-This project's research & collaboration is coordinated by Dr. Nathaniel Frissell W2NAF at the University of Scranton W3USR and supports a global network of "Citizen Science" monitors. Key partners include: TAPR [Tucson Amateur Packet Radio](https://tapr.org/) - NJIT [Center for Solar-Terrestrial Research](https://research.njit.edu/cstr/) - MIT - [Haystack Observatory](https://www.haystack.mit.edu/) - Case Western Reserve University [Case Western Reserve University](https://case.edu/) et.al.  
-
-### Building our RX888 WSPRDaemon SDR Station for HamSCI
 This repository documents the build of a Personal Space Weather Station (PSWS) node by located in maidenhead grid FN20lb at the QTH of [K3DFD](https://www.qrz.com/db/K3DFD) in the Fox Chase section of Philadelphia, Pa. This build will not incorporate WSPRsonde, VLF receiver or Magnetometer.   
 
-### Build Instructions  
+HamSCI's research & collaboration is coordinated by Dr. Nathaniel Frissell W2NAF at the University of Scranton W3USR and supports a global network of "Citizen Science" monitors. Key partners include: TAPR [Tucson Amateur Packet Radio](https://tapr.org/) - NJIT [Center for Solar-Terrestrial Research](https://research.njit.edu/cstr/) - MIT - [Haystack Observatory](https://www.haystack.mit.edu/) - Case Western Reserve University [Case Western Reserve University](https://case.edu/) et.al.  
+
+### Building the RX888 WSPRDaemon SDR Station
 [Hardware Build](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/hardware.md)  
 [Official HamSCI System Installation & Configuration](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
 [Use of the PSWS & WSPRDaemon](https://github.com/K3DFD-Radio/K3DFD-PSWS/blob/main/operation.md)  
