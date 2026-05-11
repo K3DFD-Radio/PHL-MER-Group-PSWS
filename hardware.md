@@ -22,10 +22,9 @@ Use a 4mm drill bit to open holes in the aluminum base plateplate and use M3 scr
 <img width="1143" height="796" alt="image" src="https://github.com/user-attachments/assets/cc9186c5-f339-4bc0-ba5c-c18ac4f96f91" />  
 
 ### 3D printed Component Hold Downs
-You can use these .stl file to print the component hold down parts that affix the RX888, GPSDO and Filter-Preamp to the aluminum plate. ABS recommended although .20mm layer/20% infill PLS works well
+You can use these .stl file to print the component hold down parts that affix the RX888, GPSDO and Filter-Preamp to the aluminum plate. ABS recommended although .20mm layer / 20% infill PLA works well
 [RX888 MkII SDR}](https://drive.google.com/file/d/11iTI1NAHCLrqhb-Ud5RXdYGEvIffmVQV/view?usp=sharing), [Leo Bodnar LBE-1420](https://drive.google.com/file/d/18yck0PaMf3_px7qnixWy3uBU1HxInkka/view?usp=sharing), [Turn Island Systems 30Mhz Filter-Preamp](https://drive.google.com/file/d/1gPSx4msNTrLTgFopmkgazG57UBLr8tAZ/view?usp=sharing)  
 <img width="1143" height="767" alt="image" src="https://github.com/user-attachments/assets/6318063e-6c47-48c7-a323-7d009c39c269" />  
-
 
 ## Required RX888 SDR mods and Leo Bodnar GPSDO configuration tasks before completing the PSWS build.  
 
@@ -46,7 +45,6 @@ Also, attach the rubber pad to the underside of the SDR's board and the copper t
 4. In the `OUT1` box, enter `27000000` and click **Set** > This sets the output to **27 MHz**, which is the required clock frequency for the RX-888
 5. Disconnect the GPS from your PC
 
-
 Connect the GPS clock's **OUTPUT 1 SMA connector** to the RX-888, then connect both devices to the PSWS computer via USB.
 
 > 📷 **Receiver Setup Schematic:** The Beelink PC, RX-888 Receiver, and GPS Disciplined Oscillator are connected as follows:
@@ -55,6 +53,11 @@ Connect the GPS clock's **OUTPUT 1 SMA connector** to the RX-888, then connect b
 > - 🟢 Green — RX-888 to PC
 
 ---
+## Assemble and Configure the DX Engineering DXE-RSEAV-1 Short Vertical Active Antenna
+The first task is to change the internal J2 and J3 jumper settings to disable the Bias-T power source feature. Move both J2 and J3 jumpers from the 1-2 position to the 2-3 position. Then the required 12VDC will be supplied to the type-F connector on the front of the antenna box.
+<img width="1143" height="796" alt="image" src="https://github.com/user-attachments/assets/1a676475-a87c-4fe0-bac0-027ff0272290" />
+
+
 ### [Follow the HamSCI instructions to configure the Beelink PC with Linux 24.04.n and WSPRDaemon](https://github.com/HamSCI/PSWS_Documentation/wiki/HF-wsprdaemon-Receiver)  
 
 
