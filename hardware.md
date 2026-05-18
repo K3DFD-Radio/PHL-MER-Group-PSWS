@@ -23,9 +23,9 @@ Use a 4mm drill bit to open holes in the aluminum base plateplate and use M3 scr
 
 ### 3D printed Component Hold Downs
 You can use these .stl file to print the component hold down parts that affix the RX888, GPSDO and Filter-Preamp to the aluminum plate. ABS recommended although .20mm layer / 20% infill PLA works well  
-[RX888 MkII SDR](https://drive.google.com/file/d/11iTI1NAHCLrqhb-Ud5RXdYGEvIffmVQV/view?usp=sharing)  
-[Leo Bodnar LBE-1420](https://drive.google.com/file/d/18yck0PaMf3_px7qnixWy3uBU1HxInkka/view?usp=sharing)  
-[Turn Island Systems 30Mhz Filter-Preamp](https://drive.google.com/file/d/1gPSx4msNTrLTgFopmkgazG57UBLr8tAZ/view?usp=sharing)  
+[.stl file for RX888 MkII SDR](https://drive.google.com/file/d/11iTI1NAHCLrqhb-Ud5RXdYGEvIffmVQV/view?usp=sharing)  
+[.stl file for Leo Bodnar LBE-1420](https://drive.google.com/file/d/18yck0PaMf3_px7qnixWy3uBU1HxInkka/view?usp=sharing)  
+[.stl file for Turn Island Systems 30Mhz Filter-Preamp](https://drive.google.com/file/d/1gPSx4msNTrLTgFopmkgazG57UBLr8tAZ/view?usp=sharing)  
 <img width="1143" height="767" alt="image" src="https://github.com/user-attachments/assets/6318063e-6c47-48c7-a323-7d009c39c269" />  
 
 ## Perform Required RX888 clock-Thermal Kit Installation, DXE-RSEAV1 Antenna Bias-T Disable and LBE-1420 Clock Freq Configuration
