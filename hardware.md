@@ -1,4 +1,4 @@
-## Hardware Mods, Configuration, BeeLing PC Linux Install, DXE Active Antenna & System Build  
+## Hardware Mods, DXE Active Antenna, BeeLink PC Linux Server Install and WSPRDdaemon Configuration
 
 The actual construction style and design of the RX888 WSPRDaemon SDR PSWS is up to the builder although certain tasks are requied regardless of how the build is performed. The use of the below cabinet, layout and hardware is not required but represents the quality that was put into the K3DFD PSWS build. How you do it is of course, up to you. Regardless, the system must meet the operational performance levels to provide useful data to HamSCI.
 
